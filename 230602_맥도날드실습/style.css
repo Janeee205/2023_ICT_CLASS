@@ -1,3 +1,58 @@
 * {
   font-family: 'Rubik', sans-serif;
+  margin: 0; /* 초기화 */
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li{
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+  color: black;
+}
+
+.visually-hidden{
+  display: none;
+}
+
+/* 부트스트랩에서 권장하는 그리드 시스템
+  sm(Small), md(Medium) 768px, lg(Large) 1200px
+*/
+.sm-only{
+  display: none;
+}
+
+nav{
+  display: flex;
+  justify-content: space-between; /* 서로 양 끝에 붙음 */
+  align-items: center;
+  width: 95%; /* 가로사이즈를 95%로 축소하고 margin auto로 여백 나눔 */
+  margin: 0 auto;
+  padding: 10px 0;
+  background-color: #fff;
+
+}
+
+.logo img{
+  width: 70px;
+}
+
+.gnb-list{
+  display: flex;
+  /* 너비를 주고 스페이스비트윈 하면 마진 안넣어도 됨 */
+  justify-content: space-between;
+  width: 300px;
+}
+
+.gnb-item a{
+  font-size: 16px;
+  font-weight: 700;
+  transition: color 300ms ease-in-out;
+}
+
+.gnb-item a:hover {
+  color: red;
 }
