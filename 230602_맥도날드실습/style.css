@@ -146,13 +146,13 @@ nav{
 /****** 스토리박스 ******/
 .mac-story-box{
  margin-top: 30px;
- padding: 20px, 0;
+ padding: 20px 0;
  position: sticky;
  bottom: 0;
  z-index: 10;
  text-align: center;
  background-color: #fff;
- border-top: 3px, solid, rgb(255, 213, 23);
+ border-top: 3px solid rgb(255, 213, 23);
 }
 
 .mac-story-list{
