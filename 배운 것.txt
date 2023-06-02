@@ -1,0 +1,5 @@
+터미널 열기
+ctrl + shift + 물결
+
+push 명령어
+git push origin main
