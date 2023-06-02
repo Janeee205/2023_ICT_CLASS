@@ -34,7 +34,6 @@ nav{
   margin: 0 auto;
   padding: 10px 0;
   background-color: #fff;
-
 }
 
 .logo img{
@@ -62,6 +61,7 @@ nav{
 .lnb-wrapper {
   position: sticky; /* 달라붙기 */
   top: 0; /* 맨위부터 */
+  z-index: 10; /* 해당 포지션을 우선으로 한다*/
 }
 
 .lnb-list{
@@ -79,4 +79,68 @@ nav{
 .lnb-item a{
   color: #fff;
   padding: 0 20px;
+}
+
+
+/****** main ******/
+.background {
+  height: 600px;
+  background-image: url('./images/back.jpeg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover; /* 가로세로 다 채움 */
+}
+
+.food-box {
+  /* food-box-list의 부모 */
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; /* 칸이 부족하면 떨어져라 */
+  width: 90%;
+  margin: 80px auto 0 auto;
+}
+
+.food-box-list{
+  display: flex;
+  margin: 30px;
+} 
+
+.food-box-list:first-child{
+  margin-top: 0;
+}
+
+.food-box-item{
+  display: flex;
+  justify-content: center;
+  width: 300px;
+  margin-right: 30px;
+  border-radius: 10px;
+  box-shadow: 3px 3px 5px #e1e1e1; /* x축, y축, 퍼지는정도, 색상 */
+  overflow: hidden;
+}
+
+.food-box-item:last-child{
+  margin-right: 0;
+}
+
+.food-box-item a{
+  transition: opacity 300ms ease-in-out;
+}
+
+.food-box-item a:hover{
+  opacity: .7; /*푸드박스 이미지 위에 마우스 올렸을때 이미지 흐려지는 정도 0~1 */
+  
+}
+
+.food-box-item img {
+  width: 300px;
+  height: 250px;
+  object-fit: cover; /* 비율 지키면서 이미지 확대 */
+}
+
+.food-box-txt {
+  width: 90%;
+  margin: 30px auto;
+  text-align: center;
+  font-weight: 700;
 }
