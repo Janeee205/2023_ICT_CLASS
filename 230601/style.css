@@ -1,16 +1,13 @@
-* {
-  margin: 0;
-  padding: 0;
+/* html 코드 순서대로 */
+
+a {
+  color: #000;
+  text-decoration: none;
 }
 
 li {
   list-style: none;
 }
-
-a {
-  text-decoration: none;
-}
-
 
 nav {
   /* display : flex 항상 내가 정렬하고 싶은
@@ -26,118 +23,6 @@ nav {
   align-items: center;
   padding: 15px 40px;
   background-color: #ffffff;
-}
-
-.box-list-wrap {
-  display: flex;
-  justify-content: center;
-  margin: 3%, auto;
-}
-
-/* 음식사진 첫줄 */
-.box-list {
-  width: 300px;
-  box-shadow: 5px 5px 5px #ccc;
-  border-radius: 20px;
-  overflow: hidden;
-  margin: 25px 15px;
-}
-
-.box-list img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-}
-
-.box-list p {
-  padding: 20px;
-  text-align: center;
-}
-
-/* 음식사진 둘째줄 */
-
-.box-list2 {
-  width: 300px;
-  box-shadow: 5px 5px 5px #ccc;
-  border-radius: 20px;
-  overflow: hidden;
-  margin: 25px 15px;
-}
-
-
-.box-list2 img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-}
-
-.box-list2 p {
-  padding: 20px;
-  text-align: center;
-}
-
-/* 음식사진 셋째줄 */
-
-.box-list3 {
-  width: 300px;
-  box-shadow: 5px 5px 5px #ccc;
-  border-radius: 20px;
-  overflow: hidden;
-  margin: 25px 15px;
-}
-
-
-.box-list3 img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-}
-
-.box-list3 p {
-  padding: 20px;
-  text-align: center;
-}
-
-/* 마지막 */
-.circle {
-  display: flex;
-  justify-content: space-between;
-  width: 50%;
-  margin: 10% auto;
-}
-
-.circle1 {
-  width: 30%;
-  height: 30%;
-  background-image: url('./images/side1.png');
-  background-size: 100%;
-  background-repeat: no-repeat;
-  border: 1px solid rgb(255, 255, 255);
-  border-radius: 100%;
-}
-
-.circle2 {
-  width: 30%;
-  height: 30%;
-  background-image: url('./images/side2.jpeg');
-  background-size: 100%;
-  background-repeat: no-repeat;
-  border: 1px solid rgb(255, 255, 255);
-  border-radius: 100%;
-}
-
-.circle3 {
-  width: 30%;
-  height: 30%;
-  background-image: url('./images/top.jpeg');
-  background-size: 100%;
-  background-repeat: no-repeat;
-  border: 1px solid rgb(255, 255, 255);
-  border-radius: 100%;
-}
-
-.circle p {
-  margin-top: 50%;
 }
 
 
@@ -163,24 +48,145 @@ nav {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 500px;
+  height: 700px;
   background-image: url('./images/back.jpeg');
   background-repeat: no-repeat;
   background-size: cover;
+  object-fit: cover;
   background-position: center;
   color: #fff;
   text-align: center;
 }
 
-hr {
-  background-color: #ffea8b;
-  height: 10px;
+/* 음식사진부분 */
+.box-list-wrap {
+  display: flex;
+  justify-content: center;
+  margin: 3%, auto;
 }
 
+/* 음식사진 첫줄 */
+.box-list {
+  width: 300px;
+  box-shadow: 5px 5px 5px #ccc;
+  border-radius: 20px;
+  overflow: hidden; /* 튀어나온 부분 가림 */
+  margin: 25px 15px;
+}
+
+.box-list img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover; /* 이미지의 비율은 고정한채로 박스에 가득채움 */
+}
+
+.box-list p {
+  padding: 20px;
+  text-align: center;
+}
+
+/* 음식사진 둘째줄 */
+.box-list2 {
+  width: 300px;
+  box-shadow: 5px 5px 5px #ccc;
+  border-radius: 20px;
+  overflow: hidden;
+  margin: 25px 15px;
+}
+
+
+.box-list2 img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.box-list2 p {
+  padding: 20px;
+  text-align: center;
+}
+
+/* 음식사진 셋째줄 */
+.box-list3 {
+  width: 300px;
+  box-shadow: 5px 5px 5px #ccc;
+  border-radius: 20px;
+  overflow: hidden;
+  margin: 25px 15px;
+}
+
+.box-list3 img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.box-list3 p {
+  padding: 20px;
+  text-align: center;
+}
+
+/* HR */
+hr {
+  border: 5px;
+  height: 5px;
+  background-color: #ffea8b;
+  margin: 0;
+}
+
+/* 마지막 */
+.circle-list-wrap {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0px;
+}
+
+.circle-list-wrap p{
+  text-align: center;
+  margin: 0;
+}
+
+.circle1 {
+  width: 100px;
+  overflow: hidden;
+  margin: 10px 20px;
+}
+
+.circle1 img{
+  width: 100%;
+  height: 100px;
+  border-radius: 100%;
+}
+
+.circle2
+{
+  width: 100px;
+  overflow: hidden;
+  margin: 10px 20px;
+}
+
+.circle2 img{
+  width: 100%;
+  height: 100px;
+  border-radius: 100%;
+}
+
+.circle3
+{
+  width: 100px;
+  overflow: hidden;
+  margin: 10px 20px;
+}
+.circle3 img{
+  width: 100%;
+  height: 100px;
+  border-radius: 100%;
+}
+
+/* footer */
 footer {
-  margin-top: 120px;
   background-color: #ea1c26;
-  padding: 20px 50px;
+  padding: 20px 30px;
 }
 
 .global-footer {
@@ -191,22 +197,39 @@ footer {
   padding: 20px 0;
 }
 
-.footer-list {
+.footer-list{
+  display : flex;
+}
+
+.footer-list div{
+  margin: 0px 15px;
+}
+
+.icon-list {
   display: flex;
 }
 
-.footer-item {
-  margin-right: 20px;
+.icon-item a {
+  justify-content: center;
+  align-items: center;
 }
 
-.footer-item:last-child {
-  margin-right: 0;
+.icon-item div {
+  width: 50px;
+  height: 50px;
+  background-color: #fff;
+  border-radius: 100%;
+  margin: 0px 10px;
 }
 
-.footer-item a {
-  color: #fff;
+.icon-item a i {
+  transition: all 0.5s; /*	선택자가 변화되는 것을 시간의 흐름을 줘서 변화시키는 속성 */
 }
 
+
+
+
+/* 반응형 */
 @media screen and (max-width : 1200px) {
   .background {
     height: 400px;
@@ -245,8 +268,7 @@ footer {
   }
   
   footer {
-    margin-top: 80px;
-    padding: 20px 50px;
+    padding: 20px 20px;
   }
 }
 
@@ -294,7 +316,6 @@ footer {
   }
 
   footer {
-    margin-top: 60px;
-    padding: 20px 50px;
+    padding: 20px 20px;
   }
 }
