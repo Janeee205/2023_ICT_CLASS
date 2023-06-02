@@ -14,6 +14,7 @@ a{
   color: black;
 }
 
+/****** header gnb 스타일링 ******/
 .visually-hidden{
   display: none;
 }
@@ -55,4 +56,27 @@ nav{
 
 .gnb-item a:hover {
   color: red;
+}
+
+/* 얘 부모는 body여야 함 */
+.lnb-wrapper {
+  position: sticky; /* 달라붙기 */
+  top: 0; /* 맨위부터 */
+}
+
+.lnb-list{
+  display: flex;
+  background-color: rgb(235, 27, 27);
+  padding: 20px 0;
+  border-top: 3px solid rgb(255, 213, 23);
+}
+
+/* 첫째 자식의 왼쪽에 여백 넣기위함 */
+.lnb-item:first-child{
+  margin-left: 20px;
+}
+
+.lnb-item a{
+  color: #fff;
+  padding: 0 20px;
 }
