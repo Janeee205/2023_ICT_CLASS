@@ -152,7 +152,7 @@ nav{
  z-index: 10;
  text-align: center;
  background-color: #fff;
- border-top: 2px, solid, rgb(255, 213, 23);
+ border-top: 3px, solid, rgb(255, 213, 23);
 }
 
 .mac-story-list{
@@ -168,3 +168,44 @@ nav{
  object-fit: cover;
  border-radius: 50%;
 }
+
+
+/****** footer ******/
+footer{
+  background-color: rgb(235, 27, 27);
+  padding: 20px, 0;
+}
+
+.global-footer{
+ display: flex;
+ justify-content: space-between;
+ width: 90%;
+ margin: 0 auto;
+ color: #fff;
+}
+
+.global-footer a{
+  color:#fff;
+}
+
+/* 해당하는 클래스의 첫번째 자식 안의 a 태그 */
+.mac-link-item:first-child a{
+  color:rgb(255, 213, 23);
+}
+
+.mac-link-list{
+margin-right: 40px;
+}
+
+/* flex-grow 속성 : flex-grow가 적용되지 않았을 경우,
+   레이아웃보다 정렬된 아이템들의 width 합이 작으면 오른쪽에 여백이 남는다.
+   그 여백을 지정한 비율대로 차지하게 할 수 있는 속성 */
+.mac-info-list{
+  flex-grow: 1;
+  color: #fff;
+}
+
+
+/* 아이콘정렬 포지션 속성 */
+
+
