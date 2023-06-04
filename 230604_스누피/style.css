@@ -15,3 +15,14 @@ a{
     color: #000;
 }
 
+header{
+    height: 80px;
+}
+
+header nav{
+
+}
+
+.logo img{
+    width: 50px;
+}
