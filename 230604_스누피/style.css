@@ -20,9 +20,14 @@ header{
 }
 
 header nav{
-
+    display: flex;
+    justify-content: space-between;
 }
 
 .logo img{
     width: 50px;
+}
+
+.gnb-list {
+    display: flex;
 }
