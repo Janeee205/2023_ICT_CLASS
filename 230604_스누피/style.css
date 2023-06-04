@@ -44,3 +44,7 @@ header nav{
 .gnb-item a:hover{
     color: dodgerblue;
 }
+
+.background{
+    background-image: url(./images/스누피배경.jpeg);
+}
