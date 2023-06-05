@@ -1,53 +1,56 @@
 * {
   font-family: 'Rubik', sans-serif;
-  margin: 0; /* 초기화 */
+  margin: 0;
+  /* 초기화 */
   padding: 0;
   box-sizing: border-box;
 }
 
-li{
+li {
   list-style: none;
 }
 
-a{
+a {
   text-decoration: none;
   color: black;
 }
 
 /****** header gnb 스타일링 ******/
-.visually-hidden{
+.visually-hidden {
   display: none;
 }
 
 /* 부트스트랩에서 권장하는 그리드 시스템
   sm(Small), md(Medium) 768px, lg(Large) 1200px
 */
-.sm-only{
+.sm-only {
   display: none;
 }
 
-nav{
+nav {
   display: flex;
-  justify-content: space-between; /* 서로 양 끝에 붙음 */
+  justify-content: space-between;
+  /* 서로 양 끝에 붙음 */
   align-items: center;
-  width: 95%; /* 가로사이즈를 95%로 축소하고 margin auto로 여백 나눔 */
+  width: 95%;
+  /* 가로사이즈를 95%로 축소하고 margin auto로 여백 나눔 */
   margin: 0 auto;
   padding: 10px 0;
   background-color: #fff;
 }
 
-.logo img{
+.logo img {
   width: 70px;
 }
 
-.gnb-list{
+.gnb-list {
   display: flex;
   /* 너비를 주고 스페이스비트윈 하면 마진 안넣어도 됨 */
   justify-content: space-between;
   width: 300px;
 }
 
-.gnb-item a{
+.gnb-item a {
   font-size: 16px;
   font-weight: 700;
   transition: color 300ms ease-in-out;
@@ -57,14 +60,17 @@ nav{
   color: red;
 }
 
-/* 얘 부모는 body여야 함 */
+/* position: sticky로 top:0부터 달라붙게 하려면, 부모는 body여야 함 */
 .lnb-wrapper {
-  position: sticky; /* 달라붙기 */
-  top: 0; /* 맨위부터 */
-  z-index: 10; /* 해당 포지션을 우선으로 한다*/
+  position: sticky;
+  /* 달라붙기 */
+  top: 0;
+  /* 맨위부터 */
+  z-index: 10;
+  /* 해당 포지션을 우선으로 한다*/
 }
 
-.lnb-list{
+.lnb-list {
   display: flex;
   background-color: rgb(235, 27, 27);
   padding: 20px 0;
@@ -72,11 +78,11 @@ nav{
 }
 
 /* 첫째 자식의 왼쪽에 여백 넣기위함 */
-.lnb-item:first-child{
+.lnb-item:first-child {
   margin-left: 20px;
 }
 
-.lnb-item a{
+.lnb-item a {
   color: #fff;
   padding: 0 20px;
 }
@@ -88,52 +94,57 @@ nav{
   background-image: url('./images/back.jpeg');
   background-repeat: no-repeat;
   background-position: center;
-  background-size: cover; /* 가로세로 다 채움 */
+  background-size: cover;
+  /* 가로세로 다 채움 */
 }
 
 .food-box {
   /* food-box-list의 부모 */
   display: flex;
   justify-content: center;
-  flex-wrap: wrap; /* 칸이 부족하면 떨어져라 */
+  flex-wrap: wrap;
+  /* 칸이 부족하면 떨어져라 */
   width: 90%;
   margin: 80px auto 0 auto;
 }
 
-.food-box-list{
+.food-box-list {
   display: flex;
   margin: 30px;
-} 
+}
 
-.food-box-list:first-child{
+.food-box-list:first-child {
   margin-top: 0;
 }
 
-.food-box-item{
+.food-box-item {
   width: 300px;
   margin-right: 30px;
   border-radius: 10px;
-  box-shadow: 3px 3px 5px #e1e1e1; /* x축, y축, 퍼지는정도, 색상 */
+  box-shadow: 3px 3px 5px #e1e1e1;
+  /* x축, y축, 퍼지는정도, 색상 */
   overflow: hidden;
 }
 
-.food-box-item:last-child{
+.food-box-item:last-child {
   margin-right: 0;
 }
 
-.food-box-item a{
+.food-box-item a {
   transition: opacity 300ms ease-in-out;
 }
 
-.food-box-item a:hover{
-  opacity: .7; /*푸드박스 이미지 위에 마우스 올렸을때 이미지 흐려지는 정도 0~1 */
-  
+.food-box-item a:hover {
+  opacity: .7;
+  /*푸드박스 이미지 위에 마우스 올렸을때 이미지 흐려지는 정도 0~1 */
+
 }
 
 .food-box-item img {
   width: 300px;
   height: 250px;
-  object-fit: cover; /* 비율 지키면서 이미지 확대 */
+  object-fit: cover;
+  /* 비율 지키면서 이미지 확대 */
 }
 
 .food-box-txt {
@@ -144,79 +155,89 @@ nav{
 }
 
 /****** 스토리박스 ******/
-.mac-story-box{
- margin-top: 30px;
- padding: 20px 0;
- position: sticky;
- bottom: 0;
- z-index: 10;
- text-align: center;
- background-color: #fff;
- border-top: 3px solid rgb(255, 213, 23);
+.mac-story-box {
+  margin-top: 30px;
+  padding: 20px 0;
+  position: sticky;
+  bottom: 0;
+  z-index: 10;
+  text-align: center;
+  background-color: #fff;
+  border-top: 3px solid rgb(255, 213, 23);
 }
 
-.mac-story-list{
+.mac-story-list {
   display: flex;
   width: 25%;
   margin: 0 auto;
   justify-content: space-between;
 }
 
-.mac-story-item img{
- width: 100px;
- height: 100px;
- object-fit: cover;
- border-radius: 50%;
+.mac-story-item img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
 
 /****** footer ******/
-footer{
+footer {
   background-color: rgb(235, 27, 27);
   padding: 20px 0;
 }
 
-.global-footer{
- display: flex;
- justify-content: space-between;
- width: 90%;
- margin: 0 auto;
- color: #fff;
-}
-
-.global-footer a{
-  color:#fff;
-}
-
-/* 해당하는 클래스의 첫번째 자식 안의 a 태그 */
-.mac-link-item:first-child a{
-  color:rgb(255, 213, 23);
-}
-
-.mac-link-list{
-  margin-right: 40px;
-  padding: 15px;
-}
-
-/* flex-grow 속성 : flex-grow가 적용되지 않았을 경우,
-   레이아웃보다 정렬된 아이템들의 width 합이 작으면 오른쪽에 여백이 남는다.
-   그 여백을 지정한 비율대로 차지하게 할 수 있는 속성 */
-.mac-info-list{
-  flex-grow: 1;
+.global-footer {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin: 0 auto;
   color: #fff;
-  padding: 15px;
+}
+
+.global-footer a {
+  color: #fff;
+}
+
+.mac-link-list {
+  margin-right: 40px;
+}
+
+/* inline tag에 마진 패딩이 적용되지 않을때 */
+.mac-link-item a {
+  display: inline-block;
+  /* 패딩이나 마진값이 안먹을때 */
+  padding: 5px 0;
+}
+
+.mac-link-item:first-child a {
+  color: rgb(255, 213, 23);
+}
+
+/* flex-grow속성 : flex-grow가 적용되지 않았을 경우
+   레이아웃 보다 정렬된 아이템들의 width 합이 작으면
+   오른쪽에 여백이 남는다. 그 여백을 지정한 비율대로 
+   차지하게 할 수 있는 속성
+*/
+.mac-info-list {
+  flex-grow: 1;
+}
+
+.mac-info-list li {
+  padding: 5px 0;
+  ;
 }
 
 
 /* 아이콘정렬 포지션 속성 */
-.mac-icon-list{
+.mac-icon-list {
   display: flex;
-  padding: 30px;
+  align-items: center;
 }
 
-.mac-icon-list li{
-  background-color: palevioletred;
-  margin: 5px;
+.mac-icon-list li {
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   background-color: #fff;
   margin-right: 10px;
