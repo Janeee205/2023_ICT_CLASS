@@ -218,9 +218,184 @@ footer{
   background-color: palevioletred;
   margin: 5px;
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  background-color: #fff;
+  margin-right: 10px;
+  position: relative;
+  transition: background-color 300ms ease-in-out;
 }
+
+.mac-icon-list li:hover {
+  background-color: rgb(235, 27, 27);
+}
+
+.mac-icon-list li:hover i {
+  color: #fff;
+}
+
+.mac-icon-list li:last-child {
+  margin-right: 0;
+}
+
+/* 동그란 배경을 포지션 릴레이티브로 하고, 가운데로 둘 아이콘을 앱솔루트로 한다 */
+.mac-icon-list i {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  /* 본인이 가진 크기의 반만큼 당긴다. */
+  color: red;
+  top: 50%;
+  left: 50%;
+  font-size: 26px;
+  /* 아이콘 사이즈를 웹폰트라 font-size를 사용 */
+  transition: background-color 300ms ease-in-out;
+}
+
+
+
+/****** 반응형 ******/
+@media screen and (max-width: 1200px) {
+
+  nav {
+    padding: 5px 0;
+  }
+
+  .logo img {
+    width: 60px;
+  }
+
+  .gnb-list {
+    width: 250px;
+  }
+
+  .background {
+    height: 400px;
+  }
+
+
+  .food-box {
+    margin-top: 50px;
+  }
+
+  .food-box-item {
+    width: 33%;
+  }
+
+  .food-box-item img {
+    width: 100%;
+    height: 150px;
+  }
+
+  .food-box-txt {
+    margin: 20px auto;
+  }
+
+  .mac-story-box {
+    margin-top: 50px;
+    padding: 10px 0;
+  }
+
+  .mac-story-list {
+    width: 40%;
+  }
+
+  .mac-story-item img {
+    width: 80px;
+    height: 80px;
+  }
+
+
+}
+
+
+@media screen and (max-width: 768px) {
+
+  .sm-only {
+    display: block;
+  }
+
+  .sm-hidden {
+    display: none;
+  }
+
+  .logo img {
+    width: 50px;
+  }
+
+  .gnb-icon-btn i {
+    font-size: 24px;
+  }
+
+  .background {
+    height: 300px;
+  }
+
+
+  .food-box {
+    width: 100%;
+    margin-top: 30px;
+  }
+
+  .food-box-list {
+    /* 모바일 버전에서 한개씩 세로로 가운데로 정렬하기위함 */
+    flex-direction: column;
+    margin-top: 0;
+  }
+
+  .food-box-item {
+    width: 90%;
+    margin: 20px auto 0 auto;
+  }
+
+  .food-box-item:first-child {
+    margin-top: 0px;
+  }
+
+  .food-box-item:last-child {
+    margin-right: auto;
+  }
+
+  .food-box-txt {
+    margin: 20px auto;
+  }
+
+  .mac-story-box {
+    margin-top: 30px;
+  }
+
+  .mac-story-list {
+    width: 50%;
+  }
+
+  .mac-story-item img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .global-footer {
+    flex-wrap: wrap;
+  }
+
+
+  .mac-link-list {
+    margin-right: 0;
+  }
+
+  .mac-info-list {
+    text-align: right;
+
+  }
+
+  /* 아이콘정렬 포지션 속성 */
+  .mac-icon-list {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .mac-icon-list li {
+    width: 40px;
+    height: 40px;
+  }
 
 .mac-icon-list i{
   margin: 10px 10px;
