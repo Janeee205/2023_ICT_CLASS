@@ -139,3 +139,63 @@ footer {
 .icon-list{
     display: flex;
 }
+
+.icon-item a{
+    padding-right: 20px;
+}
+
+.icon-item:last-child a{
+    padding-right: 0;
+}
+
+.icon-item a:hover i{
+    color: dodgerblue;
+    /* scale : 요소를 확대하거나 축소한다. n>1 확대, n<1 축소 */
+    transform: scale(1.2);
+}
+
+.icon-item a i{
+    transition: all 0.5s;
+    font-size: 24px;
+}
+
+.top-btn{
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+}
+
+.top-btn i{
+    font-size: 38px;
+    color: rgb(41, 127, 161);
+}
+
+.side-menu{
+    position: fixed;
+    top: 150px;
+    right: 50px;
+}
+
+.side-menu-list {
+    width: 200px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px #888;
+    text-align: center;
+}
+
+/* display block : 혼자서 한 줄 다 차지 (div, p, h1), width나 height, margin, padding 부여 가능
+   display inline : 컨텐츠 영역만큼 요소가 잡힘, width나 height 부여 불가능
+   display inline-block : 다른 요소를 나란히 배치, width나 height, margin, padding 부여 가능
+*/
+.side-menu-item a{
+    display: inline-block;
+    padding: 10px 0;
+    color: #888;
+    transition: all 500ms;
+}
+
+.side-menu-item a:hover{
+    color: dodgerblue;
+    text-decoration: underline;
+}

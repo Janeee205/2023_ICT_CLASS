@@ -1,113 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>스누피 실습하기</title>
-    <!-- css 연결 -->
-    <link rel="stylesheet" href="./style.css">
-    <!-- 파비콘 연결 -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff">
-    <!-- 구글폰트 연결 -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">  
-    <!-- 폰트어썸 연결 -->
-    <script src="https://kit.fontawesome.com/9b527152d1.js" crossorigin="anonymous"></script>
-</head>
-<body>
-    <div class="wrapper" id="top">
-      <!-- header 태그 안에는 반드시 hn 태그가 하나 이상 포함 되어야 한다. -->
-        <header>
-            <nav>
-                <h1 class="logo">
-                    <a href="./index.html">
-                        <img src="./images/스누피2.png">
-                    </a>
-                </h1>
-
-                <h2 class="visually-hidden">메뉴</h2>
-                <ul class="gnb-list">
-                    <li class="gnb-item"><a href="">menu1</a></li>
-                    <li class="gnb-item"><a href="">menu2</a></li>
-                    <li class="gnb-item"><a href="">menu3</a></li>
-                    <li class="gnb-item"><a href="">menu4</a></li>
-                </ul>
-            </nav>
-        </header>
-
-        <main>
-            <section class="background">
-                <h3 class="main-title">SNOOPY GARDEN</h3>
-                <p class="main-content">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error, sed ex velit fugit quas voluptate animi. Consequuntur vel laboriosam assumenda numquam ratione, atque fugit dignissimos id voluptatibus alias adipisci autem?</p>
-                <button class="main-btn" type="button">더보기</button>
-            </section>
-
-            <section class="post-card">
-                <div>
-                    <h3>Lorem ipsum dolor!</h3>
-                    <p class="main-content">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut iste voluptatibus possimus, repudiandae libero accusamus voluptatem eveniet architecto quisquam suscipit iure blanditiis amet pariatur nemo error harum excepturi. Totam, deserunt.
-                    </p>
-                </div>
-                <div>
-                    <h3>Lorem ipsum dolor!</h3>
-                    <p class="main-content">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut iste voluptatibus possimus, repudiandae libero accusamus voluptatem eveniet architecto quisquam suscipit iure blanditiis amet pariatur nemo error harum excepturi. Totam, deserunt.
-                    </p>
-                </div>
-                <div>
-                    <h3>Lorem ipsum dolor!</h3>
-                    <p class="main-content">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut iste voluptatibus possimus, repudiandae libero accusamus voluptatem eveniet architecto quisquam suscipit iure blanditiis amet pariatur nemo error harum excepturi. Totam, deserunt.
-                    </p>
-                </div>
-            </section>
-
-            <section class="fixed-back">
-                <div class="fixed-back-img"></div>
-            </section>
-
-        </main>
-
-        <footer>
-            <div class="global-footer">
-                <h3>Contact</h3>
-                <ul class="icon-list">
-                    <li class="icon-item">
-                        <a href="mailto:ga473625@gmail.com">
-                            <i class="fa-solid fa-envelope"></i>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>스누피 실습하기</title>
+        <!-- css 연결 -->
+        <link rel="stylesheet" href="./style.css">
+        <!-- 파비콘 연결 -->
+        <link rel="apple-touch-icon" sizes="180x180" href="./images/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="theme-color" content="#ffffff">
+        <!-- 구글폰트 연결 -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">  
+        <!-- 폰트어썸 연결 -->
+        <script src="https://kit.fontawesome.com/9b527152d1.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div class="wrapper" id="top">
+        <!-- header 태그 안에는 반드시 hn 태그가 하나 이상 포함 되어야 한다. -->
+            <header>
+                <nav>
+                    <h1 class="logo">
+                        <a href="./index.html">
+                            <img src="./images/스누피2.png">
                         </a>
-                    </li>
-                    <li class="icon-item">
-                        <a href="tel:010-1234-5647">
-                            <i class="fa-solid fa-square-phone"></i>
-                        </a>
-                    </li>
-                    <li class="icon-item">
-                        <a href="https://www.youtube.com/">
-                            <i class="fa-brands fa-youtube"></i>
-                        </a>
-                    </li>
-                </ul>
+                    </h1>
+
+                    <h2 class="visually-hidden">메뉴</h2>
+                    <ul class="gnb-list">
+                        <li class="gnb-item"><a href="">menu1</a></li>
+                        <li class="gnb-item"><a href="">menu2</a></li>
+                        <li class="gnb-item"><a href="">menu3</a></li>
+                        <li class="gnb-item"><a href="">menu4</a></li>
+                    </ul>
+                </nav>
+            </header>
+
+            <main>
+                <section class="background">
+                    <h3 class="main-title">SNOOPY GARDEN</h3>
+                    <p class="main-content">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error, sed ex velit fugit quas voluptate animi. Consequuntur vel laboriosam assumenda numquam ratione, atque fugit dignissimos id voluptatibus alias adipisci autem?</p>
+                    <button class="main-btn" type="button">더보기</button>
+                </section>
+
+                <section class="post-card">
+                    <div>
+                        <h3>Lorem ipsum dolor!</h3>
+                        <p class="main-content">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut iste voluptatibus possimus, repudiandae libero accusamus voluptatem eveniet architecto quisquam suscipit iure blanditiis amet pariatur nemo error harum excepturi. Totam, deserunt.
+                        </p>
+                    </div>
+                    <div>
+                        <h3>Lorem ipsum dolor!</h3>
+                        <p class="main-content">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut iste voluptatibus possimus, repudiandae libero accusamus voluptatem eveniet architecto quisquam suscipit iure blanditiis amet pariatur nemo error harum excepturi. Totam, deserunt.
+                        </p>
+                    </div>
+                    <div>
+                        <h3>Lorem ipsum dolor!</h3>
+                        <p class="main-content">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut iste voluptatibus possimus, repudiandae libero accusamus voluptatem eveniet architecto quisquam suscipit iure blanditiis amet pariatur nemo error harum excepturi. Totam, deserunt.
+                        </p>
+                    </div>
+                </section>
+
+                <section class="fixed-back">
+                    <div class="fixed-back-img"></div>
+                </section>
+
+            </main>
+
+            <footer>
+                <div class="global-footer">
+                    <h3>Contact</h3>
+                    <ul class="icon-list">
+                        <li class="icon-item">
+                            <a href="mailto:ga473625@gmail.com">
+                                <i class="fa-solid fa-envelope"></i>
+                            </a>
+                        </li>
+                        <li class="icon-item">
+                            <a href="tel:010-1234-5647">
+                                <i class="fa-solid fa-square-phone"></i>
+                            </a>
+                        </li>
+                        <li class="icon-item">
+                            <a href="https://www.youtube.com/">
+                                <i class="fa-brands fa-youtube"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </footer>
+
+            <div class="top-btn">
+                <a href="#top">
+                    <i class="fa-solid fa-circle-arrow-up"></i>
+                </a>
             </div>
-        </footer>
 
-
-        <div class="top-btn">
-            <a href="#top">
-                <i class="fa-solid fa-circle-arrow-up"></i>
-            </a>
+            <aside class="side-menu">
+                <ul class="side-menu-list">
+                    <li class="side-menu-item"><a href="">sidemenu1</a></li>
+                    <li class="side-menu-item"><a href="">sidemenu2</a></li>
+                    <li class="side-menu-item"><a href="">sidemenu3</a></li>
+                    <li class="side-menu-item"><a href="">sidemenu4</a></li>
+                </ul>
+            </aside>
         </div>
-    </div>
-
-    
-
-</body>
+    </body>
 </html>
