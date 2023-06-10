@@ -1,0 +1,174 @@
+ * {
+   font-family: 'Gothic A1', sans-serif;
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+ }
+
+ li {
+   list-style: none;
+ }
+
+ a {
+   text-decoration: none;
+   color: black;
+ }
+
+ .visually-hidden {
+   display: none;
+ }
+
+ .logo {
+   width: 100%;
+   height: auto;
+   background-color: rgb(255, 204, 0);
+   display: flex;
+   justify-content: space-between;
+   padding: 10px 20px;
+   align-items: center;
+ }
+
+ .logo a{
+  display: flex;
+ }
+
+ .gnb-icon-btn i {
+   color: #dc0000;
+ }
+
+ .logo img {
+   width: 100px;
+ }
+
+ .sm-only{
+  /* display: none; */
+ }
+
+.gnb-list{
+  /* margin:0;
+  display: flex;
+  width: 300px;
+  justify-content: space-between;
+  align-items: center;
+  border : 2px solid black; */
+}
+
+.gnb-list img{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+ .lnb-wrapper {
+   padding: 20px 20px;
+ }
+
+ .lnb-list {
+   display: flex;
+   width: 70%;
+   justify-content: space-between;
+ }
+
+
+ /****** main ******/
+ .background {
+   background-image: url('./images/lego.png');
+   height: 800px;
+   background-repeat: no-repeat;
+   background-size: cover;
+ }
+
+
+ /* 사이드바 */
+.sidebar{
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 200;
+  width: 300px;
+  height: 100%;
+  padding: 80px 30px;
+  transform: translateX(-300px);
+  transition: transform 300ms ease-in-out;
+}
+
+.sidebar.is-active{
+  transform: translateX(0);
+}
+
+.side-menu-box{
+  border-top: 1px solid lightslategray;
+  padding : 20px;
+}
+
+.side-menu-user{
+  display: flex;
+}
+
+.side-menu-user img{
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
+
+.side-menu-item{
+  display: none;
+}
+
+.menu-title{
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu-title-wrapper{
+  display: flex;
+}
+
+.menu-title-wrapper i{
+  margin-right: 5px;
+}
+
+.overlay{
+  background-color: rgba(63, 65, 80, .5);
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  position: fixed;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.overlay.is-active{
+  visibility: visible;
+  opacity: 1;
+}
+
+
+
+
+ @media screen and (max-width: 1200px) {
+   .background {
+     height: 400px;
+   }
+
+ }
+
+
+ @media screen and (max-width: 768px) {
+   .background {
+     height: 300px;
+   }
+
+   .sm-hidden{
+    display: none;
+   }
+
+   .sm-only{
+    display: block;
+   }
+
+ }
