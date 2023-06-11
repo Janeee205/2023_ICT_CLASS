@@ -2,7 +2,9 @@ const gnbIconBtn = document.querySelector('.gnb-icon-btn');
 const sideBar = document.querySelector('.sidebar');
 const overLay = document.querySelector('.overlay');
 const arrow = document.querySelector('.menu-title-arrow');
-const li = document.querySelector('.side-menu-item');
+const li = document.querySelector('.li-wrapper');
+const titleIcon = document.querySelector('.menu-title-wrapper i');
+const rotateArrow = document.querySelector('.fa-rotate-180');
 
 gnbIconBtn.addEventListener('click',function(){
   sideBar.classList.add('is-active');
@@ -18,13 +20,14 @@ overLay.addEventListener('click',function(){
 
 arrow.addEventListener('click',function(){
   li.style.display = 'block';
-  document.querySelector('.menu-title-wrapper i').style.color = 'yellow';
-  
+  titleIcon.style.color = 'yellow';
+  arrow.innerHTML = "<i class='fa-solid fa-chevron-down fa-rotate-180'>";
 })
 
 function closeMenu(){
   li.style.display = 'none';
-  document.querySelector('.menu-title-wrapper i').style.color = 'gray';
+  titleIcon.style.color = 'gray';
+  rotateArrow.innerHTML = 'arrow';
 }
 
-arrow.addEventListener('click', closeMenu);
+rotateArrow.addEventListener('click', closeMenu);

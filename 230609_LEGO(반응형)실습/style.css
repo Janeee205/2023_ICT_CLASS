@@ -79,7 +79,7 @@
  }
 
 
- /* 사이드바 */
+ /****** 사이드바 ******/
 .sidebar{
   background-color: #fff;
   position: fixed;
@@ -112,10 +112,6 @@
   margin-right: 5px;
 }
 
-.side-menu-item{
-  display: none;
-}
-
 .menu-title{
   display: flex;
   justify-content: space-between;
@@ -127,6 +123,10 @@
 
 .menu-title-wrapper i{
   margin-right: 5px;
+}
+
+.li-wrapper{
+  display: none;
 }
 
 .overlay{
@@ -148,7 +148,7 @@
 }
 
 
-
+ /****** 반응형 ******/
 
  @media screen and (max-width: 1200px) {
    .background {
@@ -156,7 +156,6 @@
    }
 
  }
-
 
  @media screen and (max-width: 768px) {
    .background {
