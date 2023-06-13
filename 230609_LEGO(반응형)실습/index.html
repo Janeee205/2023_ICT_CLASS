@@ -1,172 +1,40 @@
 <!DOCTYPE html>
-<html lang="ko">
-
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="JUEUNKIM">
+  <meta name="descriptopn" content="LEGO 연습">
+  <meta name="keywords" content="LEGO, 웹사이트">
+  <meta name="author" content="JUEUNKIM">
+  
   <title>LEGO</title>
-  <!-- 사이트 설명 / 검색어 / 제작자 -->
-  <meta name="desciption" content="반응형 웹 페이지 제작">
-  <meta name="keywords" content="반응형, 레고, 모바일">
-  <meta name="author" content="JueunKim">
-  <!-- css 연결 -->
-  <link rel="stylesheet" href="./style.css">
-  <!-- favicon -->
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
-  <meta name="msapplication-TileColor" content="#da532c">
-  <meta name="theme-color" content="#ffffff">
-  <!-- font awesome -->
-  <script src="https://kit.fontawesome.com/9b527152d1.js" crossorigin="anonymous"></script>
-  <!-- google font -->
+
+  <!-- GOOGLE FONT 연결 -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+  
+  <!-- FAVICON 연결 -->
+  <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon-16x16.png">
+  <link rel="manifest" href="./site.webmanifest">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- FONT AWESOME 연결 -->
+  <script src="https://kit.fontawesome.com/9b527152d1.js" crossorigin="anonymous"></script>
+
+  <!-- CSS 연결 -->
+  <link rel="stylesheet" href="./style.css">
 </head>
 
+
 <body>
-  <div class="wrapper">
-    <header>
-      <nav class="logo-nav">
-        <h1 class="logo">
-          <div class="gnb-icon-btn sm-only">
-            <i class="fa-solid fa-bars"></i>
-          </div>
-          <!-- .logo-img -->
-          <a href=""><img src="./images/logo.png"></a>
-          <i class="fa-solid fa-magnifying-glass"></i>
-        </h1>
-        <h2 class="visually-hidden">메뉴</h2>
-        <!-- <ul class="gnb-list sm-hidden">
-          <li><a href="">제품쇼핑</a></li>
-          <li><a href="">브랜드소개</a></li>
-          <li><a href="">고객지원</a></li>
-          <li><a href="">세일</a></li>
-        </ul> -->
+  
 
-        <!-- <ul class="gnb-list sm-hidden">
-          <li><a href="">
-            </i>스토어검색</a></li>
-          <li><a href=""><img src="./images/user.jpeg"></a></li>
-          <li><a href="">장바구니</a></li>
-          <li><a href="">로그아웃</a></li>
-        </ul> -->
-
-      </nav>
-    </header>
-  </div>
-
-  <!-- local navigation bar -->
-  <div class="lnb-wrapper">
-    <ul class="lnb-list">
-      <li class="lnb-item"><a href="">신제품</a></li>
-      <li class="lnb-item"><a href="">독점제품</a></li>
-      <li class="lnb-item"><a href="">행사</a></li>
-      <li class="lnb-item"><a href="">아이디어</a></li>
-      <li class="lnb-item"><a href="">베스트셀러</a></li>
-      <li class="lnb-item"><a href="">레어제품</a></li>
-    </ul>
-  </div>
-
-  <main>
-    <div class="main-wrapper">
-      <section class="background"></section>
-
-    </div>
-  </main>
-
-  <footer></footer>
-
-  <!--
-    <i class="fa-solid fa-chevron-down"></i>
-  <i class="fa-solid fa-chevron-down fa-rotate-180">
-  </i> -->
-  <aside class="sidebar sm-only">
-    <nav class="sidebar-nav">
-      <h2 class="visually-hidden">사이드바 메뉴</h2>
-      <div class="side-menu-box">
-        <div class="side-menu-user">
-          <img src="./images/user.jpeg" alt="user-icon">
-          <p>레고레고레고레고레고…</p>
-        </div>
-      </div>
-
-      <div class="side-menu-box">
-        <ul class="side-menu-list">
-          <div class="menu-title">
-            <div class="menu-title-wrapper">
-              <i class="fa-solid fa-cart-shopping"></i>
-              <p>레고 제품 쇼핑</p>
-            </div>
-            <div class="menu-title-arrow">
-              <i class="fa-solid fa-chevron-down"></i>
-            </div>
-          </div>
-          <div class="li-wrapper">
-            <li class="side-menu-item"><a href="">시리즈별 세트</a></li>
-            <li class="side-menu-item"><a href="">연령별</a></li>
-            <li class="side-menu-item"><a href="">가격별</a></li>
-            <li class="side-menu-item"><a href="">레고 상품</a></li>
-            <li class="side-menu-item"><a href="">관심분야</a></li>
-            <li class="side-menu-item"><a href="">Pick and Build</a></li>
-            <li class="side-menu-item"><a href="">독점 제품</a></li>
-            <li class="side-menu-item"><a href="">신제품</a></li>
-          </div>
-        </ul>
-      </div>
-
-      <div class="side-menu-box">
-        <ul class="side-menu-list">
-          <div class="menu-title">
-            <div class="menu-title-wrapper">
-              <i class="fa-regular fa-face-smile"></i>
-              <p>레고 브랜드 소개</p>
-            </div>
-            <div class="menu-title-arrow">
-              <i class="fa-solid fa-chevron-down"></i>
-            </div>
-          </div>
-          <div class="li-wrapper">
-            <li class="side-menu-item"><a href="">기업가치</a></li>
-            <li class="side-menu-item"><a href="">레고 앱</a></li>
-            <li class="side-menu-item"><a href="">레고 매거진</a></li>
-            <li class="side-menu-item"><a href="">레고 전 제품</a></li>
-            <li class="side-menu-item"><a href="">레고 전체 관심사별</a></li>
-            <li class="side-menu-item"><a href="">성인 환영</a></li>
-          </div>
-        </ul>
-      </div>
-
-      <div class="side-menu-box">
-        <ul class="side-menu-list">
-          <div class="menu-title">
-            <div class="menu-title-wrapper">
-              <i class="fa-sharp fa-solid fa-circle-info"></i>
-              <p>고객 지원</p>
-            </div>
-            <div class="menu-title-arrow">
-              <i class="fa-solid fa-chevron-down"></i>
-            </div>
-          </div>
-          <div class="li-wrapper">
-            <li class="side-menu-item"><a href="">주문 현황 확인</a></li>
-            <li class="side-menu-item"><a href="">배송 및 반품</a></li>
-            <li class="side-menu-item"><a href="">스토어 검색</a></li>
-            <li class="side-menu-item"><a href="">조립설명서 검색</a></li>
-            <li class="side-menu-item"><a href="">일반적인 질문</a></li>
-          </div>
-        </ul>
-      </div>
-    </nav>
-  </aside>
-
-
-  <div class="overlay"></div>
-  <!-- JS 연결 -->
   <script src="./js/sidebar.js"></script>
+  <script src="./js/sidebar-drawer.js"></script>
 </body>
-
 </html>
