@@ -1,0 +1,74 @@
+/* 전체 영역에서 쓰이면 전역변수 */
+:root {
+  --size: 36px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+#app {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(105, 170, 255);
+}
+
+#pointer {
+  --size: 100px;
+  --shadow: 0 10px 50px rgb(255, 217, 0);
+  box-shadow: var(--shadow);
+  position: fixed;
+  top: 0;
+  left: 0;
+  /* background-color: rgb(251, 255, 0); */
+  width: var(--size);
+  height: var(--size);
+  border-radius: var(--size);
+  border: 1px solid wheat;
+  cursor: none;
+}
+
+#pointer::after {
+  --size: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: var(--size);
+  height: var(--size);
+  border-radius: var(--size);
+  background-color: rgb(255, 238, 0);
+  content: '';
+}
+
+#bubble {
+  display: block;
+  width: var(--size);
+  height: var(--size);
+  border-radius: var(--size);
+  background-color: white;
+  opacity: 0;
+}
+
+#pointer:active #bubble {
+  opacity: 1;
+}
+
+@keyfrems bubble {
+
+
+
+  0% {
+    opacity: 0;
+  }
+
+  100% {}
+}
