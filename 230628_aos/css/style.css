@@ -1,0 +1,38 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body{
+  width: 100%;
+  height: 100%;
+}
+main{
+  display: block;
+  background-image: url('https://images.pexels.com/photos/302220/pexels-photo-302220.jpeg');
+background-repeat: no-repeat;
+background-size: cover;
+background-position: center center;
+background-attachment: fixed;
+}
+
+section{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  padding: 3rem; /* 16px * 3 */
+  overflow-x: hidden;
+}
+
+ section:nth-child(odd){
+  justify-content: flex-end;
+  /* 100글자(character) */
+}
+
+section P{
+  width: 50ch;
+  font-size: 2rem;
+  color: white;
+}

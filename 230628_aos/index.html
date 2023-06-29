@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+
+<body>
+  <main>
+    <section>
+      <!-- data-aos-duration= "0.7초" -->
+      <P data-aos="fade-up" data-aos-duration="700">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam
+        esse perferendis nemo minima debitis cumque impedit eum, dolorem quos corporis eaque culpa error rem sequi
+        eligendi similique delectus dolor praesentium.</P>
+    </section>
+
+    <section>
+      <!-- data-aos-offset= "100px" -->
+      <P data-aos="flip-left" data-aos-offset="100">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam
+        esse perferendis nemo minima debitis cumque impedit eum, dolorem quos corporis eaque culpa error rem sequi
+        eligendi similique delectus dolor praesentium.</P>
+    </section>
+
+    <section>
+      <P data-aos="fade-right" data-aos-duration="1000">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+        Quisquam esse perferendis nemo minima debitis cumque impedit eum, dolorem quos corporis eaque culpa error rem
+        sequi eligendi similique delectus dolor praesentium.</P>
+    </section>
+
+    <section>
+      <!-- anchor-placement= "section의 밑이 - 브라우저의 아래에 위치할때 실행" -->
+      <P data-aos="fade-left" data-aos-anchor-placement="center-bottom">Lorem ipsum dolor sit amet consectetur,
+        adipisicing elit. Quisquam esse perferendis nemo minima debitis cumque impedit eum, dolorem quos corporis eaque
+        culpa error rem sequi eligendi similique delectus dolor praesentium.</P>
+    </section>
+
+    <section>
+      <P data-aos="flip-right">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam esse perferendis nemo
+        minima debitis cumque impedit eum, dolorem quos corporis eaque culpa error rem sequi eligendi similique delectus
+        dolor praesentium.</P>
+    </section>
+  </main>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 700,
+      offset: 100,
+      easing: 'ease-in-sine'
+    });
+  </script>
+</body>
+
+</html>
