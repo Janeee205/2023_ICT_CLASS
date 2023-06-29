@@ -14,6 +14,103 @@ li{
   list-style: none;
 }
 
-body{
-  background-color: cadetblue;
+button {
+  background-color: transparent;
+  border: none;
+}
+
+
+.sm-hidden,
+.lg-only,
+.md-only,
+.visually-hidden {
+  display: none;
+}
+
+.global-header{
+  background-color: rgb(255, 204, 0);
+  border-bottom: 1px solid #e0e2e7;
+}
+
+.gnb-wrapper{
+  height: 50px;
+  width: 95%;
+  margin: 0 auto;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  position: relative;
+}
+
+.logo{
+  height: 40px;
+  /* absolute 가운데로 보내기, gnb-wrapper의 가운데에 위치시킴 */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.logo img {
+  height: 40px;;
+}
+
+
+
+.gnb-left{
+  /* display: flex; */
+}
+
+.gnb-right{
+  /* display: flex; */
+  /* 끝으로 정렬 */
+  /* justify-content: flex-end; */
+}
+
+.gnb-icon-button.is-menu{
+  color: rgb(222, 0, 0);
+}
+
+.gnb-icon-button.is-menu:active{
+  color: rgb(188, 0, 0);
+}
+
+.lnb-wrapper{
+  background-color: white;
+}
+
+.lnb-list{
+  display: flex;
+  width: 95%;
+  align-items: center;
+  height: 40px;
+  margin: 0 auto;
+}
+
+.lnb-item a {
+  font-size: 13px;
+  padding: 0 8px;
+  font-weight: 700;
+}
+
+.lnb-item a:active {
+  color: rgb(222, 0, 0);
+}
+
+.background{
+  background-image: url('./images/lego.png');
+  height: 300px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+
+.avatar img{
+  width: 40px;
+}
+
+
+.sidebar{
+  display: none;
 }
