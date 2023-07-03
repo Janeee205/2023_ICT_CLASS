@@ -1,0 +1,125 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+li {
+  list-style: none;
+}
+
+
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #3e1c1c;
+  border: 1px solid transparent;
+  /* 마진 상쇄현상 */
+  /* 인접해있는 블록요소 두개가 겹칠때 발생(상/하) */
+}
+
+.title {
+  width: 280px;
+  margin: 30px 0 10px 10px;
+  padding: 20px;
+  color: #a67c00;
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  text-align: center;
+}
+
+.menu_box_wrapper {
+  display: flex;
+  /* 공간이 부족하면 떨어지게 */
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.menu_box {
+  display: inline-block;
+  /* 마진 -80px, padding -20px 값 빼기 */
+  width: calc((100% - 100px) / 4);
+  margin: 20px 10px;
+  padding: 10px;
+  border-radius: 7px;
+  background-color: #fff;
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 400ms ease-in-out;
+}
+
+.menu_box:hover {
+  transform: scale(1.04);
+  box-shadow: 0 15px 15px rgba(0, 0, 0, 0.5);
+}
+
+
+.img-box {
+  /* 밖으로 튀어나가는 애들 가리기 위함 */
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+}
+
+.img-box img {
+  /* width: 100%; */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  filter: blur(2px);
+  transition: filter 400ms ease-in-out;
+}
+
+.menu_box:hover .img-box img {
+  filter: blur(0);
+}
+
+.menu_title {
+  margin-top: 20px;
+  /* 글 넘치는거 가리기 */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.menu_info {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+
+.date,
+.count {
+  font-size: 14px;
+  color: #333;
+}
+
+@media screen and (max-width : 1200px) {
+  .menu_box {
+    width: calc((100% - 80px) / 3);
+  }
+}
+
+@media screen and (max-width : 768px) {
+  .menu_box {
+    width: calc((100% - 60px) / 2);
+  }
+}
+
+@media screen and (max-width : 560px) {
+  .menu_box {
+    width: calc(100% - 40px);
+  }
+}
