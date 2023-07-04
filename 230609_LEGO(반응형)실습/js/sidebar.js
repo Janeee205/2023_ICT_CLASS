@@ -1,19 +1,19 @@
-const sidebar = document.querySelector('.sidebar');
-const sidebarMenuButton = document.querySelector('.gnb-icon-button');
-const sidebarOverlay = document.querySelector('.overlay');
+// 변수명이 길더라도 명시적으로 적어주는 게 좋음
+const sidebarMenuButton = document.querySelector('.gnb-icon-button')
 
-// 오버레이
+const sidebar = document.querySelector('.sidebar')
+const sidebarOverlay = document.querySelector('.overlay')
 
-const openSideBar = () => {
-    sidebar.classList.add('is-active');
-    sidebarOverlay.classList.add('is-active');
+function openSidebar() {
+  sidebar.classList.add('is-active');
+  sidebarOverlay.classList.add('is-active');
 }
 
-sidebarMenuButton.addEventListener('click', openSideBar);
+sidebarMenuButton.addEventListener('click', openSidebar)
 
-const closeSideBar = () => {
-    sidebar.classList.remove('is-active');
-    sidebarOverlay.classList.remove('is-active');
+function closeSidebar() {
+  sidebar.classList.remove('is-active')
+  sidebarOverlay.classList.remove('is-active')
 }
 
-sidebarOverlay.addEventListener('click', closeSideBar);
+sidebarOverlay.addEventListener('click', closeSidebar)

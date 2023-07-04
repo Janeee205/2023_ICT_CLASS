@@ -2,32 +2,25 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="author" content="JUEUNKIM">
-  <meta name="descriptopn" content="LEGO 연습">
-  <meta name="keywords" content="LEGO, 웹사이트">
-  <meta name="author" content="JUEUNKIM">
-  
-  <title>LEGO</title>
-
-  <!-- GOOGLE FONT 연결 -->
+  <title>Sidebar Drawermenu 레고실습</title>
+  <link rel="stylesheet" href="./style.css">
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
-  
-  <!-- FAVICON 연결 -->
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/04f099bcb9.js" crossorigin="anonymous"></script>
+  <!-- Favicon -->
   <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
   <link rel="manifest" href="./site.webmanifest">
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="theme-color" content="#ffffff">
-
-  <!-- FONT AWESOME 연결 -->
-  <script src="https://kit.fontawesome.com/9b527152d1.js" crossorigin="anonymous"></script>
-
-  <!-- CSS 연결 -->
-  <link rel="stylesheet" href="./style.css">
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
 </head>
 <body>
   <header class="global-header">
@@ -49,7 +42,7 @@
           </ul>
         </nav>
 
-        <!--aria-label : 웹접근성을 높이기 위한, 추가정보를 알려주는 역할. -->
+        <!-- 스크린리더 같은 도구를 이용해서 웹을 이용하는 사람은 이 아이콘이 대체 무슨 아이콘인지, 무슨 버튼인지 알 수 없다. 그래서 추가적으로 정보를 주는게 aria-lable -->
         <button type="button" class="sm-only gnb-icon-button is-menu" aria-label="메뉴 열기 버튼">
           <i class="fa-solid fa-bars"></i>
         </button>
@@ -194,10 +187,13 @@
     </nav>
   </aside>
 
+
   <div class="overlay"></div>
 
-  <script src="./js/sidebar.js"></script>
-  <script src="./js/sidebar-drawer.js"></script>
+  <!-- <script src="./js/sidebar.js"></script> -->
+  <!-- <script src="./js/sidebar-drawer.js"></script> -->
+  <script src="./js/sidebar(jQuery).js"></script>
+  <script src="./js/sidebar-drawer(jQuery).js"></script>
+   
 </body>
-
 </html>
