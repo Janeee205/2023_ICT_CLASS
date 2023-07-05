@@ -1,46 +1,27 @@
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>changeText</title>
+  <title>Document</title>
   <!-- jQuery -->
-  <script src="https://code.jquery.com/jquery-3.7.0.min.js"
-    integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
 </head>
-
 <body>
   <div class="wrapper">
     <p class="hello">안녕</p>
     <p class="hello">안녕</p>
     <p class="hello">안녕</p>
   </div>
-
+  
   <script>
-    // p태그를 클릭하면
-    // 글자가 바뀐다.
-
-    //자바스크립트*****
-
-    // const pHello = document.querySelectorAll('.hello');
-
-    // pHello.forEach(function (pHello) {
-    //   pHello.addEventListener('click', function () {
-    //     pHello.textContent = "헬로";
-    //   })
-    // })
-
-
-    //제이쿼리*****
+    const pHello = document.querySelectorAll('.hello');
     
-    // const pHello = $('.hello');
-    // pHello.on('click', function(){
-    //   pHello.text("Hello!")
-    // })
+    function change() {
+ document.querySelectorAll('.hello').innerText = "Hello";
+}
 
 
   </script>
 </body>
-
 </html>
