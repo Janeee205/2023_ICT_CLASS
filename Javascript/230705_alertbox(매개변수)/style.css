@@ -1,0 +1,24 @@
+.alert-box{
+  background-color: skyblue;
+  display: none;
+  justify-content: space-between;
+  border-radius: 5px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+
+
+
+/****** 연습 ******/
+
+/* box-sizing : border-box -> 테두리를 기준으로 크기를 정한다. */
+.alert-box2{
+  display: none;
+  background-color: lightcoral;
+  box-sizing: border-box;
+  justify-content: space-between;
+  border-radius: 5px;
+  padding: 20px;
+
+}
