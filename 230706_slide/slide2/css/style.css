@@ -69,7 +69,7 @@ li {
 }
 
 .btn-group button.active{
-  background-color : blue;
+  background-color : violet;
 }
 
 .btn-group button:last-child{
