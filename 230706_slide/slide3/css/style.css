@@ -52,8 +52,8 @@ li {
 .arrow-btn-group{
   position: absolute;
   top: 50%;
-  /* left: 0; */
-  transform: translateY(-50%);
+  left: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
   width: 100%;
   justify-content: space-between;
@@ -64,6 +64,7 @@ li {
   font-size: 50px;
   color: white;
   cursor: pointer;
+  transition: opacity 200ms ease-in-out;
 }
 
 .arrow-btn-group i:hover{
