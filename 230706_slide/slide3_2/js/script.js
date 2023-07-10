@@ -25,7 +25,7 @@ nextBtn.addEventListener('click', function () {
     currentSlide++;
     slideList.style.transform = `translateX(-${currentSlide * 100}vw)`
     changeButtonColor();
-  }
+  } 
 })
 
 prevBtn.addEventListener('click', function () {
