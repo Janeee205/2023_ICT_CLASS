@@ -9,15 +9,27 @@ buttons.forEach((btn, index) => {
     //   btn.classList.remove('active')
     // })
 
-// buttons라는 배열을 한 번 더 돌면서 모든 버튼이 가지고 있는 active class remove
-    buttons.forEach(function(otherBtn){
-      otherBtn.classList.remove('active')
-    })
+    // buttons라는 배열을 한 번 더 돌면서 모든 버튼이 가지고 있는 active class remove
+    /*
+        buttons.forEach(function(otherBtn){
+          otherBtn.classList.remove('active')
+        })
+        */
+
 
     let xValue = -index * 100 + 'vw';
     slideList.style.transform = `translateX(${xValue})`;
+
     // 클릭된 버튼에만 active class add
-    btn.classList.toggle('active');
+    btn.classList.add('active');
+    
+    // 조건문
+    buttons.forEach(function (otherBtn) {
+      if(otherBtn !== btn && otherBtn.classList.contains('active')){
+        otherBtn.classList.remove('active')
+      }
+    })
+
 
   })
 })
