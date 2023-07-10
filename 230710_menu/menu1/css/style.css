@@ -12,9 +12,22 @@ body {
 
 a {
   text-decoration: none;
+  color: #000;
 }
 
 li {
   list-style: none;
+}
+
+.visually-hidden{
+  display: none;
+}
+
+.gnb{
+  display: flex;
+}
+
+.gnb-menu{
+width: calc(100% / 5);
 }
 
