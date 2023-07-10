@@ -52,3 +52,26 @@ li {
 .next{
   right: 30px;
 }
+
+.dot-btn-group{
+  position: absolute;
+  bottom: 25px;
+  left:50%;
+  transform: translateX(-50%);
+}
+
+.dot-btn-group button{
+width: 15px;
+height: 15px;
+border-radius: 50px;
+border: none;
+margin-right: 5px;
+}
+
+.dot-btn-group button:last-child{
+  margin-right: 0;
+}
+
+.dot-btn-group button.active{
+background-color: violet;
+}

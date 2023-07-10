@@ -2,7 +2,10 @@ const slideList = document.querySelector('.slide-list');
 const slideItems = document.querySelectorAll('.slide-list li')
 let prevBtn = document.querySelector('.prev')
 let nextBtn = document.querySelector('.next')
-console.log(slideItems.length);
+// console.log(slideItems.length);
+let buttons = document.querySelectorAll('.dot-btn-group button')
+console.log(buttons.length);
+
 
 let currentSlide = 0;
 
@@ -19,4 +22,10 @@ prevBtn.addEventListener('click', function () {
     currentSlide--;
     slideList.style.transform = 'translateX(-' + currentSlide * 100 + 'vw)';
   }
+})
+
+buttons.forEach(function(btn, index){
+console.log(btn, index)
+
+
 })
