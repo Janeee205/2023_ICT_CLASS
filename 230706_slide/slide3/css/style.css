@@ -64,9 +64,10 @@ li {
   font-size: 50px;
   color: white;
   cursor: pointer;
+  opacity: 0.7;
   transition: opacity 200ms ease-in-out;
 }
 
 .arrow-btn-group i:hover{
-  opacity: 0.75;
+  opacity: 0.4;
 }
