@@ -20,17 +20,22 @@ li {
   list-style: none;
 }
 
-.visually-hidden {
+.visually-hidden, .sm-only {
   display: none;
 }
 
-
 .login-wrapper {
-  padding: 5px;
+  position: relative;
   margin: 0 10%;
+  justify-content: center;
+  padding: 30px 0;
 }
 
 .account-list {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
   display: flex;
   justify-content: right;
 }
@@ -46,7 +51,7 @@ li {
 
 .account-list li a {
   font-size: 15px;
-  color: rgb(22, 22, 74);
+  color: #555;
 }
 
 .gnb-wrapper {
@@ -55,28 +60,59 @@ li {
 
 .gnb-left {
   position: relative;
-  background-color: lightpink;
   display: flex;
-  padding: 3px;
-  /* justify-content: center; */
   align-items: center;
   width: 80%;
+  height: 80px;
   margin: 0 auto;
+  z-index: 100;
 }
 
-.gnb-nav-list {
+.gnb-list {
   display: flex;
-  margin-left: 70px;
+  margin-left: 80px;
+  width: 100%;
 }
 
-.gnb-nav-list li {
-  /* background-color: red; */
+.gnb-list>li {
   text-align: center;
-  padding: 0 20px;
+  position: relative;
+  width: 20%;
 }
 
-.gnb-nav-list li a {
-  font-size: 1rem;
+.gnb-list>li>a {
+  display: block;
+  font-size: 20px;
+  padding: 30px;
+  transition: background-color 300ms ease-in-out;
+}
+
+  .gnb-list>li>a:hover {
+  background-color: lightslategray;
+  }
+
+.sub{
+  position: absolute;
+  overflow: hidden;
+  width: 100%;
+  transition: max-height 300 ease-in-out;
+  max-height: 0;
+}
+
+.sub.active{
+  max-height: 280px;
+}
+
+.sub li a{
+display: block;
+padding: 16px 0;
+background-color: white;
+transition: background-color 300ms ease-in-out;
+}
+
+.sub li a:hover,
+.sub li a.on {
+  background-color: #ccc;
 }
 
 .square-btn {
@@ -84,16 +120,18 @@ li {
   right: 0;
 }
 
+
+/* main */
 .slide-wrapper {
   width: 100vw;
   overflow: hidden;
+  position: relative;  
 }
 
 .slide-list {
   display: flex;
-  /* viewport width * 3(이미지 수) */
   width: 300vw;
-  height: 80vh;
+  height: 60vh;
   transform: translateX(0vw);
   transition: transform 700ms ease-in-out;
 }
@@ -109,18 +147,42 @@ li {
   object-fit: cover;
 }
 
-
-/* main */
-.wrapper {
-  position: relative;
-}
-
-.button-wrapper {
+.span-wrapper {
   position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  text-align: center;
+  border-top: 0.1px solid rgba(255, 255, 255, 0.5);
 }
 
-.button-wrapper button {
-  background-color: transparent;
-  border: none;
+.span-wrapper span {
+  position: relative;
+  display: inline-block;
+  margin: 30px 40px;
+  color: white;
+  font-size: 18px;
+  font-weight: 400;
+  cursor: pointer;
+}
 
+.span-wrapper span::after {
+  position: absolute;
+  content: "";
+  width: 1;
+  height: 10px;
+  background-color: red;
+}
+
+
+
+
+
+@media screen and (max-width: 1200px) {
+  .gnb-list {
+    display: none;
+  }
+  .sm-only{
+    display: block;
+  }
 }

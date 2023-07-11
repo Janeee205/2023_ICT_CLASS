@@ -14,7 +14,11 @@
   <!-- google font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400&display=swap" rel="stylesheet">
+  <!-- jquery -->
+  <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+    integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+
   <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -47,16 +51,50 @@
         <nav class="gnb-nav sm-hidden">
           <h2 class="visually-hidden">메뉴</h2>
           <!-- 1200안으로 떨어지면 가려짐 -->
-          <ul class="gnb-nav-list">
-            <li class="gnb-nav-item"><a href="/">포럼 소개</a></li>
-            <li class="gnb-nav-item"><a href="/">포럼신청</a></li>
-            <li class="gnb-nav-item"><a href="/">포럼활동</a></li>
-            <li class="gnb-nav-item"><a href="/">정보마당</a></li>
-            <li class="gnb-nav-item"><a href="/">고객센터</a></li>
+          <ul class="gnb-list">
+
+            <li class=""><a href="">포럼 소개</a>
+              <ul class="sub">
+                <li><a href="">취지문</a></li>
+                <li><a href="">주요사업</a></li>
+                <li><a href="">조직위원회</a></li>
+                <li><a href="">정관</a></li>
+                <li><a href="">건강기능식품연구회</a></li>
+              </ul>
+            </li>
+
+            <li class=""><a href="">포럼신청</a>
+              <ul class="sub">
+                <li><a href="">포럼공지</a></li>
+                <li><a href="">포럼일정 및 참가</a></li>
+              </ul>
+            </li>
+
+            <li class=""><a href="">포럼활동</a>
+              <ul class="sub">
+                <li><a href="">포럼자료</a></li>
+                <li><a href="">포토갤러리</a></li>
+              </ul>
+            </li>
+
+            <li class=""><a href="">정보마당</a>
+              <ul class="sub">
+                <li><a href="">e-News</a></li>
+              </ul>
+            </li>
+
+            <li class=""><a href="">고객센터</a>
+              <ul class="sub">
+                <li><a href="">공지사항</a></li>
+                <li><a href="">자주하는 질문</a></li>
+                <li><a href="">1:1문의</a></li>
+              </ul>
+            </li>
+
           </ul>
         </nav>
 
-        <div class="square-btn">
+        <div class="square-btn sm-only">
           <a href="">
             <!-- 1200아래로 떨어지면서 나타나야함 -->
             <img src="images/btn_nav.svg" alt="">
@@ -74,20 +112,21 @@
     <main>
       <div class="wrapper">
         <div class="slide-wrapper">
-          <ul class="slide-list">
-            <li><img src="images/img1.jpg" alt="첫번째 이미지"></li>
-            <li><img src="images/img2.jpg" alt="두번째 이미지"></li>
-            <li><img src="images/img3.jpeg" alt="세번째 이미지"></li>
-          </ul>
-        </div>
+          <div class="slide-list-wrapper">
+            <ul class="slide-list">
+              <li><img src="images/img1.jpg" alt="첫번째 이미지"></li>
+              <li><img src="images/img2.jpg" alt="두번째 이미지"></li>
+              <li><img src="images/img3.jpeg" alt="세번째 이미지"></li>
+            </ul>
+          </div>
 
-        <div class="button-wrapper">
-          <button type="button">첫번째</button>
-          <button type="button">두번째</button>
-          <button type="button">세번째</button>
-        </div>
+          <div class="span-wrapper">
+            <span>첫번째</span>
+            <span>두번째</span>
+            <span>세번째</span>
+          </div>
 
-      </div>
+        </div>
     </main>
   </body>
 
