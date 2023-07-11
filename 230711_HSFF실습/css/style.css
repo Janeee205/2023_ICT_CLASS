@@ -1,0 +1,126 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+li {
+  list-style: none;
+}
+
+.visually-hidden {
+  display: none;
+}
+
+
+.login-wrapper {
+  padding: 5px;
+  margin: 0 10%;
+}
+
+.account-list {
+  display: flex;
+  justify-content: right;
+}
+
+.account-list li {
+  display: flex;
+  margin-right: 1rem;
+}
+
+.account-list li:last-child {
+  margin-right: 0;
+}
+
+.account-list li a {
+  font-size: 15px;
+  color: rgb(22, 22, 74);
+}
+
+.gnb-wrapper {
+  width: 100%;
+}
+
+.gnb-left {
+  position: relative;
+  background-color: lightpink;
+  display: flex;
+  padding: 3px;
+  /* justify-content: center; */
+  align-items: center;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.gnb-nav-list {
+  display: flex;
+  margin-left: 70px;
+}
+
+.gnb-nav-list li {
+  /* background-color: red; */
+  text-align: center;
+  padding: 0 20px;
+}
+
+.gnb-nav-list li a {
+  font-size: 1rem;
+}
+
+.square-btn {
+  position: absolute;
+  right: 0;
+}
+
+.slide-wrapper {
+  width: 100vw;
+  overflow: hidden;
+}
+
+.slide-list {
+  display: flex;
+  /* viewport width * 3(이미지 수) */
+  width: 300vw;
+  height: 80vh;
+  transform: translateX(0vw);
+  transition: transform 700ms ease-in-out;
+}
+
+.slide-list li {
+  width: 100vw;
+  height: 100%;
+}
+
+.slide-list li img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+/* main */
+.wrapper {
+  position: relative;
+}
+
+.button-wrapper {
+  position: absolute;
+}
+
+.button-wrapper button {
+  background-color: transparent;
+  border: none;
+
+}
