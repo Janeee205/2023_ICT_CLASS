@@ -1,3 +1,4 @@
+// header 메뉴
 const gnbMenu = document.querySelectorAll('.gnb-list > li');
 
 gnbMenu.forEach(function (item) {
@@ -16,7 +17,6 @@ gnbMenu.forEach(function (item) {
 
 
 // 이미지 슬라이드
-
 const slideList = document.querySelector('.slide-list');
 const Buttons = document.querySelectorAll('.button-wrapper button')
 
