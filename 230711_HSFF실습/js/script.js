@@ -18,9 +18,9 @@ gnbMenu.forEach(function (item) {
 // 이미지 슬라이드
 
 const slideList = document.querySelector('.slide-list');
-const spanButton = document.querySelectorAll('.span-wrapper span')
+const Buttons = document.querySelectorAll('.button-wrapper button')
 
-spanButton.forEach((item, index) => {
+Buttons.forEach((item, index) => {
     item.addEventListener('click', function () {
 
         // console.log(item, index)
@@ -29,9 +29,9 @@ spanButton.forEach((item, index) => {
         slideList.style.transform = `translateX(${xValue})`;
         item.classList.add('active');
 
-        spanButton.forEach(function (otherSpan) {
-            if (otherSpan !== item && otherSpan.classList.contains('active')) {
-                otherSpan.classList.remove('active');
+        Buttons.forEach(function (otherButton) {
+            if (otherButton !== item && otherButton.classList.contains('active')) {
+                otherButton.classList.remove('active');
             }
         })
     })
@@ -41,14 +41,12 @@ spanButton.forEach((item, index) => {
 // sidebar
 const sidebarButton = document.querySelector('.square-btn');
 const sidebar = document.querySelector('.sidebar');
-const overlay = document.querySelector('.overlay');
+const xButton = document.querySelector('.xbutton');
 
 sidebarButton.addEventListener('click', function(){
     sidebar.classList.add('is-active');
-    overlay.classList.add('is-active');
 })
 
-overlay.addEventListener('click', () =>{
+xButton.addEventListener('click', () =>{
     sidebar.classList.remove('is-active');
-    overlay.classList.remove('is-active');
 })
