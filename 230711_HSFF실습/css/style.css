@@ -20,7 +20,8 @@ li {
   list-style: none;
 }
 
-.visually-hidden, .sm-only {
+.visually-hidden,
+.sm-only {
   display: none;
 }
 
@@ -63,9 +64,9 @@ li {
   display: flex;
   align-items: center;
   width: 80%;
-  height: 80px;
   margin: 0 auto;
   z-index: 100;
+  box-shadow:  0 4px 4px -4px rgba(0, 0, 0, 0.3);
 }
 
 .gnb-list {
@@ -75,8 +76,8 @@ li {
 }
 
 .gnb-list>li {
-  text-align: center;
   position: relative;
+  text-align: center;
   width: 20%;
 }
 
@@ -87,11 +88,12 @@ li {
   transition: background-color 300ms ease-in-out;
 }
 
-  .gnb-list>li>a:hover {
+.gnb-list>li>a:hover,
+.gnb-list>li>a.on {
   background-color: lightslategray;
-  }
+}
 
-.sub{
+.sub {
   position: absolute;
   overflow: hidden;
   width: 100%;
@@ -99,15 +101,31 @@ li {
   max-height: 0;
 }
 
-.sub.active{
+.sub li{
+  position: relative
+}
+
+.sub li::after{
+  position: absolute;
+  content: '';
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  color: red;
+  top: 0;
+  right: 0;
+}
+
+
+.sub.active {
   max-height: 280px;
 }
 
-.sub li a{
-display: block;
-padding: 16px 0;
-background-color: white;
-transition: background-color 300ms ease-in-out;
+.sub li a {
+  display: block;
+  padding: 16px 0;
+  background-color: white;
+  transition: background-color 300ms ease-in-out;
 }
 
 .sub li a:hover,
@@ -120,12 +138,16 @@ transition: background-color 300ms ease-in-out;
   right: 0;
 }
 
+.square-btn button {
+  border: none;
+  background-color: transparent;
+}
 
 /* main */
 .slide-wrapper {
   width: 100vw;
   overflow: hidden;
-  position: relative;  
+  position: relative;
 }
 
 .slide-list {
@@ -133,7 +155,7 @@ transition: background-color 300ms ease-in-out;
   width: 300vw;
   height: 60vh;
   transform: translateX(0vw);
-  transition: transform 700ms ease-in-out;
+  transition: transform 700ms ease-in-out; 
 }
 
 .slide-list li {
@@ -163,26 +185,152 @@ transition: background-color 300ms ease-in-out;
   color: white;
   font-size: 18px;
   font-weight: 400;
-  cursor: pointer;
 }
 
-.span-wrapper span::after {
-  position: absolute;
-  content: "";
-  width: 1;
-  height: 10px;
-  background-color: red;
+.span-wrapper span.active {
+  color: gray;
 }
+
+.span-wrapper span:nth-child(n+1)::after {
+  position: absolute;
+  content: "|";
+  right: -50px;
+  align-items: center;
+}
+
+.span-wrapper span:last-child::after {
+  content: "";
+}
+
+/* square-btn */
+.sidebar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 200;
+  width: 300px;
+  height: 100%;
+  background-color: white;
+  text-align: center;
+  transform: translateX(-300px);
+  transition: transform 300ms ease-in-out;
+}
+
+.sidebar.is-active {
+  transform: translateX(0);
+}
+
+.sidebar ul {
+  margin: 10%;
+}
+
+.sidebar li {
+  background-color: #fff;
+  padding: 20px 10px;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.5);
+  visibility: hidden;
+}
+
+.overlay.is-active {
+  visibility: visible;
+}
+
+/* fotter */
+
+footer {
+  margin-top: 50px;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 15%;
+  background-color: #414244;
+}
+
+.footer-top ul {
+  display: flex;
+  color: gray;
+  align-items: center;
+}
+
+.first-ul li {
+  padding: 15px 20px;
+  border-left: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.first-ul li:last-child {
+  border-right: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.first-ul li:nth-child(2) {
+  font-weight: 600;
+  color: white;
+}
+
+.second-ul li {
+  padding: 15px;
+}
+
+.second-ul li:nth-child(2) {
+  font-size: 20px;
+  color: white;
+}
+
+.footer-bottom {
+  background-color: #2d2d30;
+  padding: 5% 15%;
+  color: gray;
+}
+.footer-logo img{
+  opacity: 0.5;
+}
+
+.third-ul {
+  margin-top: 30px;
+  display: flex;
+}
+
+.third-ul li {
+  position: relative;
+  margin-right: 30px;
+}
+
+.third-ul li::after {
+  position: absolute;
+  content: '/';
+  right: -17px;
+}
+
+.third-ul li:last-child:after {
+  content: '';
+}
+
 
 
 
 
 
 @media screen and (max-width: 1200px) {
-  .gnb-list {
+
+  .sm-hidden {
     display: none;
   }
-  .sm-only{
+
+  .sm-only {
     display: block;
+  }
+
+  .gnb-left {
+    height: 80px;
   }
 }
