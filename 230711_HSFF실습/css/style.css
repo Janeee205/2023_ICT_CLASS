@@ -20,6 +20,10 @@ li {
   list-style: none;
 }
 
+/* 수정사항
+
+header메뉴 부분에 position-fixed */
+
 .visually-hidden,
 .sm-only {
   display: none;
@@ -150,7 +154,7 @@ li {
 
 /* 이미지 슬라이드 */
 .slide-wrapper {
-  width: 100vw;
+  /* width: 100vw; */
   overflow: hidden;
   position: relative;
 }
