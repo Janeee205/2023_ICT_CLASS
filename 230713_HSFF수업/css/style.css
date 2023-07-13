@@ -80,12 +80,18 @@ li {
 
 .sub {
   position: absolute;
-  display: none;
+  /* display: none; */
   left: 50%;
   transform: translateX(-50%);
   width: 200px;
   background-color: #fff;
+  max-height: 0;
+  overflow: hidden;
   box-shadow: 0 3px 15px rgba(0, 0, 0, 0.3);
+}
+
+.sub.active{
+  max-height: 265px;
 }
 
 .sub::before {
