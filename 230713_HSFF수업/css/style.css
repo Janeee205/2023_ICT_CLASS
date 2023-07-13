@@ -80,7 +80,7 @@ li {
 
 .sub {
   position: absolute;
-  /* display: none; */
+  display: none;
   left: 50%;
   transform: translateX(-50%);
   width: 200px;
