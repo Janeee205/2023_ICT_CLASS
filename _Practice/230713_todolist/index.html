@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Jueun Kim">
+    <meta name="keywords" content="js연습">
+    <meta name="description" content="심심해서 함">
+    <title>todolist</title>
+    <!-- iconify -->
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <main id="app">
+        <div class="list-container">
+            
+            <header id="header">
+                <h1>
+                    <iconify-icon icon="emojione-v1:memo"></iconify-icon>
+                    Todo List
+                </h1>
+                <div class="input-wrapper">
+                    <input type="text" id="add-todo" placeholder="할 일을 입력해주세요!">
+                    <button id="add-button">추가</button>
+                </div>
+            </header>
+
+            <ul id="list">
+                <li class="list-item">
+                    오늘 해야할 일
+                    <button class="list-delete">X</button>
+                </li>
+            </ul>
+        </div>
+    </main>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
