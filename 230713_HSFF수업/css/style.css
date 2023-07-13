@@ -203,7 +203,7 @@ footer {
   align-items: center;
 }
 
-.foot-right span{
+.foot-right span {
   margin-left: 15px;
 }
 
@@ -244,6 +244,74 @@ footer {
   content: none;
 }
 
-.footer-bottom p{
+.footer-bottom p {
   margin-top: 10px;
+}
+
+
+
+@media screen and (max-width: 1200px) {
+
+  .lg-hidden {
+    display: block;
+  }
+
+  .lg-only {
+    display: none;
+  }
+
+  .gnb-log {
+    padding: 20px 30px;
+  }
+
+  .gnb-main {
+    padding: 10px 30px;
+  }
+
+  .gnb-open-btn {
+    border: none;
+    background-color: transparent;
+  }
+
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 200;
+    width: 200px;
+    height: 100vh;
+    background-color: #fff;
+    text-align: center;
+    padding: 20px 30px;
+    transform: translateX(-200px);
+    transition: transform 500ms ease-in-out
+    box-shadow: 5px 0px 5px rgba(0, 0, 0, .2);
+  }
+
+  .sidebar.active{
+    transform: translateX(0);
+  }
+
+  .sidebar-btn {
+    float: right;
+    border: none;
+    font-size: 18px;
+    background-color: transparent;
+  }
+
+  .sidebar-list {
+    /* float을 썼을 시 반드시 clear 쓴다. */
+    clear: right;
+    margin-top: 20px;
+  }
+
+  .sidebar-item a {
+    display: block;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .sidebar-item:first-child a {
+    border-top: 1px solid #ccc;
+  }
 }
