@@ -69,7 +69,18 @@ li {
 
 .gnb-main-item a:hover,
 .gnb-main-item a.active {
+  position:relative;
   color: darkblue;
+}
+.gnb-main-item a.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  transform: translate(-50%);
+  width: 10px;
+  height: 10px;
+  background-color: #113676;
 }
 
 .gnb-main-item a {
@@ -80,7 +91,6 @@ li {
 
 .sub {
   position: absolute;
-  display: none;
   left: 50%;
   transform: translateX(-50%);
   width: 200px;
@@ -91,18 +101,7 @@ li {
 }
 
 .sub.active{
-  max-height: 265px;
-}
-
-.sub::before {
-  content: '';
-  position: absolute;
-  top: -5px;
-  left: 50%;
-  transform: translate(-50%);
-  width: 10px;
-  height: 10px;
-  background-color: #113676;
+  max-height: 280px;
 }
 
 .slide-wrapper {
@@ -114,6 +113,7 @@ li {
   display: flex;
   width: 300vw;
   height: 600px;
+  transform: translateX(-100vw);
 }
 
 .slide-list li {
@@ -207,10 +207,7 @@ footer {
   display: flex;
   width: 360px;
   align-items: center;
-}
-
-.foot-right span {
-  margin-left: 15px;
+  justify-content: space-between;
 }
 
 .number {
@@ -276,7 +273,6 @@ footer {
 
   .gnb-open-btn {
     border: none;
-    background-color: transparent;
   }
 
   .sidebar {
@@ -289,8 +285,8 @@ footer {
     background-color: #fff;
     text-align: center;
     padding: 20px 30px;
-    transform: translateX(-200px);
-    transition: transform 500ms ease-in-out
+    transform: translateX(-220px);
+    transition: transform 500ms ease-in-out;
     box-shadow: 5px 0px 5px rgba(0, 0, 0, .2);
   }
 

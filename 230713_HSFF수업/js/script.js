@@ -1,4 +1,6 @@
-// jQuery
+
+/************************** 메인메뉴 **************************/
+// ********** jQuery **********
 
 /*
 $('.gnb-main-item').hover(function(){
@@ -14,14 +16,50 @@ $('.gnb-main-item').hover(function(){
 })
 */
 
-// vanilla JS
+// ********** vanilla JS **********
 
-const gnbItems = document.querySelectorAll('.gnb-main-item li');
+const gnbItems = document.querySelectorAll('.gnb-main-item');
 
-gnbItems.forEach(function(item){
+gnbItems.forEach(function (item) {
   let subMemu = item.querySelector('.sub');
-  item.addEventListener('mouseover', function(){
+  item.addEventListener('mouseover', function () {
     subMemu.classList.add('active');
-    this.querySelector('a').classList.add('on');
+    this.querySelector('a').classList.add('active');
+
+
+    item.addEventListener('mouseleave', function () {
+      subMemu.classList.remove('active');
+      this.querySelector('a').classList.remove('active');
+    })
+
   })
 })
+
+/************************** slideImg **************************/
+// ********** vanilla JS **********
+
+const slideList = document.querySelector('.slide-list');
+const buttons = document.querySelectorAll('.slide-btn li');
+// console.log(buttons);
+
+buttons.forEach(function (btn, index) {
+  // console.log(btn, index);
+
+  btn.addEventListener('click', function () {
+    let xValue = '-' + index * 100 + 'vw';
+    console.log(xValue);
+
+    slideList.style.transform = `translateX(${xValue})`;
+  })
+})
+
+
+
+// ********** jQuery **********
+/*  하다말음
+$('.slide-list').click(function(){
+  
+  $('.slide-btn li')
+
+})
+*/
