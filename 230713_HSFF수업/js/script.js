@@ -22,17 +22,21 @@ const gnbItems = document.querySelectorAll('.gnb-main-item');
 
 gnbItems.forEach(function (item) {
   let subMemu = item.querySelector('.sub');
+
   item.addEventListener('mouseover', function () {
     subMemu.classList.add('active');
     this.querySelector('a').classList.add('active');
+    this.querySelector('span').classList.add('is-active');
+  })
 
-
-    item.addEventListener('mouseleave', function () {
-      subMemu.classList.remove('active');
-      this.querySelector('a').classList.remove('active');
-    })
+  item.addEventListener('mouseleave', function () {
+    subMemu.classList.remove('active');
+    this.querySelector('a').classList.remove('active');
+    this.querySelector('span').classList.remove('is-active');
 
   })
+
+
 })
 
 /************************** slideImg **************************/
