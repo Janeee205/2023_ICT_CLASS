@@ -16,7 +16,7 @@ gnbLi.forEach(function (li, index) {
   })
 })
 */
-
+// 메인메뉴
 const menuItems = document.querySelectorAll('.gnb > li');
 
 menuItems.forEach(function (item) {
