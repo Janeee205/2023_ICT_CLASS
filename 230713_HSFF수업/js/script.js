@@ -50,10 +50,17 @@ buttons.forEach(function (btn, index) {
   // console.log(btn, index);
 
   btn.addEventListener('click', function () {
+
     let xValue = -index * 100 + 'vw';
-    console.log(xValue);
 
     slideList.style.transform = `translateX(${xValue})`;
+    
+    buttons.forEach(function(otherBtn){
+      otherBtn.classList.remove('active');
+    })
+    
+    this.classList.add('active');
+    
   })
 })
 
