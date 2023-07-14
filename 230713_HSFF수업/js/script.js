@@ -42,15 +42,15 @@ gnbItems.forEach(function (item) {
 /************************** slideImg **************************/
 // ********** vanilla JS **********
 
-const slideList = document.querySelector('.slide-list');
-const buttons = document.querySelectorAll('.slide-btn li');
+let slideList = document.querySelector('.slide-list');
+let buttons = document.querySelectorAll('.slide-btn li');
 // console.log(buttons);
 
 buttons.forEach(function (btn, index) {
   // console.log(btn, index);
 
   btn.addEventListener('click', function () {
-    let xValue = '-' + index * 100 + 'vw';
+    let xValue = -index * 100 + 'vw';
     console.log(xValue);
 
     slideList.style.transform = `translateX(${xValue})`;
@@ -60,9 +60,9 @@ buttons.forEach(function (btn, index) {
 
 
 /************************** sidebar **************************/
-const sideBar = document.querySelector('.sidebar')
-const openBtn = document.querySelector('.gnb-open-btn');
-const closeBtn = document.querySelector('.sidebar-btn');
+let sideBar = document.querySelector('.sidebar')
+let openBtn = document.querySelector('.gnb-open-btn');
+let closeBtn = document.querySelector('.sidebar-btn');
 
 openBtn.addEventListener('click', function(){
   sideBar.classList.add('active');
