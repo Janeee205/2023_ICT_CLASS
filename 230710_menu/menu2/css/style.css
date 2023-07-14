@@ -4,8 +4,7 @@
   box-sizing: border-box;
 }
 
-html,
-body {
+html, body {
   width: 100%;
   height: 100%;
 }
@@ -17,4 +16,38 @@ a {
 
 li {
   list-style: none;
+}
+
+.visually-hidden {
+  display: none;
+}
+
+.gnb {
+  display: flex;
+  justify-content: end;
+}
+
+.gnb li {
+  background-color: mediumspringgreen;
+  padding: 16px;
+}
+
+.gnb li:hover,
+.gnb li.active {
+  background-color: red;
+}
+
+.sub-menu {
+  display: flex;
+  visibility: hidden;
+  background-color: skyblue;
+  justify-content: end;
+}
+
+.sub-menu .sub li {
+  padding: 16px;
+}
+
+.sub li:hover {
+  background-color: red;
 }
