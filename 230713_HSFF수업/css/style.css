@@ -294,6 +294,7 @@ footer {
 
   .gnb-open-btn {
     border: none;
+    background-color: transparent;
   }
 
   .sidebar {
@@ -319,6 +320,8 @@ footer {
     float: right;
     border: none;
     font-size: 18px;
+    width: 20px;
+    text-align: end;
     background-color: transparent;
   }
 

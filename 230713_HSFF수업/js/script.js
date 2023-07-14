@@ -59,11 +59,16 @@ buttons.forEach(function (btn, index) {
 
 
 
-// ********** jQuery **********
-/*  하다말음
-$('.slide-list').click(function(){
-  
-  $('.slide-btn li')
+/************************** sidebar **************************/
+const sideBar = document.querySelector('.sidebar')
+const openBtn = document.querySelector('.gnb-open-btn');
+const closeBtn = document.querySelector('.sidebar-btn');
 
+openBtn.addEventListener('click', function(){
+  sideBar.classList.add('active');
 })
-*/
+
+
+closeBtn.addEventListener('click', function(){
+  sideBar.classList.remove('active');
+})
