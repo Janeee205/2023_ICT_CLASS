@@ -270,13 +270,17 @@ li {
   cursor: pointer;
 }
 
+.modal_bottom input#cb1:checked {
+  background-color: #63aeff;
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
 .modal label {
   margin-left: 10px;
   font-size: 13px;
   font-weight: 500;
   cursor: pointer;
 }
-
 
 footer {
   margin-top: 60px;
