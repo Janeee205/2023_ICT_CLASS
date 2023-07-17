@@ -195,8 +195,8 @@ li {
   border: 2px solid #003a79;
   top: 50%;
   left: 50%;
-  width: 500px;
-  height: auto;
+  width: 450px;
+  height: 750px;
   transform: translate(-50%, -50%);
   background-color: #fff;
   z-index: 100;
@@ -223,20 +223,21 @@ li {
 .modal_top h3 {
   color: #003a79;
   font-size: 24px;
+  text-align: center;
 }
 
 .modal img {
   width: 350px;
-  
 }
 
 .modal_image {
+  text-align :center;
 }
 
 .modal_detail {
   margin: 0 auto;
   background-color: #5baa96;
-  width: 350px;
+  width: 300px;
   padding: 15px;
   margin-bottom: 20px;
   transition: background-color 300ms ease-in-out;
@@ -260,16 +261,20 @@ li {
   background-color: #f5f5f5;
 }
 
-.modal_bottom input {
+.modal_bottom input#cb1 {
   width: 20px;
   height: 20px;
-  /* border: 1px solid #ddd; */
-  border: none;
+  border: 1px solid #bcbcbc;
+  background-color: #fff;
+  appearance: none;
+  cursor: pointer;
 }
+
 .modal label {
   margin-left: 10px;
   font-size: 13px;
   font-weight: 500;
+  cursor: pointer;
 }
 
 
