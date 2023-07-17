@@ -5,7 +5,6 @@
 // index
 // eq()
 
-
 $('.main-menu li, .submenu-wrapper').hover(function () {
   // hover시 실행할 함수
   $('.submenu-wrapper').stop().slideDown(500);
