@@ -20,6 +20,11 @@ li {
   list-style: none;
 }
 
+button {
+  background-color: transparent;
+  border: none;
+}
+
 .lg-hidden {
   display: none;
 }
@@ -190,96 +195,66 @@ li {
 }
 
 /* 모달 */
-.modal {
-  position: fixed;
-  border: 2px solid #003a79;
-  top: 50%;
-  left: 50%;
-  width: 450px;
-  height: 750px;
-  transform: translate(-50%, -50%);
-  background-color: #fff;
-  z-index: 100;
-}
-
-.modal_top {
-  position: relative;
-  width: 100%;
-  padding: 40px 30px;
-  overflow: auto;
-}
-
-.modal_top button {
+.popup {
   position: absolute;
-  top: 10px;
-  right: 20px;
-  font-size: 30px;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 3px solid darkblue;
+  z-index: 300;
+  background-color: #fff;
+  width: 480px;
+}
+
+.popup-top {
+  padding: 30px;
+}
+
+.popup .close-btn {
+  text-align: right;
+}
+
+.close-btn button {
+  font-size: 24px;
   background-color: transparent;
   border: none;
-  text-align: right;
-  cursor: pointer;
 }
 
-.modal_top h3 {
-  color: #003a79;
-  font-size: 24px;
+.popup h2 {
+  margin-top: 20px;
+  color: darkblue;
+}
+
+.popup img {
+  margin-top: 20px;
+}
+
+.content-btn {
+  margin-top: 20px;
   text-align: center;
 }
 
-.modal img {
-  width: 350px;
-}
-
-.modal_image {
-  text-align :center;
-}
-
-.modal_detail {
-  margin: 0 auto;
+.content-btn button {
+  padding: 14px 80px;
   background-color: #5baa96;
-  width: 300px;
-  padding: 15px;
-  margin-bottom: 20px;
+  color: #fff;
   transition: background-color 300ms ease-in-out;
+}
+
+.content-btn button:hover {
+  background-color: #4c9381;
   cursor: pointer;
 }
 
-.modal_detail:hover {
-  background-color: #398874;
-}
-
-.modal_detail p {
-  text-align: center;
-  font-size: 18px;
-  color: #fff;
-}
-
-.modal_bottom {
-  display: flex;
-  border-top: 1px solid #ddd;
-  padding: 10px 20px;
+.popup-check {
+  padding: 12px 20px;
+  border-top: 1px solid #ccc;
   background-color: #f5f5f5;
 }
 
-.modal_bottom input#cb1 {
-  width: 20px;
-  height: 20px;
-  border: 1px solid #bcbcbc;
-  background-color: #fff;
-  appearance: none;
-  cursor: pointer;
-}
-
-.modal_bottom input#cb1:checked {
-  background-color: #63aeff;
-  border-color: rgba(255, 255, 255, 0.3);
-}
-
-.modal label {
-  margin-left: 10px;
-  font-size: 13px;
-  font-weight: 500;
-  cursor: pointer;
+.popup-check span {
+  color: #666;
+  font-size: 14px;
 }
 
 footer {
@@ -387,7 +362,6 @@ footer {
   }
 
   .gnb-open-btn {
-    border: none;
     background-color: transparent;
   }
 
