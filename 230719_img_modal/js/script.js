@@ -3,13 +3,14 @@
 // fadeout
 // js로 imgsrc속성 가져오기
 
+/*
 const imgList = document.querySelector('.img-item img');
 const popup = document.querySelector('.popup');
 const overlay = document.querySelector('.overlay');
 const bgImg = document.querySelector('.bg-img');
+*/
 
 // let text = imgList[3].src;
-console.log(imgList);
 
 /*
 imgList.foreach((item) => {
@@ -25,3 +26,16 @@ imgList.foreach((item) => {
   })
 })
 */
+
+$(function () {
+  $('li img').click(function () {
+    let img = new Image(500, 500);
+    img.src = $(this).attr('src');
+    $('.bg-img').html(img);
+    $('.popup').show();
+  });
+
+  $('.popup').click(function (e) {
+    $('.popup').toggle();
+  });
+});
