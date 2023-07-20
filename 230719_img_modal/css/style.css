@@ -106,6 +106,7 @@ button {
 
 .close-btn {
   font-size: 20px;
+  cursor: pointer;
 }
 
 .modal-sec {
@@ -143,7 +144,7 @@ button {
   margin-top: 10px;
 }
 
-.overlay{
+.overlay {
   position: fixed;
   display: none;
   top: 0;
@@ -151,5 +152,9 @@ button {
   right: 0;
   bottom: 0;
   z-index: 100;
-  background-color: rgba(0, 0, 0, .5);
+  background-color: rgba(0, 0, 0, .7);
+}
+
+.overlay.is-active {
+  display: block;
 }

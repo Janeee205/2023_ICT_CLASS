@@ -1,41 +1,45 @@
+// .open-btn click시 .modal-box fadeIn()
 
-// fadein
-// fadeout
-// js로 imgsrc속성 가져오기
+$('.open-btn').click(function () {
+  // fadeIn(), fadeOut
+  // JQuery에서 애니메이션 효과를 만드는 메서드
+  $('.modal-box').fadeIn();
+  $('.overlay').fadeIn();
 
-/*
-const imgList = document.querySelector('.img-item img');
-const popup = document.querySelector('.popup');
-const overlay = document.querySelector('.overlay');
-const bgImg = document.querySelector('.bg-img');
-*/
-
-// let text = imgList[3].src;
-
-/*
-imgList.foreach((item) => {
-  item.addEventListener("click", (e) => {
-    console.log(imgAdrr);
-    e.preventDefault();
-    let imgAdrr = imgList.src;
-    overlay.style.display = "block";
-    popup.style.display = "block";
-
-
-    bgImg.style.backgroundImage = "url()"
-  })
+  // $('.overlay').addClass('is-active');
 })
-*/
 
-$(function () {
-  $('li img').click(function () {
-    let img = new Image(500, 500);
-    img.src = $(this).attr('src');
-    $('.bg-img').html(img);
-    $('.popup').show();
-  });
+// .modal-close click시 .modal-box, .overlay fadeOut()
+$('.modal-close').click(function () {
+  $('.modal-box').fadeOut();
+  $('.overlay').fadeOut();
+})
 
-  $('.popup').click(function (e) {
-    $('.popup').toggle();
-  });
-});
+
+// 내가 클릭한 이미지를 모달창으로 띄우기
+// modal-list img를 클릭 했을 때 그 클릭된 이미지의 src, alt값을 가져온다
+// 속성값을 가져올때는 attr이라는 매서드를 사용한다.
+
+$('.modal-list img').click(function () {
+  let imgAddr = $(this).attr('src');
+  let imgAlt = $(this).attr('alt');
+
+  // 클릭된 요소의 src, alt 값이 담긴 변수
+  // .img-modal-wrapper img src, alt 값으로 넣어준다.
+
+  $('.img-modal-wrapper img').attr({
+    src: imgAddr,
+    alt: imgAlt
+  })
+
+  // .img-modal-box, .overlay를 fadeIn();
+  $('.img-modal-box').fadeIn();
+  $('.overlay').fadeIn();
+})
+
+// .img-modal-btn click시 .img-modal-box
+
+$('.img-modal-btn').click(function () {
+  $('.img-modal-box').fadeOut();
+  $('.overlay').fadeOut();
+})
