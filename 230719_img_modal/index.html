@@ -1,30 +1,53 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Img modal</title>
   <link rel="stylesheet" href="css/style.css">
-  <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+    integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
 </head>
+
 <body>
 
   <div class="wrapper">
-      <ul class="img-list">
-        <li class="img-item"><a href="">모달열기</a></li>
-        <li class="img-item"><img src="images/cat04.jpg"></li>
-        <li class="img-item"><img src="images/cat05.jpg"></li>
-        <li class="img-item"><img src="images/cat02.jpg"></li>
-        <li class="img-item"><img src="images/dog01.jpg"></li>
-        <li class="img-item"><img src="images/dog02.jpg"></li>
-      </ul>
-  </div>
+    <ul class="modal-list">
+      <li class="open-btn"><a href="">모달열기</a></li>
+      <li><img src="images/cat04.jpg" alt="겁나 귀여운 고양이"></li>
+      <li><img src="images/cat05.jpg" alt="겁나 귀여운 고양이"></li>
+      <li><img src="images/cat02.jpg" alt="겁나 귀여운 고양이"></li>
+      <li><img src="images/dog01.jpg" alt="겁나 귀여운 강아지"></li>
+      <li><img src="images/dog02.jpg" alt="겁나 귀여운 강아지"></li>
+    </ul>
 
-  <div class="popup">
-    <div class="bg-img"></div>
+
+    <div class="modal-box modal">
+      <div class="modal-head">
+        <p>😍귀여운 동물들😍</p>
+        <button type="button" class="modal-close close-btn">X</button>
+      </div>
+      <div class="modal-sec">
+        <img src="images/cat03.jpg" alt="카페 고양이">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit quam qui, placeat dignissimos laudantium odio,
+          atque alias, tempore aperiam tenetur explicabo animi eaque ut? Blanditiis adipisci mollitia placeat sit?
+          Quidem.</p>
+      </div>
+    </div>
+
+    <div class="img-modal-box modal">
+      <button type="button" class="img-modal-btn close-btn">X</button>
+      <div class="img-modal-wrapper">
+        <img src="images/cat01.jpg" alt="">
+      </div>
+    </div>
+
+
+    <div class="overlay"></div>
+
   </div>
-  <!-- <div class="overlay"></div> -->
-  
   <script src="js/script.js"></script>
 </body>
+
 </html>
