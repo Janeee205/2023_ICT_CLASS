@@ -87,6 +87,6 @@ button {
   margin-right: 0;
 }
 
-#dots div:is-active {
+#dots div.is-active {
   background-color: #fff;
 }
