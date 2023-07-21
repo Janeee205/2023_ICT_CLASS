@@ -24,7 +24,7 @@ function sliding(dir) {
   // siblings : 형제 요소를 찾는 함수
   // siblings를 이용해서 현재 슬라이드를 제외한 나머지 슬라이드를 fadeOut 시킨다.
 
-  // 현재 선택된 요소 외에 .slide-item의 다른 형제요소sibling를 fadeOut
+  // 현재 선택된 요소 외에 .slide-item의 다른 형제요소 sibling을 fadeOut
   $('.slide-item').eq(cur).siblings('.slide-item').stop().fadeOut();
 
   // fadeIn으로 현재 슬라이드를 화면에 보이게 한다.
@@ -43,4 +43,20 @@ function sliding(dir) {
   $('#dots div').eq(cur).addClass('is-active');
 }
 
-sliding(1)
+sliding(0)
+
+// 이런 슬라이드로 가야하니까 음수값을 매개변수로 전달
+$('#prev').click(function () { sliding(-1) });
+
+// 다음 슬라이드로 가야하니까 양수값을 매개변수로 전달
+$('#next').click(function () { sliding(1) });
+
+
+let auto = setInterval(sliding, 5000, 1)
+
+// dots btn을 클릭했을때 해당 슬라이드로 이동
+$('#dots div').click(function () {
+  cur = 0;
+  let num = $(this).index()
+  sliding(num);
+})
