@@ -1,49 +1,9 @@
+// 현재 인덱스를 젖아하는 변수 (초기값 0)
+let cur = 0;
 
-const prevBtn = document.querySelector('.slide-arrow .prev');
-const nextBtn = document.querySelector('.slide-arrow .next');
-const slideList = document.querySelector('.slide-list');
-const slideItem = document.querySelectorAll('.slide-list li');
-const slideText = document.querySelector('.slide-text');
-const buttons = document.querySelectorAll('.slide-dot-btn button');
+// len이라는 변수에 .slide-item이라는 클래스가 가진 요소들의 총 개수 저장
+let len = $('.slide-item').length;
 
-let currentSlide = 0
-
-setInterval(() => {
-  if (currentSlide < slideItem.length - 1) {
-    currentSlide++;
-  }
-
-  slideList.style.transform = 'translateX(-' + currentSlide * 100 + 'vw)';
-  slideText.style.transform = 'translateX(-' + currentSlide * 100 + 'vw)';
-  btnbgcChange();
-}, 5000)
-
-
-btnbgcChange = () => buttons.forEach((btn, index) => {
-  if (index == currentSlide) {
-    btn.classList.add('is-active')
-  } else {
-    btn.classList.remove('is-active')
-  }
-})
-
-
-prevBtn.addEventListener('click', () => {
-  if (currentSlide > 0) {
-    currentSlide--;
-  }
-  slideList.style.transform = 'translateX(-' + currentSlide * 100 + 'vw)';
-  slideText.style.transform = 'translateX(-' + currentSlide * 100 + 'vw)';
-  btnbgcChange();
-})
-
-
-
-nextBtn.addEventListener('click', () => {
-  if (currentSlide < slideItem.length - 1) {
-    currentSlide++;
-  }
-  slideList.style.transform = 'translateX(-' + currentSlide * 100 + 'vw)';
-  slideText.style.transform = 'translateX(-' + currentSlide * 100 + 'vw)';
-  btnbgcChange();
-})
+for(i=0; i<len; i++){
+  $('#dots').append('<div></div>')
+}
