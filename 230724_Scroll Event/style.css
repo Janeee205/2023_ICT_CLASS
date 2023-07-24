@@ -1,38 +1,47 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html, body{
+html,
+body {
   width: 100%;
   height: 100%;
 }
 
-button{
+button {
   border: none;
   background-color: transparent;
 }
 
 nav {
   position: fixed;
-  top:0;
+  top: 0;
   width: 100%;
   display: flex;
   justify-content: space-between;
   background-color: #a5e7ff;
   padding: 10px 30px;
+  transition: background-color 300ms ease-in-out;
 }
 
-.logo img{
+.logo img {
   width: 80px;
 }
 
-button i{
+button i {
   font-size: 24px;
 }
 
-.box{
+.box {
   height: 3000px;
   background-color: #fff;
+}
+
+.lorem {
+  width: 500px;
+  height: 300px;
+  overflow-y: scroll;
+  margin: 30px auto;
 }
