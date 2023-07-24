@@ -15,6 +15,13 @@ a{
     color: black;
 }
 
+.wrapper{
+    width: 1200px;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
 .sm-only{
     display: none;
 }
@@ -27,7 +34,7 @@ a{
 /* 최상단 로그인 */
 .top-nav{
     /* display: flex; */
-    width: 60%;
+    width: 100%;
     /* background-color: beige; */
     margin: 0 auto;
     /* justify-content: center; */
@@ -50,21 +57,57 @@ a{
 
 .top-nav-list a{
     font-size: 0.8em;
+    font-weight: 500;
 }
-/* nav {
+
+.gnb-wrapper{
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 95%;
     margin: 0 auto;
-    padding: 10px;
-    background-color: #fff;
+    width: 100%;
+    height: 90px;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid goldenrod;
+}
+
+.logo{
+    height: 42px;
 }
 
 .gnb-list{
     display: flex;
-    width: 500px;
-    justify-content: space-between;
-} */
+}
+
+.gnb-item{
+    margin-left: 30px;
+}
+
+.gnb-item:nth-child(8) a{
+    position: relative;
+}
+
+.gnb-item:nth-child(8) a::after{
+    position: absolute;
+    top: 0;
+    left: 50;
+    color: red;
+    width: 100px;
+    height: 100px;
+}
+
+.gnb-item a{
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.search{
+    width: 200px;
+    text-align: right;
+    padding-top: 5px
+}
+
+.search i{
+    font-size: 23px;
+}
 
 /* a에 호버하면 색 바뀌는것부터 */
