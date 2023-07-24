@@ -27,9 +27,10 @@ window.addEventListener('scroll', function () {
 
 })
 
+/*
 // 스크롤창이 끝까지 됐을때 alert창으로 '스크롤창!'
 document.querySelector('.lorem').addEventListener('scroll', function () {
-  //  scrollTop, clientHeight, scrollHeight
+  // scrollTop, clientHeight, scrollHeight
   // scrollTop : 스크롤된 양
   let 스크롤양 = document.querySelector('.lorem').scrollTop;
 
@@ -39,11 +40,27 @@ document.querySelector('.lorem').addEventListener('scroll', function () {
   // scrollHeight : 박스에 스타일로 지정된 높이값이 아니라 스크롤 가능한 높이값
   let 스크롤높이 = document.querySelector('.lorem').scrollHeight;
 
-  console.log(스크롤양, 높이, 스크롤높이);
+  console.log(스크롤양 + 높이, 스크롤높이);
 
-
-    if(스크롤양 == 1023){
-      alert('스크롤!');
-    }
+  if (스크롤양 + 높이 == 스크롤높이) {
+    alert('스크롤 끝!');
+  }
 })
+*/
 
+// window 스크롤 다 되었을 때 alert창 '전체 스크롤 완료'
+
+window.addEventListener('scroll', function () {
+// documentElement == querySelector('html')
+
+  let 문서스크롤양 = document.querySelector('html').scrollTop;
+  let 문서높이 = document.querySelector('html').clientHeight;
+  let 문서스크롤높이 = document.querySelector('html').scrollHeight;
+
+  console.log(문서스크롤양 + 문서높이, 문서스크롤높이);
+
+  if(문서스크롤양 + 문서높이 == 문서스크롤높이){
+    alert('전체 스크롤 완료!')
+  }
+
+})
