@@ -6,32 +6,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tab Menu</title>
   <link rel="stylesheet" href="style.css">
-  <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+    integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
 </head>
 
 <body>
   <div class="wrapper">
     <ul class="tab-list">
-      <li class="tab-item is-active">tab menu1</li>
-      <li class="tab-item">tab menu2</li>
-      <li class="tab-item">tab menu3</li>
-      <li class="tab-item">tab menu4</li>
+      <li class="tab-item" data-menu="menu1">tab menu1</li>
+      <li class="tab-item" data-menu="menu2">tab menu2</li>
+      <li class="tab-item" data-menu='menu3'>tab menu3</li>
     </ul>
-    <div class="tab-content is-active">
+    <div class="tab-content is-active" data-order="1">
       <p>탭메뉴 1 클릭시 보여줄 화면</p>
     </div>
 
-    <div class="tab-content">
+    <div class="tab-content" data-order="2">
       <p>탭메뉴 2 클릭시 보여줄 화면</p>
     </div>
 
-    <div class="tab-content">
+    <div class="tab-content" data-order="3">
       <p>탭메뉴 3 클릭시 보여줄 화면</p>
     </div>
 
-    <div class="tab-content">
-      <p>탭메뉴 4 클릭시 보여줄 화면</p>
-    </div>
 
   </div>
   <script src="js/script.js"></script>
