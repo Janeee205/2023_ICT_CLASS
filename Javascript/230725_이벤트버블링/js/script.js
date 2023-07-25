@@ -24,8 +24,6 @@ document.querySelector('.overlay').addEventListener('click', function (e) {
 })
 
 
-
-
 /*
 $('.open-btn').on('click', function () {
   $('.overlay').addClass('is-active');
@@ -36,7 +34,7 @@ $('.close-btn').on('click', function () {
 })
 
 $('.overlay').on('click', function (e) {
-  if(e.target == $('.overlay')){
+  if($(e.target) == $('.overlay')){
     $('.overlay').removeClass('is-active');
   }
 })
