@@ -34,7 +34,7 @@ $('.close-btn').on('click', function () {
 })
 
 $('.overlay').on('click', function (e) {
-  if($(e.target) == $('.overlay')){
+  if($(e.target).is('.overlay')){
     $('.overlay').removeClass('is-active');
   }
 })
