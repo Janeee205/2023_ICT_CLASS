@@ -28,10 +28,8 @@ document.querySelector('.tab-list').addEventListener('click', function (e) {
   // html에 유저는 볼 수 없게 몰래 정보를 숨겨둘 수 있다.
   // data-자료이름="값"
   // dataset.자료이름
-  // 지금 클릭한 버튼에 숨겨져있는 dataset.id를 tabOpen함수의 매개변수
-  let num = e.target.dataset.id-1
-  tabOpen(num);
-
-  console.log(num);
+  // 지금 클릭한 버튼에 숨겨져있는 dataset.id를 tabOpen함수의 매개변수 값으로 넘겨준다.
+  // let num = e.target.dataset.id-1
+  tabOpen(e.target.dataset.id-1);
 
 })
