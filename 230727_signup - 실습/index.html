@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="JUEUNKIM">
+  <meta name="keywords" content="반응형 css">
+  <meta name="description" content="">
+  <title>네이버 회원가입</title>
+  <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+    integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="wrapper">
+    <header>
+      <h1 class="logo"><img src="images/logo.png" alt="네이버 로고"></h1>
+      <select name="language" id="language-select">
+        <option value="ko_KR">한국어</option>
+        <option value="en_US">English</option>
+        <option value="zh-Hans_CN">中文(简体)</option>
+        <option value="zh-Hant_TW">中文(台灣)</option>
+        <option value="ja_JP">日本語</option>
+      </select>
+    </header>
+
+    <section>
+      <form action="signup.html">
+        <div class="form-wrap">
+          <ul>
+            <li>
+              <div class="all-checkterms checkterms">
+                <input type="checkbox" id="total">
+                <label for="total">
+                  <p><u>
+                      네이버 이용약관, 개인정보 수집 및 이용, 위치정보 이용약관(선택),프로모션 정보 수신(선택)에 모두 동의합니다.
+                    </u></p>
+                </label>
+              </div>
+            </li>
+          </ul>
+
+          <ul>
+            <li>
+              <div class="checkterms">
+                <div class="check_wrap ess-wrap">
+                  <input type="checkbox" id="termService">
+                  <label for="termService">
+                    <span>네이버 이용약관 동의</span>
+                    <strong class="option ess">(필수)</strong></label>
+                </div>
+
+                <div class="term-desc">
+                  <p><b>여러분을 환영합니다.</b></p>
+                  <p>
+                    네이버 서비스 및 제품(이하 ‘서비스’)을 이용해 주셔서 감사합니다. 본 약관은 다양한 네이버 서비스의 이용과 관련하여 네이버 서비스를 제공하는 네이버 주식회사(이하 ‘네이버’)와
+                    이를
+                    이용하는 네이버 서비스 회원(이하 ‘회원’) 또는 비회원과의 관계를 설명하며, 아울러 여러분의 네이버 서비스 이용에 도움이 될 수 있는 유익한 정보를 포함하고 있습니다.
+                  </p>
+                  <p>
+                    네이버 서비스를 이용하시거나 네이버 서비스 회원으로 가입하실 경우 여러분은 본 약관 및 관련 운영 정책을 확인하거나 동의하게 되므로, 잠시 시간을 내시어 주의 깊게 살펴봐 주시기
+                    바랍니다.
+                  </p>
+                  <p>다양한 네이버 서비스를 즐겨보세요.</p>
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="checkterms">
+                <div class="check_wrap ess-wrap">
+                  <input type="checkbox" id="termsPrivacy">
+                  <label for="termsPrivacy">
+                    <span>개인정보 수집 및 이용 동의</span>
+                    <strong class="option ess">(필수)</strong></label>
+                </div>
+
+                <div class="term-desc">
+                  <p><b>여러분을 환영합니다.</b></p>
+                  <p>
+                    네이버 서비스 및 제품(이하 ‘서비스’)을 이용해 주셔서 감사합니다. 본 약관은 다양한 네이버 서비스의 이용과 관련하여 네이버 서비스를 제공하는 네이버 주식회사(이하 ‘네이버’)와
+                    이를
+                    이용하는 네이버 서비스 회원(이하 ‘회원’) 또는 비회원과의 관계를 설명하며, 아울러 여러분의 네이버 서비스 이용에 도움이 될 수 있는 유익한 정보를 포함하고 있습니다.
+                  </p>
+                  <p>
+                    네이버 서비스를 이용하시거나 네이버 서비스 회원으로 가입하실 경우 여러분은 본 약관 및 관련 운영 정책을 확인하거나 동의하게 되므로, 잠시 시간을 내시어 주의 깊게 살펴봐 주시기
+                    바랍니다.
+                  </p>
+                  <p>다양한 네이버 서비스를 즐겨보세요.</p>
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="checkterms">
+                <div class="check_wrap">
+                  <input type="checkbox" id="termLocation">
+                  <label for="termLocation">
+                    <span>위치정보 이용약관 동의</span>
+                    <strong class="option cho">(선택)</strong></label>
+                </div>
+
+                <div class="term-desc">
+                  <p><b>여러분을 환영합니다.</b></p>
+                  <p>
+                    네이버 서비스 및 제품(이하 ‘서비스’)을 이용해 주셔서 감사합니다. 본 약관은 다양한 네이버 서비스의 이용과 관련하여 네이버 서비스를 제공하는 네이버 주식회사(이하 ‘네이버’)와
+                    이를
+                    이용하는 네이버 서비스 회원(이하 ‘회원’) 또는 비회원과의 관계를 설명하며, 아울러 여러분의 네이버 서비스 이용에 도움이 될 수 있는 유익한 정보를 포함하고 있습니다.
+                  </p>
+                  <p>
+                    네이버 서비스를 이용하시거나 네이버 서비스 회원으로 가입하실 경우 여러분은 본 약관 및 관련 운영 정책을 확인하거나 동의하게 되므로, 잠시 시간을 내시어 주의 깊게 살펴봐 주시기
+                    바랍니다.
+                  </p>
+                  <p>다양한 네이버 서비스를 즐겨보세요.</p>
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="checkterms last-checkterms">
+                <div class="check_wrap">
+                  <input type="checkbox" id="termPromo">
+                  <label for="termPromo">
+                    <span>프로모션 정보 수신 동의</span>
+                    <strong class="option cho">(선택)</strong></label>
+                </div>
+
+                <div class="term-desc">
+                  <p><b>여러분을 환영합니다.</b></p>
+                  <p>
+                    네이버 서비스 및 제품(이하 ‘서비스’)을 이용해 주셔서 감사합니다. 본 약관은 다양한 네이버 서비스의 이용과 관련하여 네이버 서비스를 제공하는 네이버 주식회사(이하 ‘네이버’)와
+                    이를
+                    이용하는 네이버 서비스 회원(이하 ‘회원’) 또는 비회원과의 관계를 설명하며, 아울러 여러분의 네이버 서비스 이용에 도움이 될 수 있는 유익한 정보를 포함하고 있습니다.
+                  </p>
+                  <p>
+                    네이버 서비스를 이용하시거나 네이버 서비스 회원으로 가입하실 경우 여러분은 본 약관 및 관련 운영 정책을 확인하거나 동의하게 되므로, 잠시 시간을 내시어 주의 깊게 살펴봐 주시기
+                    바랍니다.
+                  </p>
+                  <p>다양한 네이버 서비스를 즐겨보세요.</p>
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="notice">
+                <p>네이버 이용약관과 개인정보 수집 및 이용에 대한 안내에 모두 동의해주세요.
+                </p>
+              </div>
+              <div class="form-bottom">
+                <div class="button-wrap">
+                  <button type="button">취소</button>
+                  <button type="submit">확인</button>
+                </div>
+                <p>회사, 동아리 등 단체에서 사용할 ID가 필요하세요? 단체 회원 가입
+                </p>
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </form>
+    </section>
+
+
+  </div>
+  <script src="js/script.js"></script>
+</body>
+
+</html>
