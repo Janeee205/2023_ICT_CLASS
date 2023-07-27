@@ -8,6 +8,8 @@
   <meta name="keywords" content="반응형 css">
   <meta name="description" content="">
   <title>네이버 회원가입</title>
+  <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+    integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -29,12 +31,12 @@
         <div class="form-wrap">
           <ul>
             <li>
-              <div class="check">
-                <input type="checkbox" id="chk_all">
-                <label for="chk_all">
-                  <span class="">
-                    네이버 이용약관, 개인정보 수집 및 이용, 위치정보 이용약관(선택),프로모션 정보 수신(선택)에 모두 동의합니다.
-                  </span>
+              <div class="all-checkterms checkterms">
+                <input type="checkbox" id="total">
+                <label for="total">
+                  <p><u>
+                      네이버 이용약관, 개인정보 수집 및 이용, 위치정보 이용약관(선택),프로모션 정보 수신(선택)에 모두 동의합니다.
+                    </u></p>
                 </label>
               </div>
             </li>
@@ -43,7 +45,7 @@
           <ul>
             <li>
               <div class="checkterms">
-                <div class="check_wrap">
+                <div class="check_wrap ess-wrap">
                   <input type="checkbox" id="termService">
                   <label for="termService">
                     <span>네이버 이용약관 동의</span>
@@ -68,7 +70,7 @@
 
             <li>
               <div class="checkterms">
-                <div class="check_wrap">
+                <div class="check_wrap ess-wrap">
                   <input type="checkbox" id="termsPrivacy">
                   <label for="termsPrivacy">
                     <span>개인정보 수집 및 이용 동의</span>
@@ -117,7 +119,7 @@
             </li>
 
             <li>
-              <div class="checkterms">
+              <div class="checkterms last-checkterms">
                 <div class="check_wrap">
                   <input type="checkbox" id="termPromo">
                   <label for="termPromo">
@@ -142,10 +144,14 @@
             </li>
 
             <li>
+              <div class="notice">
+                <p>네이버 이용약관과 개인정보 수집 및 이용에 대한 안내에 모두 동의해주세요.
+                </p>
+              </div>
               <div class="form-bottom">
                 <div class="button-wrap">
-                  <button type="button">동의</button>
-                  <button type="button">확인</button>
+                  <button type="button">취소</button>
+                  <button type="submit">확인</button>
                 </div>
                 <p>회사, 동아리 등 단체에서 사용할 ID가 필요하세요? 단체 회원 가입
                 </p>
