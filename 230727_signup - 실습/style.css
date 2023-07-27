@@ -47,7 +47,7 @@ section label {
 }
 
 label input[type='checkbox'] {
-  display: none;
+  /* display: none; */
 }
 
 .checkbox-img {
@@ -67,7 +67,7 @@ label p {
 }
 
 .total .checkbox-img.checked {
-  background-image: url('images/pc_check_on_24.png');
+  background-image: url('images/pc_check_on_l_24.png');
 }
 
 .agree {
