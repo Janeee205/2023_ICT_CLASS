@@ -53,8 +53,8 @@ $('.agree label').on('click', function () {
   // 언체크
   let unchk = len - chklen;
 
-  console.log(len)
-  console.log('체크된 놈' + chklen)
+  // console.log(len)
+  // console.log('체크된 놈' + chklen)
 
   // 조건이 참이라면
   // .total label .checkbox-img checked class add
@@ -71,17 +71,42 @@ $('.agree label').on('click', function () {
     $('.total label input[type="checkbox"]').removeAttr('checked');
   }
 
-
-
   /*
-  if ((len - chklen) > 0) {
-    $('.total label').find('.checkbox-img').removeClass('checked');
-    $('.total label').find('input[type="checkbox"]').removeAttr('checked');
-  } else{
-    $('.total label').find('.checkbox-img').addClass('checked');
-    $('.total label').find('input[type="checkbox"]').attr('checked', true);
-  }
+if ((len - chklen) > 0) {
+  $('.total label').find('.checkbox-img').removeClass('checked');
+  $('.total label').find('input[type="checkbox"]').removeAttr('checked');
+} else{
+  $('.total label').find('.checkbox-img').addClass('checked');
+  $('.total label').find('input[type="checkbox"]').attr('checked', true);
+}
 */
 
+})
 
+// 확인버튼을 클릭했을때 필수사항을 모두 체크했는지
+// 확인해서 모두 체크했으면 submit()
+
+// 하나라도 체크하지 않은게 있다면 submit()을 막고
+// .req-alert 텍스트를 보여준다.
+// .req label submit
+
+
+
+$('#submit').on('click', function (e) {
+  let req = $('.req .checkbox-img').length;
+  let chkreq = $('.req .checked').length;
+  let unchk = req - chkreq;
+
+
+  if (unchk == 0) {
+    $('form1').submit();
+  } else {
+    e.preventDefault();
+    $('.req-alert').css('visibility', 'visible');
+  }
+})
+
+// 취소버튼 클릭시 네이버 사이트로 이동
+$('#cancel').on('click', function () {
+  location.href = 'https://www.naver.com/';
 })
