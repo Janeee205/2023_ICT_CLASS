@@ -1,7 +1,3 @@
-// 각 label 클릭시
-// 클릭된 label 안 .checkbox-img에 checked class toggle
-// 클릭된 label 안 input checkbox에 checked 속성 true / false
-
 let lebels = document.querySelectorAll('label');
 let totalLabel = document.querySelector('.total label');
 let agreeAll = document.querySelectorAll('.agree');
@@ -10,7 +6,9 @@ let submitBtn = document.getElementById('submit');
 let cancelBtn = document.getElementById('cancel');
 
 
-
+// 각 label 클릭시
+// 클릭된 label 안 .checkbox-img에 checked class toggle
+// 클릭된 label 안 input checkbox에 checked 속성 true / false
 
 
 lebels.forEach(function (label) {
