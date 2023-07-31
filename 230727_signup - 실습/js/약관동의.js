@@ -1,18 +1,32 @@
+// 각 label 클릭시
+// 클릭된 label 안 .checkbox-img에 checked class toggle
+// 클릭된 label 안 input checkbox에 checked 속성 true / false
+
+let lebels = document.querySelectorAll('label');
+let totalLabel = document.querySelector('.total label');
+let agreeAll = document.querySelectorAll('.agree');
+let agreeLabel = document.querySelectorAll('.agree label');
 
 
-document.querySelectorAll('label').forEach(function (item) {
-  item.addEventListener('click', function (e) {
+
+
+
+
+lebels.forEach(function (label) {
+  label.addEventListener('click', function (e) {
     e.preventDefault();
-
-    let chImg = this.querySelector('.checkbox-img')
-
-    chImg.classList.toggle('checked')
+    this.querySelector('.checkbox-img').classList.toggle('checked');
 
 
-    if (chImg.classList.contains('checked')) {
-      this.querySelector('input[type="checkbox"]').checked = true;
+    let inputCheck = this.querySelector('input[type="checkbox"]');
+
+    // JS에서 특정 클래스를 포함하고 있는지 확인하는 함수 classList.contains
+    // .checked class를 통해 체크 유무를 확인
+    // 이미지가 체크되어 있다면, checked 속성 true / false
+    if (this.querySelector('.checkbox-img').classList.contains('checked')) {
+      inputCheck.checked = true;
     } else {
-      this.querySelector('input[type="checkbox"]').checked = false;
+      inputCheck.checked = false;
     }
 
   })
@@ -20,22 +34,50 @@ document.querySelectorAll('label').forEach(function (item) {
 
 
 
+// .total label 클릭시
+// .agree 안에 있는 모든 .checkbox-img에 checked class add / remove
+// .agree 안에 있는 모든 input checkbox에 checked 속성 true / false
 
-
-
-/*
- 
-$('.total label').on('click', function () {
-  if ($(this).children('.checkbox-img').hasClass('checked')) {
-    $('.agree').find('.checkbox-img').addClass('checked');
-    $('.agree').find('input[type="checkbox"]').attr('checked', true);
-  } else {
-    $('.agree').find('.checkbox-img').removeClass('checked');
-    $('.agree').find('input[type="checkbox"]').removeAttr('checked');
-  }
+agreeAll.forEach(function (agree) {
+  totalLabel.addEventListener('click', function () {
+    if (this.querySelector('.checkbox-img').classList.contains('checked')) {
+      agree.querySelector('.checkbox-img').classList.add('checked');
+      agree.querySelector('input[type="checkbox"]').checked = true
+    } else {
+      agree.querySelector('.checkbox-img').classList.remove('checked');
+      agree.querySelector('input[type="checkbox"]').checked = false
+    }
+  })
 })
- 
-*/
 
+
+
+
+
+// .agree label이 모두 체크 됐을때
+// .total label 안 .checked-img에  checked class add
+// .total label input checkbox에 checked 속성 true
+
+// .agree label이 모두 체크되지 않았을때
+// .total label 안 .checkbox-img checked class remove
+// .total label 안 input checked에 checked에 속성 false 
+
+agreeLabel.forEach(function (alabel) {
+  alabel.addEventListener('click', function () {
+
+    let len = document.querySelectorAll('.agree .checkbox-img').length;
+    let chklen = document.querySelectorAll('.agree .checked').length;
+    let unchk = len - chklen;
+
+    if (unchk == 0) {
+      document.querySelector('.total label .checkbox-img').classList.add('checked');
+      document.querySelector('.total input[type="checkbox"]').checked = true;
+    } else {
+      document.querySelector('.total label .checkbox-img').classList.remove('checked');
+      document.querySelector('.total input[type="checkbox"]').checked = false;
+    }
+
+  })
+})
 
 
