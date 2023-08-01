@@ -52,7 +52,6 @@ button {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    justify-content: space-between;
     cursor: pointer;
 }
 
@@ -138,6 +137,7 @@ footer {
 
 .banner-contents span {
     font-size: 18px;
+    font-weight: bold;
 }
 
 .banner-btn-list {
@@ -152,7 +152,6 @@ footer {
     display: flex;
     align-items: center;
     height: 100%;
-    /* width: 80%; */
 }
 
 .banner-site-list li {
