@@ -24,120 +24,128 @@
       </h1>
     </header>
 
-
     <section class="signup-form">
       <form action="" id="form2">
         <ul>
           <li>
             <label class="id">
               <p>아이디</p>
-              <input type="text" placeholder="@naver.com">
+              <input type="text" placeholder="@naver.com" #="idValue">
             </label>
+            <div class="alert">
+              <p>필수 정보입니다.</p>
+              <p>5~20자의 영문소문자만 사용가능합니다.</p>
+              <p>멋진 아이디네요!</p>
+            </div>
           </li>
 
           <li>
-            <label>
+            <label class="password">
               <p>비밀번호</p>
-              <input type="password" placeholder="">
+              <input type="password" placeholder="" #="passwordValue"">
             </label>
-          </li>
+            <div class=" alert">
+              <p>필수 정보입니다.</p>
+              <p>5~20자의 영문소문자만 사용가능합니다.</p>
+  </div>
+  </li>
 
-          <li>
-            <label class="ps-check">
-              <p>비밀번호 확인</p>
-              <input type="password" placeholder="">
-            </label>
-          </li>
+  <li>
+    <label class=" ps-check">
+      <p>비밀번호 확인</p>
+      <input type="password" placeholder="" #="passwordCheck">
+    </label>
+  </li>
 
-          <li>
-            <label>
-              <p>이름</p>
-              <input type="text" placeholder="">
-            </label>
-          </li>
+  <li>
+    <label>
+      <p>이름</p>
+      <input type="text" placeholder="">
+    </label>
+  </li>
 
-          <li>
-            <label>
-              <p>생년월일</p>
-              <div class="birth">
-                <input type="number" placeholder="년(4자)">
-                <select name="" id="">
-                  <option value="">월</option>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                  <option value="6">6</option>
-                  <option value="7">7</option>
-                  <option value="8">8</option>
-                  <option value="9">9</option>
-                  <option value="10">10</option>
-                  <option value="11">11</option>
-                  <option value="12">12</option>
-                </select>
-                <input type="number" placeholder="일">
-              </div>
-            </label>
-          </li>
+  <li>
+    <label>
+      <p>생년월일</p>
+      <div class="birth">
+        <input type="number" placeholder="년(4자)">
+        <select name="" id="">
+          <option value="">월</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+        </select>
+        <input type="number" placeholder="일">
+      </div>
+    </label>
+  </li>
 
-          <li>
-            <label>
-              <p>성별</p>
-              <div class="gender">
-                <button type="button">남자</button>
-                <button type="button">여자</button>
-                <button type="button">선택안함</button>
-              </div>
-            </label>
-          </li>
+  <li>
+    <label>
+      <p>성별</p>
+      <div class="gender">
+        <input type="radio"><span>남자</span>
+        <input type="radio"><span>여자</span>
+        <input type="radio" class="radiochk"><span>선택안함</span>
+      </div>
+    </label>
+  </li>
 
-          <li>
-            <label>
-              <p>본인 확인 이메일<span class="text-secondary">(선택)</span></p>
-              <input type="text" placeholder="선택입력">
-            </label>
-          </li>
+  <li>
+    <label class="email">
+      <p>본인 확인 이메일<span class="text-secondary">(선택)</span></p>
+      <input type="text" placeholder="선택입력">
+    </label>
+  </li>
 
-          <li>
-            <label class="phone">
-              <p>휴대전화</p>
-              <select name="" id="phone">
-                <option value="233">가나 +233</option>
-                <option value="30">그리스 +30</option>
-                <option value="82" selected>대한민국 +82</option>
-                <option value="49">독일 +49</option>
-                <option value="960">몰디브 +960</option>
-                <option value="1">미국/캐나다 +1</option>
-                <option value="254">케나 +254</option>
-              </select>
+  <li>
+    <label class="phone">
+      <p>휴대전화</p>
+      <select name="" id="phone">
+        <option value="233">가나 +233</option>
+        <option value="30">그리스 +30</option>
+        <option value="82" selected>대한민국 +82</option>
+        <option value="49">독일 +49</option>
+        <option value="960">몰디브 +960</option>
+        <option value="1">미국/캐나다 +1</option>
+        <option value="254">케나 +254</option>
+      </select>
+      <div class="certi-num">
+        <input type="tel" placeholder="전화번호 입력">
+        <button type="button" class="get-number">인증번호 받기</button>
+      </div>
+      <input type="number" placeholder="인증번호 입력하세요">
+    </label>
+  </li>
 
-              <input type="tel" placeholder="전화번호 입력">
-              <button type="button">인증번호 받기</button>
-              <input type="number" placeholder="인증번호 입력하세요">
-            </label>
-          </li>
+  <li>
+    <label>
+      <p>주소</p>
+      <div class="postalcode">
+        <input type="number" placeholder="우편번호" class="zipcode">
+        <button type="button" class="find-zipcode">우편번호 찾기</button>
+      </div>
+      <input type="text" placeholder="도로명주소">
+      <input type="text" placeholder="지번주소">
+      <input type="text" placeholder="상세주소">
+      <input type="text" placeholder="참고항목">
+    </label>
+  </li>
+  </ul>
 
-          <li>
-            <label>
-              <p>주소</p>
-              <input type="number" placeholder="우편번호">
-              <button type="button">우편번호 찾기</button>
-              <input type="text" placeholder="도로명주소">
-              <input type="text" placeholder="지번주소">
-              <input type="text" placeholder="상세주소">
-              <input type="text" placeholder="참고항목">
-            </label>
-          </li>
-        </ul>
+  <button type="submit" id="submit">가입하기</button>
 
-        <button type="submit">가입하기</button>
-
-      </form>
-    </section>
-
-
-
+  </form>
+  </section>
 
   </div>
   <script src="js/join.js"></script>

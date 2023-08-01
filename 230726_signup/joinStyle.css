@@ -10,7 +10,16 @@ body {
   height: 100%;
 }
 
-.wrapper {}
+input::-webkit-inner-spin-button {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+
+button,
+input {
+  height: 60px;
+}
 
 /* header */
 header {
@@ -44,11 +53,14 @@ label p {
 
 label input {
   width: 100%;
-  height: 60px;
   border: 1px solid #ccc;
   margin-top: 5px;
   padding: 10px;
   outline: none;
+}
+
+.inputboxact {
+  border-color: #03C75A;
 }
 
 .id input::placeholder {
@@ -67,19 +79,16 @@ label input[type="password"] {
   background-size: 30px;
 }
 
+.alert p {
+  display: none;
+}
+
 .ps-check input[type="password"] {
   background-image: url('images/m_icon_pw_step_02.png');
 }
 
-.birth input::-webkit-inner-spin-button {
-  appearance: none;
-  -moz-appearance: none;
-  -webkit-appearance: none;
-}
-
 .birth {
   display: flex;
-  border: 1px solid red;
   align-items: center;
   justify-content: space-between;
 }
@@ -92,21 +101,29 @@ select {
 
 .birth select {
   border: 1px solid #ccc;
+  height: 60px;
   font-size: 20px;
 }
 
-.gender {
-  border: 1px solid red;
-  text-align: center;
+.gender input[type="radio"] {
+  display: none;
+
 }
 
-.gender button {
-  width: calc(97% / 3);
+.gender input[type="radio"]+span {
+  display: inline-block;
+  padding: 15px calc(34% / 3);
   height: 60px;
-  border: none;
   border: 1px solid #ccc;
   background-color: #fff;
   font-size: 16px;
+  text-align: center;
+}
+
+.gender input[type="radio"].radiochk+span {
+  background-color: #08a600;
+  color: #fff;
+  font-weight: bold;
 }
 
 .text-secondary {
@@ -114,7 +131,40 @@ select {
   font-size: 15px;
 }
 
-.phone select{
+.phone select {
   width: 100%;
   font-size: 20px;
+}
+
+.certi-num,
+.postalcode {
+  display: inline-block;
+  font-size: 0;
+}
+
+.certi-num input[type="tel"],
+.postalcode input[type="number"] {
+  width: 335px;
+  margin-right: 10px;
+}
+
+.get-number,
+.find-zipcode {
+  background-color: #08a600;
+  border: none;
+  width: 120px;
+  height: 60px;
+  color: #fff;
+  font-weight: bold;
+}
+
+#submit {
+  width: 100%;
+  height: 60px;
+  background-color: #08a600;
+  font-weight: bold;
+  font-size: 20px;
+  color: #fff;
+  border: none;
+  margin-top: 20px;
 }
