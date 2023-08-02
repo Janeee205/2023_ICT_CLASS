@@ -26,17 +26,90 @@ button {
     border: none;
 }
 
+
+/*********** section5 문화재 소개***********/
+
 .sction5 {
+    position: relative;
     width: 1920px;
-    height: 1080px;
+    height: 900px;
     margin: 0 auto;
+    overflow-x: hidden;
 }
 
-.section6-wrapper {
-    width: 1400px;
-    height: 100%;
-    margin: 0 auto;
+.title {
+    font-size: 30px;
+    font-weight: bold;
+    color: #282D61;
+    text-align: center;
 }
+
+.sec5-title {
+    margin-top: 105px;
+}
+
+.sec5-subtitle {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+.background-text {
+    position: absolute;
+    font-size: 100px;
+    color: transparent;
+    z-index: -1;
+    -webkit-text-stroke: 1px #F0F0F0;
+}
+
+.cultural {
+    top: 5px;
+    left: 30%;
+    font-weight: 900;
+}
+
+.properties {
+    top: 120px;
+    right: 30%;
+    font-weight: 900;
+}
+
+.image-list-wrapper {
+    margin: 0 auto;
+
+}
+
+.top-image-list,
+.bottom-image-list {
+    display: flex;
+
+}
+
+.top-image-list {
+    margin-top: 106px;
+    margin-bottom: 25px;
+}
+
+.bottom-image-list {
+    transform: translateX(-10%);
+}
+
+.top-image-list img,
+.bottom-image-list img {
+    width: 364px;
+    height: 250px;
+    margin-right: 25px;
+    border-radius: 20px;
+}
+
+.top-image-list li:last-child img,
+.bottom-image-list li:last-child img {
+    margin-right: 0;
+}
+
+
+
+/*********** section6 축제ㆍ행사***********/
 
 .section6 {
     width: 1920px;
@@ -52,12 +125,8 @@ button {
     margin: 0 auto;
 }
 
-.title {
+.sec6-title {
     padding-top: 60px;
-    font-size: 30px;
-    font-weight: bold;
-    color: #282D61;
-    text-align: center;
 }
 
 .buttons button {
@@ -96,6 +165,7 @@ button {
     height: 300px;
     margin-right: 40px;
     border-radius: 0 30px 0 30px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, .2);
 }
 
 .poster-list li:last-child img {
@@ -129,6 +199,7 @@ footer {
     height: 215px;
     margin: 0 auto;
 }
+
 
 /* slide banner */
 
