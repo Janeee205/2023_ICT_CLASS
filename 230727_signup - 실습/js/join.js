@@ -8,15 +8,28 @@ $('input').focusout(function () {
   $(this).parent('.inputbox').removeClass('border-act')
 })
 
+
+
+// 필수항목인 모든 변수에 false 값 할당 후
+// 각 해당 조건을 충족 했을 때 true값으로 변경한다.
+// 마지막에 필수항목에 해당하는 변수가 모두 true라면 submit
+// 아니라면 제출되지 못하게 막는다.
 let idvari = pwveri = pwchkveri = nameveri = birthveri = genderveri = phoneveri = addrveri = false;
 let emailveri = true;
 
 
 
 // 아이디
-// .userid input에 focusout 됐을 때 입력된 값의 길이가 0이라면(조건)
-// .userid warn에 내용을 작성(실행문)
+// .userid input에 focusout 됐을 때 입력된 값의 길이가 0이라면 (조건)
+// .userid .warn에 text-red class '필수 정보입니다.'
 
+// else if(!정규식.test(userID))
+// .user .warn에 text-red class
+// '5~8자의 영문 소문자, 숫자만 사용 가능합니다.
+
+// else (위 두 조건에 해당하지 않을 때)0이 아니고 정규식에 맞게 잘 작성
+// idveri = true;
+// .userid warn에 text-green class' 멋진 아이디네요!'
 
 $('.userid input').focusout(function () {
   let userId = $(this).val()
@@ -108,7 +121,6 @@ $('.userpw-chk input').focusout(function () {
 // .warn에 들어있는 경고메세지를 지워준다.
 // nameveri = true;
 
-
 $('.username input').focusout(function () {
   let userName = $(this).val();
   let nameExp = /^[가-힣]{2,5}$/;
@@ -143,7 +155,6 @@ $('.username input').focusout(function () {
 // 올 해 기준으로 나이가 100 초과라면 (조건5)
 // .birth .warn text-red class '정말이세요?'
 
-
 $('#year, #month, #date').focusout(function () {
   let year = $('#year').val();
   let month = $('#month').val();
@@ -160,9 +171,6 @@ $('#year, #month, #date').focusout(function () {
   // 사용자가 입력한 year, month, date값으로 Date 객체 생성
   let birth = new Date(year, month, date);
   birth = birth.getTime();
-
-
-
 
   if (year.length != 4) {
     $('.birth .warn').html('<span class="text-red"> 태어난 년도 4자리를 정확하게 입력하세요. </span>');
@@ -183,7 +191,51 @@ $('#year, #month, #date').focusout(function () {
     $('.birth .warn').html('<span class="text-red"> 미래에서 오셨군요.^^ </span>');
 
   } else {
+    birthveri = true;
     $('.birth .warn').empty();
   }
 
+})
+
+
+
+// 성별
+// .gender .inputbox를 클릭 했을 때
+// .gender 모든 .inputbox에 .btn-primary class remove
+// .gender .inputbox안 모든 input radio에 checked false
+// 클릭된 자신에게만 .btn-primary class add
+// 클릭된 자신에게만 input radio에 checked true
+// genderveri = true;
+
+$('.gender .inputbox').on('click', function () {
+  $('.gender .inputbox ').removeClass('btn-primary');
+  // prop => jQuery에서 radio 버튼을 제어할때 사용
+  $('.gender .inputbox input[type="radio"]').prop('checked', false);
+  $(this).addClass('btn-primary');
+  $(this).children('input[type="radio"]').prop('checked', true);
+  genderveri = true;
+})
+
+
+
+// 본인 확인 이메일
+// .usermail input에 focusout 됐을 때
+// 필수사항이 아니라 선택사항 이니까 기본적으로 true;
+// 사용자가 값을 입력하지 않았을 경우 그대로 유지
+// 값을 입력 했는데 정규식에 맞지 않게 입력 => false
+// .usermail .warn '이메일을 다시 확인해주세요.'
+
+$('.usermail input').focusout(function () {
+  let mail = $(this).val();
+  // 대소문자, 숫자로 시작 가능 @ 다음에 naver.com 까지 나와야함
+  let mailExp = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
+
+  if (mail.length == 0) {
+    $('.usermail .warn').empty();
+  } else if (!mailExp.test(mail)) {
+    mailveri = false;
+    $('.usermail .warn').html('<span class="text-red">이메일 주소를 다시 확인 해주세요.</span>')
+  } else {
+    $('.usermail .warn').empty();
+  }
 })

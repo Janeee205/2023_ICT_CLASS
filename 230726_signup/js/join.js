@@ -1,86 +1,30 @@
+// input에 focusin 되면 부모 .inputbox에 border-act class add
 
+$('input').focusin(function () {
+  $(this).parent('.inputbox').addClass('border-act');
+})
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// 정규식
-let checkChar = /[^ㄱ-ㅎㅏ-ㅣ가-힣a-zA-Z0-9]/g;
-let checkEmail = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
-let checkNum = (/[^0-9]/g, '');
-let checkPwd = /^[a-zA-Z0-9]+$/
-
-
-
-
-
-$('#form2').on('submit', () => {
-  if (!checkChar.test(idVal) || idVal.length < 6) {
-    alert('아이디 다시 입력해라')
-    $('.id input').focus()
-    return false
-  }
-
-  if (!checkPwd.test(pwCheck) || pwCheck.length < 6) {
-    alert('비밀번호 다시 입력해라')
-    $('.id input').focus()
-    return false
-  }
-
-  if (!checkEmail.test(emailVal)) {
-    alert('이메일 다시 입력해라');
-    $('.email input').focus()
-    return false
-  }
+$('input').focusout(function () {
+  $(this).parent('.inputbox').removeClass('border-act')
 })
 
 
+// 필수 항목인 모든 변수에 false 값 할당 후 각 해당 조건을 충족하면 true로 변경.
+// 마지막 필수항목에 해당하는 변수가 모두 true라면 submit, 아니라면 제출되지 못하게 막는다.
+
+let idvari = pwveri = pwchkveri = namevari = birthvari = gendervari = phonevari = addveri = false;
+// 메일은 선택사항이므로 true
+let emailveri = true;
 
 
+// 아이디
+// .userid input에 focusout 됐을 때 입력된 값의 길이가 0이라면 (조건)
+// .userid .warn에 text-red class '필수 정보입니다.'
 
+// else if(!정규식.test(userID))
+// .user .warn에 text-red class
+// '5~8자의 영문 소문자, 숫자만 사용 가능합니다.
 
-let idVal = $('.id input[type="text"]').val();
-let pwCheck = $('.password input[type="password"]').val();
-let emailVal = $('.email input[type="text"]').val();
-
-
-
-
-
-$('.id input').on('focusout', function () {
-  if (idVal.length == 0) {
-    console.log("필수입력")
-  }
-
-  if (idVal.length < 5 || idVal.length > 20) {
-    console.log("5~20")
-  }
-
-  else {
-    alert('멋진 아이디네요!')
-  }
-
-
-})
-
-
+// else (위 두 조건에 해당하지 않을 때)0이 아니고 정규식에 맞게 잘 작성
+// idveri = true;
+// .userid warn에 text-green class' 멋진 아이디네요!'

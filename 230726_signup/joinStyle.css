@@ -4,166 +4,182 @@
   box-sizing: border-box;
 }
 
-html,
-body {
-  width: 100%;
-  height: 100%;
+a {
+  text-decoration: none;
+  color: #333;
 }
 
-input::-webkit-inner-spin-button {
-  appearance: none;
-  -moz-appearance: none;
-  -webkit-appearance: none;
-}
 
-button,
-input {
-  height: 60px;
-}
-
-/* header */
-header {
-  max-width: 768px;
-  width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  padding: 50px;
+.global-header {
+  display: flex;
+  justify-content: center;
+  margin: 40px 0;
 }
 
 .logo img {
   width: 240px;
 }
 
-.signup-form {
+.join-box-list {
   max-width: 468px;
   margin: 0 auto;
 }
 
-
-li {
-  list-style: none;
+.join-box-item {
   margin-bottom: 20px;
 }
 
-label p {
-  font-size: 20px;
-  font-weight: bold;
-}
-
-label input {
-  width: 100%;
-  border: 1px solid #ccc;
-  margin-top: 5px;
-  padding: 10px;
-  outline: none;
-}
-
-.inputboxact {
-  border-color: #03C75A;
-}
-
-.id input::placeholder {
-  text-align: right;
-}
-
-label input::placeholder {
-  font-size: 20px;
-  text-align: left;
-}
-
-label input[type="password"] {
-  background-image: url('images/m_icon_pw_step_01.png');
-  background-repeat: no-repeat;
-  background-position: 98% center;
-  background-size: 30px;
-}
-
-.alert p {
-  display: none;
-}
-
-.ps-check input[type="password"] {
-  background-image: url('images/m_icon_pw_step_02.png');
-}
-
-.birth {
+.inputbox {
   display: flex;
   align-items: center;
+  height: 52px;
+  margin-top: 10px;
+  padding: 10px 12px;
+  background-color: #fff;
+  border: 1px solid #dadada;
+  cursor: pointer;
+}
+
+.inputbox input {
+  width: 70%;
+  height: 100%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.inputbox div {
+  width: 30%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.inputbox p {
+  margin-right: 5px;
+}
+
+.inputbox img {
+  height: 24px;
+}
+
+.three-box {
+  display: flex;
   justify-content: space-between;
 }
 
-.birth input,
-select {
-  width: calc(97% / 3);
-  height: 60px;
+.three-box .inputbox {
+  width: calc((100% - 20px) / 3);
 }
 
-.birth select {
-  border: 1px solid #ccc;
-  height: 60px;
-  font-size: 20px;
+.inputbox select {
+  width: 100%;
+  font-size: 18px;
+  color: #777;
+  border: none;
+  outline: none;
+}
+
+.gender .inputbox {
+  display: flex;
+  justify-content: center;
 }
 
 .gender input[type="radio"] {
   display: none;
-
 }
 
-.gender input[type="radio"]+span {
+.phonenum,
+.postnum {
+  display: flex;
+  align-items: center;
+}
+
+.phonenum .inputbox,
+.postnum .inputbox {
+  width: calc(100% - 120px);
+  margin-right: 5px;
+}
+
+.phonenum button,
+.postnum button {
+  width: 115px;
+  height: 52px;
+  margin-top: 10px;
+}
+
+.disinput,
+.disinput input {
+  cursor: not-allowed;
+  background-color: #f7f7f7;
+}
+
+
+/* JS에서 인증번호 불일치시 */
+.disagree {
+  position: relative;
   display: inline-block;
-  padding: 15px calc(34% / 3);
-  height: 60px;
-  border: 1px solid #ccc;
-  background-color: #fff;
-  font-size: 16px;
-  text-align: center;
+  width: 15px;
+  height: 15px;
+  margin-left: 5px;
 }
 
-.gender input[type="radio"].radiochk+span {
-  background-color: #08a600;
+.disagree::before,
+.disagree::after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 20px;
+  height: 2px;
+  background-color: red;
+  left: 50%;
+  top: 50%;
+}
+
+.disagree::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.disagree::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+#joinbtn {
+  width: 100%;
+  height: 58px;
+  font-size: 18px;
+}
+
+.btn-primary {
+  border: none;
   color: #fff;
   font-weight: bold;
+  cursor: pointer;
+  background-color: #03c75a;
 }
 
 .text-secondary {
   color: #8e8e8e;
-  font-size: 15px;
 }
 
-.phone select {
-  width: 100%;
-  font-size: 20px;
+.text-red {
+  color: red;
 }
 
-.certi-num,
-.postalcode {
-  display: inline-block;
-  font-size: 0;
+.text-green {
+  color: #08a600;
 }
 
-.certi-num input[type="tel"],
-.postalcode input[type="number"] {
-  width: 335px;
-  margin-right: 10px;
+.border-red {
+  border-color: red;
 }
 
-.get-number,
-.find-zipcode {
-  background-color: #08a600;
-  border: none;
-  width: 120px;
-  height: 60px;
-  color: #fff;
-  font-weight: bold;
+.border-act {
+  border-color: #03c75a;
 }
 
-#submit {
-  width: 100%;
-  height: 60px;
-  background-color: #08a600;
-  font-weight: bold;
-  font-size: 20px;
-  color: #fff;
-  border: none;
-  margin-top: 20px;
+.warn {
+  margin: 15px 0;
 }
