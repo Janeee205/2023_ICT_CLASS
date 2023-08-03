@@ -25,7 +25,7 @@ $('.userid input').focusout(function () {
   let idExp = /^[a-z0-9]{5,8}$/;
 
   if (userId.length == 0) {
-    $('.userid .warn').html('<span class="text-red"> 필수 정보입니다 </span>')
+    $('.userid .warn').html('<span class="text-red"> 필수 정보입니다. </span>')
   } else if (!idExp.test(userId)) {
     $('.userid .warn').html('<span class="text-red"> 5~8자의 영문 소문자, 숫자만 사용 가능합니다. </span>')
   } else {
@@ -47,7 +47,7 @@ $('.userpw input').focusout(function () {
   let pwExp = /^[A-Za-z0-9`~!@#\$%\^&\*\(\)\{\}\[\]\-_=\+\\|;:'"<>,\./\?]{8,20}$/
 
   if (userPw.length == 0) {
-    $('.userpw .warn').html('<span class="text-red"> 필수 정보입니다 </span>')
+    $('.userpw .warn').html('<span class="text-red"> 필수 정보입니다. </span>')
     $('.userpw .inputbox span').empty();
     $('.userpw .inputbox img').attr('src', 'images/m_icon_pw_step_01.png')
   } else if (!pwExp.test(userPw)) {
@@ -82,7 +82,7 @@ $('.userpw-chk input').focusout(function () {
   let userPwChk = $(this).val();
 
   if (userPwChk.length == 0) {
-    $('.userpw-chk .warn').html('<span class="text-red">필수 정보입니다.</span>');
+    $('.userpw-chk .warn').html('<span class="text-red"> 필수 정보입니다. </span>');
     $('.userpw-chk .inputbox img').attr('src', 'images/m_icon_pw_step_02.png')
   } else if (userPwChk == $('.userpw input').val()) {
     pwchkveri = true;
@@ -97,3 +97,93 @@ $('.userpw-chk input').focusout(function () {
 
 
 // 이름
+// .username input에  focusout 됐을때 입력된 값이 0이라면(조건)
+// text-red 필수 정보입니다.
+
+// else if
+// 정규식 한글 최소 2~5글자 (조건2)
+// text-red 한글로 2~5글자 사이로 작성하세요.
+
+// else
+// .warn에 들어있는 경고메세지를 지워준다.
+// nameveri = true;
+
+
+$('.username input').focusout(function () {
+  let userName = $(this).val();
+  let nameExp = /^[가-힣]{2,5}$/;
+
+  if (userName.length == 0) {
+    $('.username .warn').html('<span class="text-red"> 필수 정보입니다. </span>');
+  } else if (!nameExp.text(userName)) {
+    $('.username .warn').html('<span class="text-red"> 한글로 2~5글자 사이로 작성하세요. </span>');
+  }
+  else {
+    $('.username .warn').empty();
+  }
+
+})
+
+
+
+// 생년월일
+// #year #month #date에 focusout 됐을 때
+// #year의 value length가 4글자 아니라면 (조건1)
+// .birth .warn에 text-red class '태어난 년도 4자리를 정확하게 입력하세요.'
+
+// #month의 length가 0이라면 (조건2)
+// .birth .warn에 text-red class '태어난 월을 선택하세요'
+
+// #date월 length가 0이라면 (조건2)
+// .birth .warn에 text-red class 태어난 일(날짜) 2자리를 정확하게 입력하세요.
+
+// 년, 월, 일 값이 숫자가 아니라면 (조건4)
+// .birth .warn text-red class '생년월일을 다시 확인해주세요.'
+
+// 올 해 기준으로 나이가 100 초과라면 (조건5)
+// .birth .warn text-red class '정말이세요?'
+
+
+$('#year, #month, #date').focusout(function () {
+  let year = $('#year').val();
+  let month = $('#month').val();
+  let date = $('#date').val();
+
+  // 한국 날짜 및 시간 (한국 표준시)
+  let now = new Date();
+  // Date 객체의 getTime() 메서드는 1970년 1월 1일 00시 00분 00초 (UTC)
+  // 세계표준시를 기준으로 경과한 밀리초를 반환한다.
+  let nowStamp = now.getTime();
+  // 현제 날짜 및 시간에서 현재 연도의 네자리 값을 변수에 할당
+  now = now.getFullYear();
+
+  // 사용자가 입력한 year, month, date값으로 Date 객체 생성
+  let birth = new Date(year, month, date);
+  birth = birth.getTime();
+
+
+
+
+  if (year.length != 4) {
+    $('.birth .warn').html('<span class="text-red"> 태어난 년도 4자리를 정확하게 입력하세요. </span>');
+  } else if (month.length == 0) {
+    $('.birth .warn').html('<span class="text-red"> 태어난 월을 선택하세요. </span>');
+
+  } else if (date.length == 0 || date > 31 || date <= 0) {
+    $('.birth .warn').html('<span class="text-red"> 태어난 일(날짜) 2자리를 정확하게 입력하세요. </span>');
+
+  } else if (isNaN(year * month * date)) {
+    // is not a number
+    $('.birth .warn').html('<span class="text-red"> 생년월일을 다시 확인해주세요 </span>');
+  } else if (now - year > 100) {
+    $('.birth .warn').html('<span class="text-red"> 정말이세요? </span>');
+    console.log(now - year > 100)
+
+  } else if (nowStamp < birth) {
+    $('.birth .warn').html('<span class="text-red"> 미래에서 오셨군요.^^ </span>');
+
+  } else {
+    $('.birth .warn').empty();
+  }
+
+})
