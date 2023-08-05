@@ -75,14 +75,14 @@ button {
 }
 
 .image-list-wrapper {
+    width: 1400px;
+    overflow-x: hidden;
     margin: 0 auto;
-
 }
 
 .top-image-list,
 .bottom-image-list {
     display: flex;
-
 }
 
 .top-image-list {
