@@ -150,17 +150,6 @@ birthList.forEach(function (item) {
 // 성별
 let genderInputs = document.querySelectorAll('.gender .inputbox')
 
-/*
-$('.gender .inputbox').on('click', function () {
-  $('.gender .inputbox ').removeClass('btn-primary');
-  // prop => jQuery에서 radio 버튼을 제어할때 사용
-  $('.gender .inputbox input[type="radio"]').prop('checked', false);
-  $(this).addClass('btn-primary');
-  $(this).children('input[type="radio"]').prop('checked', true);
-  genderveri = true;
-})
-*/
-
 genderInputs.forEach(function (input) {
 
   input.addEventListener('click', function () {
