@@ -24,14 +24,32 @@ a {
 button {
     background-color: transparent;
     border: none;
+    cursor: pointer;
 }
 
 .wrapper {
-    width: 1240;
+    width: 1240px;
+    margin: 0 auto;
     border: 1px solid salmon;
 }
 
-.nav ul {
+nav {
+    display: flex;
+    height: 92px;
+    padding-bottom: 41px;
+    justify-content: space-between;
+    border-bottom: 1px dashed #BEBDBD;
+    margin-bottom: 75px;
+
+}
+
+nav .title {
+    font-size: 35px;
+    font-weight: 700;
+    color: #293838;
+}
+
+nav ul {
     display: flex;
 }
 
@@ -45,12 +63,76 @@ button {
 }
 
 .submenu li:first-child img,
-li:last-child img {
+.submenu li:last-child img {
     width: 25px;
     height: 25px;
+}
+
+.contents-item {
+    display: flex;
+    width: 1240px;
+    height: 280px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    padding: 33px 60px 32px 48px;
+    border: 2px solid #E2E2E2;
+    align-items: center;
+}
+
+.contents-item:last-child {
+    margin-bottom: none;
 }
 
 .contents-item img {
     width: 300px;
     height: 215px;
+    border-radius: 30px;
+    object-fit: cover;
+}
+
+.contents-item div {
+    position: relative;
+    width: 767px;
+    height: 90%;
+    margin-left: 65px;
+    border: 1px solid forestgreen;
+}
+
+.contents-item:hover .detail {
+    background-color: #00BABA;
+    border: none;
+    color: #fff
+}
+
+.content-title {
+    font-size: 30px;
+}
+
+.content-desc {
+    font-size: 16px;
+    margin-top: 21px;
+}
+
+.detail {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 200px;
+    height: 50px;
+    margin-top: 21px;
+    border: 1px solid #333;
+    border-radius: 10px;
+    transition: background-color 300ms ease-in-out;
+}
+
+
+
+.detail span {
+    display: block;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.detail i {
+    margin-left: 100px;
 }

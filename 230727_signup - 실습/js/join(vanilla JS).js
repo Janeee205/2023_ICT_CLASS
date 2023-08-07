@@ -186,6 +186,7 @@ document.querySelector('.usermail input').addEventListener('focusout', function 
 
 // 휴대전화
 let numWarn = document.querySelector('.phone .warn');
+let veriText = document.getElementById('veritext');
 
 document.querySelector('.phonenum input').addEventListener('focusout', function () {
   let phoneNum = this.value;
@@ -225,5 +226,18 @@ document.getElementById('veribtn').addEventListener('click', function () {
     numWarn.innerHTML = '<span class="text-red"> 형식에 맞지않는 번호입니다. </span>';
     veriText.parentNode.classList.add('disinput');
     veriText.disabled = true;
+  }
+})
+
+veriText.addEventListener('focusout', function () {
+  if (this.value == '1234') {
+    phoneveri = true;
+    numWarn.innerHTML = '<span class="text-green">인증 되었습니다.</span>';
+    this.nextElementSibling.innerHTML = '';
+    this.parentNode.classList.remove('border-red');
+  } else {
+    numWarn.innerHTML = '<span class="text-red">인증번호를 다시 확인해주세요.</span>';
+    this.nextElementSibling.innerHTML = '<span class="text-red">불일치</span><span class= "disagree"></span>';
+    this.parentNode.classList.add('border-red');
   }
 })
