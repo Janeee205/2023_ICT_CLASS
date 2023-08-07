@@ -159,6 +159,71 @@ genderInputs.forEach(function (input) {
 
     this.classList.add('btn-primary')
     this.querySelector('input[type="radio"]').checked = true;
+    genderveri = true;
   })
+})
 
+
+// 본인 확인 이메일
+document.querySelector('.usermail input').addEventListener('focusout', function () {
+  let usermail = this.value;
+  let mailExp = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
+  let mailWarn = document.querySelector('.usermail .warn')
+
+  if (usermail == 0) {
+    mailWarn.innerHTML = '';
+  }
+
+  else if (!mailExp.test(usermail)) {
+    mailWarn.innerHTML = '<span class="text-red">이메일 주소를 다시 확인 해주세요.</span>';
+  }
+
+  else {
+    mailWarn.innerHTML = '';
+  }
+})
+
+
+// 휴대전화
+let numWarn = document.querySelector('.phone .warn');
+
+document.querySelector('.phonenum input').addEventListener('focusout', function () {
+  let phoneNum = this.value;
+
+  if (phoneNum.length == 0) {
+    numWarn.innerHTML = essenInfo;
+  } else {
+    numWarn.innerHTML = '';
+  }
+})
+
+document.getElementById('veribtn').addEventListener('click', function () {
+  let phoneNum = document.querySelector('.phonenum input').value;
+  phoneNum = phoneNum.replace(/[^0-9]/g, '');
+  document.querySelector('.phonenum input').value = phoneNum;
+  let veriText = document.getElementById('veritext');
+
+  let phoneLeng;
+  if (phoneNum.length < 10 || phoneNum.length > 11) {
+    phoneLeng = false;
+  } else {
+    phoneLeng = true;
+  }
+
+  let phoneNaN;
+  if (isNaN(phoneNum)) {
+    phoneNaN = false;
+  } else {
+    phoneNaN = true;
+  }
+
+  if (phoneLeng && phoneNaN) {
+    numWarn.innerHTML = '<span class="text-green">인증번호를 발송했습니다.(유효시간 30분) 인증번호가 오지 않으면 입력하신 정보가 정확한지 확인하여 주세요. 이미 가입된 번호이거나, 가상전화번호는 인증번호를 받을 수 없습니다.</span>'
+    veriText.parentNode.classList.remove('disinput');
+    veriText.disabled = false;
+  } else {
+    numWarn.innerHTML = '<span class="text-red"> 형식에 맞지않는 번호입니다. </span>';
+    veriText.parentNode.classList.add('disinput');
+    veriText.disabled = true;
+  }
 })
