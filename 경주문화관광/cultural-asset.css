@@ -30,7 +30,7 @@ button {
 .wrapper {
     width: 1240px;
     margin: 0 auto;
-    border: 1px solid salmon;
+    /* border: 1px solid salmon; */
 }
 
 nav {
@@ -95,7 +95,7 @@ nav ul {
     width: 767px;
     height: 90%;
     margin-left: 65px;
-    border: 1px solid forestgreen;
+    /* border: 1px solid forestgreen; */
 }
 
 .contents-item:hover .detail {
