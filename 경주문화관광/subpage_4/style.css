@@ -33,8 +33,144 @@ button {
     /* border: 1px solid salmon; */
 }
 
+/* 상단 gnb메뉴 */
+.gnb-nav {
+    width: 100%;
+    height: 60px;
+    background-color: #fff;
+    position: relative;
+}
 
+.gnb-nav::before {
+    position: absolute;
+    content: '';
+    display: block;
+    width: 30%;
+    height: 100%;
+    background-color: #cacaca;
+}
 
+.gnb-nav-section {
+    width: 1240px;
+    height: 100%;
+    display: flex;
+    margin: 0 auto;
+}
+
+.gnb-nav-section ul {
+    display: flex;
+    align-items: center;
+}
+
+.gnb-list {
+    width: 200px;
+    height: 60px;
+    background-color: #00baba;
+    position: relative;
+}
+
+.gnb-list>a {
+    position: relative;
+    display: inline-block;
+    width: 200px;
+    padding: 20px;
+    color: #fff;
+    font-weight: 500;
+}
+
+.gnb-list>a::after {
+    position: absolute;
+    content: "";
+    display: inline-block;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-30%);
+    width: 0;
+    height: 0;
+    border: 5px solid transparent;
+    border-top-color: #fff;
+}
+
+.gnb-list:last-child {
+    background-color: #fff;
+}
+
+.gnb-list:last-child>a {
+    color: #333;
+}
+
+.gnb-list:last-child a::after {
+    border-top-color: #333;
+}
+
+.gnb-list ul {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    flex-direction: column;
+    background-color: #00baba;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    z-index: 20;
+}
+
+.gnb-list ul.active {
+    display: block;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: #00baba;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    z-index: 20;
+}
+
+.gnb-list:last-child ul {
+    background-color: #fff;
+}
+
+.gnb-list:last-child ul a {
+    color: #333;
+}
+
+.gnb-list ul li {
+    width: 200px;
+    height: 60px;
+}
+
+.gnb-list ul li:hover {
+    background-color: #fff;
+}
+
+.gnb-list ul li:hover a {
+    color: #00baba;
+}
+
+.gnb-list ul li a {
+    display: block;
+    width: 200px;
+    padding: 20px;
+    color: #fff;
+}
+
+.home-section {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    background-color: #cacaca;
+}
+
+.home-btn img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 40px;
+}
+
+/* main nav */
 .main-nav {
     width: 100%;
     display: flex;
@@ -106,9 +242,7 @@ button {
     cursor: pointer;
 }
 
-
-
-
+/* main contents */
 .contents-item {
     display: flex;
     width: 1240px;
@@ -116,10 +250,13 @@ button {
     border-radius: 20px;
     margin-bottom: 20px;
     padding-left: 48px;
-    /* padding: 33px 60px 32px 48px; */
     border: 2px solid #E2E2E2;
     align-items: center;
     transition: border 300ms ease-in-out;
+}
+
+.contents-list a:last-of-type .contents-item {
+    margin-bottom: 0;
 }
 
 .contents-item:hover {
@@ -143,7 +280,6 @@ button {
     height: 75%;
     margin-top: 10px;
     margin-left: 65px;
-    /* border: 1px solid forestgreen; */
 }
 
 .contents-item:hover .detail {
@@ -171,7 +307,6 @@ button {
     -webkit-box-orient: vertical;
     text-overflow: ellipsis;
     white-space: normal;
-
 }
 
 .detail {
@@ -196,20 +331,64 @@ button {
     margin-left: 100px;
 }
 
+/* 하단 page button */
+.page-btns ul {
+    display: flex;
+    margin: 42px 0;
+    width: 100%;
+    justify-content: center;
+}
 
+.page-btns a {
+    color: #7E7E7E;
+    font-weight: bold;
+}
 
-/* footer */
+.page-btns span {
+    position: relative;
+    color: #fff
+}
 
+.page-btns span::after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: -14%;
+    left: -110%;
+    border-radius: 50%;
+    background-color: #00BABA;
+    z-index: -1;
+}
 
+.page-btns .second-page {
+    color: #7E7E7E;
+}
+
+.page-btns .second-page::after {
+    width: 28px;
+    height: 28px;
+    margin-left: -1px;
+    border: 1.5px solid #7E7E7E;
+    background-color: transparent;
+}
+
+.page-angle {
+    margin: 0 24px;
+}
+
+.second-page {
+    margin-left: 34px;
+}
+
+/* footer 전체 */
 footer {
     width: 100%;
     height: 215px;
     margin: 0 auto;
 }
 
-
 /* slide banner */
-
 .banners {
     background-color: #F0F0F0;
     border-top: 1px solid #888888;
@@ -268,9 +447,7 @@ footer {
     border-right: 1px solid #ddd;
 }
 
-
 /* footer */
-
 .footer-contents {
     width: 100%;
     height: 165px;

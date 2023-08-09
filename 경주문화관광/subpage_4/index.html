@@ -21,11 +21,42 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+
+    <!-- JQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+        integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <div class="wrapper">
+        <!-- gnb-nav -->
+        <div class="gnb-nav">
+            <div class="gnb-nav-section">
+                <div class="home-section">
+                    <!-- 이미지파일 경로와 이름 확인하고 삽입해주세요 -->
+                    <h2 class="home-btn"><a href=""><img src="images/home-white.png" alt="홈버튼"></a></h2>
+                </div>
+                <ul>
+                    <li class="gnb-list"><a href="">문화행사</a>
+                        <ul>
+                            <li><a href="">경주여행</a></li>
+                            <li><a href="">문화행사</a></li>
+                            <li><a href="">문화재/역사</a></li>
+                            <li><a href="">음식/숙박/쇼핑</a></li>
+                            <li><a href="">여행도우미</a></li>
+                        </ul>
+                    </li>
+                    <li class="gnb-list"><a href="">정기축제 행사안내</a>
+                        <ul>
+                            <li><a href="">이달의 축제 및 행사</a></li>
+                            <li><a href="">정기축제 행사안내</a></li>
+                            <li><a href="">공연전시 정보</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
 
         <div class="main-nav">
             <p>불국사ㆍ석굴암</p>
@@ -145,14 +176,18 @@
 
             </ul>
 
-
-
-
-
+            <div class="page-btns">
+                <ul>
+                    <li><a href=""><i class="fa-solid fa-angles-left"></i></a></li>
+                    <li><a href=""> <i class="fa-solid fa-angle-left page-angle"></i></a></li>
+                    <li><a href=""><span class="first-page">1</span></a></li>
+                    <li><a href=""><span class="second-page">2</span></a></li>
+                    <li><a href=""><i class="fa-solid fa-angle-right page-angle"></i></a></li>
+                    <li><a href=""><i class="fa-solid fa-angles-right"></i></a></li>
+                </ul>
+            </div>
 
         </main>
-
-
     </div>
     <!-- footer -->
     <footer>
@@ -235,6 +270,7 @@
 
     </footer>
     <!-- footer 끝 -->
+    <script src="js/script.js"></script>
 </body>
 
 </html>
