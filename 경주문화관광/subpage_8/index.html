@@ -9,15 +9,10 @@
     <meta name="Keywords" content="경주문화관광, 경주여행, 문화재·역사, 음식, 숙박, 쇼핑, 문화행사, 신청하기, 여행필수정보, 나의여행">
     <meta name="description" content="한국관광의 메카 Beautiful Gyeongju가 여러분을 초대합니다.">
     <meta name="author" content="경주문화관광">
-    <title>불국사·석굴암 | 세계문화유산 | 국가유산·역사 | 경주문화관광 </title>
+    <title>회원가입</title>
     <!-- font Awesome -->
     <script src="https://kit.fontawesome.com/9b527152d1.js" crossorigin="anonymous"></script>
     <!------ Google Font ------>
-    <!-- content title font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
@@ -42,23 +37,161 @@
             </div>
         </div>
 
-        <div class="main-nav">
-            <p></p>
-            <ul>
-                <li class="arrow"><a href=""><img src="./images/home-black.png" alt="홈아이콘"></a></li>
-                <li class="arrow">문화재/역사</li>
-                <li class="arrow">세계문화유산</li>
-                <li class="line">불국사ㆍ석굴암</li>
-                <li class="icon"><img src="./images/ilnk.png" alt="링크아이콘"></li>
-                <li class="icon"><img src="./images/copy.png" alt="복사아이콘"></li>
-                <li class="icon"><img src="./images/print.png" alt="인쇄아이콘"></li>
-            </ul>
-        </div>
-
         <main>
+            <section class="title">
+                <p class="title1">회원가입</p>
+                <p class="title2">회원가입에 필요한 정보를 입력해주세요.</p>
+            </section>
+
+
+            <section class="table-section">
+                <form action="" id="signup-form">
+                    <table>
+                        <!-- 아이디 -->
+                        <!-- input에 타이틀 -->
+                        <tr>
+                            <th>
+                                <label for="id">
+                                    <span class="marking">*</span>회원아이디</label>
+                            </th>
+                            <td class="inputbox userid">
+                                <input type="text" name="userid" id="id">
+                                <button type="button" class="btn-primary">중복확인</button>
+                                <span class="warn">한글, 특수문자를 제외한 4~20자까지의 영문과 숫자로 입력해주세요.</span>
+                            </td>
+                        </tr>
+
+                        <!-- 비번 -->
+                        <tr>
+                            <th>
+                                <label for="pw">
+                                    <span class="marking">*</span>비밀번호</label>
+                            </th>
+                            <td class="inputbox userpw">
+                                <input type="password" name="pw" id="pw">
+                                <span class="warn">비밀번호는 4~12자 사이의 영문과 숫자 조합 형태로 입력해 주세요.</span>
+                            </td>
+                        </tr>
+
+                        <!-- 비번확인 -->
+                        <tr>
+                            <th>
+                                <label for="pw-chk">
+                                    <span class="marking">*</span>비밀번호확인</label>
+                            </th>
+                            <td class="inputbox userpw-chk">
+                                <input type="password" name="pw-chk" id="pw-chk">
+                            </td>
+                        </tr>
+
+                        <!-- 이름 -->
+                        <tr>
+                            <th>
+                                <label for="name">
+                                    <span class="marking">*</span>이름</label>
+                            </th>
+                            <td class="inputbox username">
+                                <input type="text" name="name" id="name">
+                            </td>
+                        </tr>
+
+                        <!-- 이메일 -->
+                        <tr>
+                            <th>
+                                <label for="mail">
+                                    <span class="marking">*</span>이메일</label>
+                            </th>
+                            <td class="inputbox usermail">
+                                <input type="text" name="mail" id="mail">
+                                <span class="at">@</span>
+                                <select name="select-mail" class="select-mail" title="이메일 주소 선택">
+                                    <option value="">선택하세요</option>
+                                    <option value="naver.com">naver.com</option>
+                                    <option value="daum.net">daum.net</option>
+                                    <option value="hanmail.net">hanmail.net</option>
+                                    <option value="hotmail.com">hotmail.com</option>
+                                    <option value="gmail.com">gmail.com</option>
+                                </select>
+                            </td>
+                        </tr>
+
+                        <!-- 성별 -->
+                        <tr>
+                            <th>
+                                <label for="gender">성별</label>
+                            </th>
+                            <td class="inputbox gender">
+                                <input type="radio" name="gender" value="0" id="male" checked><span>남성</span>
+                                <input type="radio" name="gender" value="1" id="female"><span>여성</span>
+                            </td>
+                        </tr>
+
+                        <!-- 연락처 -->
+                        <tr>
+                            <th>
+                                <label for="phonenum1">
+                                    <span class="marking">*</span>연락처</label>
+                            </th>
+                            <td class="inputbox phonenum">
+                                <select name="phonenum1" id="phonenum1">
+                                    <option value="010">010</option>
+                                    <option value="011">011</option>
+                                    <option value="016">016</option>
+                                    <option value="017">017</option>
+                                    <option value="018">018</option>
+                                    <option value="019">019</option>
+                                </select>
+                                <span class="hyphen">-</span>
+                                <input type="text" name="phonenum2" maxlength="4">
+                                <span class="hyphen">-</span>
+                                <input type="text" name="phonenum3" maxlength="4">
+                                <span class="warn">해당 연락처는 아이디 비밀번호 찾기시 이용합니다.</span>
+                            </td>
+                        </tr>
+
+                        <!-- 주소 -->
+                        <tr>
+                            <th>
+                                <label for="addr">이름</label>
+                            </th>
+                            <td>
+                                <div class=" inputbox address">
+                                    <input id="sample6_postcode" type="text">
+                                    <button onclick="-sample6_execDaumPostcode()" type="button" class="btn-primary">우편번호
+                                        찾기</button>
+                                    <div class=" inputbox addr-detail">
+                                        <input id="sample6_address" type="text">
+                                        <input id="sample6_detailAddress" type="text">
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <!-- 버튼 -->
+                    <section class="buttons">
+                        <button type="button" id="submit">약관동의</button>
+                        <button type="button" id="main">메인으로</button>
+                    </section>
+
+
+                </form>
+            </section>
+
+
+
+
+
 
         </main>
     </div>
+
+
+
+
+
+
+
     <!-- footer -->
     <footer>
 
