@@ -68,6 +68,10 @@ button {
     position: relative;
 }
 
+.gnb-list:nth-child(2) {
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
+}
+
 .gnb-list>a {
     position: relative;
     display: inline-block;
