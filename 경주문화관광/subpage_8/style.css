@@ -175,7 +175,6 @@ button {
     width: 20px;
     height: 20px;
     opacity: 0.6;
-
 }
 
 .arrow,
@@ -244,15 +243,19 @@ button {
 
 table {
     width: 1240px;
-    margin-top: 41px;
-    /* border: 1px solid saddlebrown; */
+    border-top: 2px solid #444;
+    border-collapse: collapse;
 }
 
 th {
     width: 249px;
     height: 80px;
     background-color: #F5F5F5;
-    border-right: #EAECF1;
+    border-right: 1px solid #EAECF1;
+}
+
+tr {
+    border-bottom: 1px solid #EAECF1;
 }
 
 tr:last-child th {
@@ -306,10 +309,20 @@ button {
     margin: 0 3px;
 }
 
+select {
+    font-size: 14px;
+}
+
+.gender label {
+    cursor: pointer;
+    font-weight: lighter;
+}
+
 input[type="radio"] {
     width: 16px;
     height: 16px;
     margin-right: 3px;
+    padding: 0;
 }
 
 input[type="radio"]:last-of-type {
@@ -327,14 +340,19 @@ input[type="radio"]:last-of-type {
 
 .address input[type="text"] {
     margin-bottom: 8px;
+    padding-left: 5px;
 }
 
 .addr-detail input[type="text"] {
     width: 100%;
 }
 
-.addr-detail input[type="text"]:last-of-type {
+#sample6_detailAddress {
     margin-bottom: 0;
+}
+
+#sample6_extraAddress {
+    display: none;
 }
 
 /* 버튼 css */
