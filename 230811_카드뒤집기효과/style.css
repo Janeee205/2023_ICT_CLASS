@@ -1,7 +1,171 @@
+html,
 body {
+  width: 100%;
+  height: 100%;
   color: #fff;
+  background-color: #000;
 }
 
 .wrapper {
-  background-color: #000;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  /* border: 1px solid red; */
+}
+
+
+.card-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 300px;
+  /* border: 1px solid white; */
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.card {
+  transform: perspective(1000px) rotateY(0deg);
+  transform-style: preserve-3d;
+}
+
+.card * {
+  backface-visibility: hidden;
+
+}
+
+.card:hover {
+  transform: perspective(1000px) rotateY(180deg);
+}
+
+
+.card-inner {
+  position: relative;
+  background-image: linear-gradient(45deg, #0045c7, #ff2c7d);
+  height: 300px;
+}
+
+
+.map-img {
+  width: 500px;
+  height: 300px;
+  opacity: .3;
+}
+
+.row {
+  position: absolute;
+  display: flex;
+  left: 50%;
+  transform: translateX(-50%);
+  align-items: center;
+}
+
+.front {
+  display: none;
+}
+
+.front .row {
+  width: 400px;
+  justify-content: space-between;
+  z-index: 200;
+}
+
+.front row {
+  justify-content: space-between;
+}
+
+.front .row:first-of-type {
+  top: 0;
+  margin-top: 20px;
+  align-items: center;
+}
+
+.front .row img:first-child {
+  width: 60px;
+  height: 60px;
+  z-index: 100;
+}
+
+.front .row img:last-child {
+  width: 80px;
+  height: 30px;
+  z-index: 100;
+}
+
+.card-num {
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-size: 30px;
+}
+
+.card-holder {
+  position: absolute;
+  bottom: 15%;
+  font-size: 10px;
+}
+
+.card-name {
+  bottom: 0;
+  font-size: 18px;
+}
+
+
+
+/* back */
+
+.back {
+  /* display: none; */
+  align-items: center;
+  transform: rotateY(180deg);
+}
+
+.back .row {
+  width: 450px;
+}
+
+.bar {
+  position: absolute;
+  top: 10%;
+  width: 100%;
+  height: 60px;
+  background-color: #111;
+}
+
+.card-cvv {
+  top: 30%;
+}
+
+.card-cvv img {
+  width: 90%;
+}
+
+.card-cvv p {
+  height: 50px;
+  width: 50px;
+  color: #000;
+  font-weight: bold;
+  font-size: 18px;
+  background-color: #fff;
+}
+
+.card-text {
+  position: absolute;
+  bottom: 20%;
+  text-align: 10px;
+  padding: 0 20px;
+  font-size: 14px;
+}
+
+.card-sig {
+  position: absolute;
+  bottom: 5%;
+  justify-content: space-between;
+}
+
+.card-sig img {
+  width: 80px;
+  height: 30px;
 }
