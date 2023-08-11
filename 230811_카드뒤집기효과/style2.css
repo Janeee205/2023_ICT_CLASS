@@ -42,7 +42,7 @@
 }
 
 .back {
-  transform: rotateY(180deg);
+  /* transform: rotateY(180deg); */
 }
 
 .row {
@@ -83,6 +83,36 @@
   margin-top: 10px;
 }
 
+/* 뒷면 */
+.bar {
+  height: 60px;
+  background-color: #222;
+  margin: 0 -30px;
+}
+
+.card-cvv {
+  margin-top: 20px;
+}
+
 .card-cvv img {
-  width: 100px;
+  height: 50px;
+  /* container 안에 공간이 남는경우 flex-grow속성으로 남는 공간을 차지하게 한다. */
+  /* flow-grow 디폴트 값 = 0, 음수 설정 불가 */
+  flex-grow: 1;
+}
+
+.card-cvv p {
+  background-color: #fff;
+  padding: 10px;
+  color: #000;
+  font-size: 22px;
+}
+
+.card-text {
+  font-size: 14px;
+}
+
+.card-text,
+.card-sig {
+  margin-top: 30px;
 }
