@@ -28,7 +28,7 @@ button {
 }
 
 .wrapper {
-    width: 1240px;
+    width: 1920px;
     margin: 0 auto;
     /* border: 1px solid salmon; */
 }
@@ -217,6 +217,12 @@ button {
 }
 
 /* main */
+
+main {
+    width: 1240px;
+    margin: 0 auto;
+}
+
 .title {
     text-align: center;
     padding: 45px 0;
