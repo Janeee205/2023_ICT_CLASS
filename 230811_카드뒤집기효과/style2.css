@@ -18,12 +18,20 @@
   width: 500px;
   height: 300px;
   cursor: pointer;
+  /* 원근법 : perspective / 숫자가 커질수록 멀리서 보는 느낌 */
+  perspective: 1000px;
 }
 
 .card-inner {
   position: relative;
   width: 100%;
   height: 100%;
+  transition: transform 1000ms;
+  transform-style: preserve-3d;
+}
+
+.card:hover .card-inner {
+  transform: rotateY(-180deg);
 }
 
 .front,
@@ -37,12 +45,12 @@
   padding: 20px 30px;
   background-image: linear-gradient(45deg, #0045c7, #ff2c7d);
   border-radius: 15px;
-  /* 뒤집어진 뒷면을 보여줄지 결정 */
+  /* 뒤집어진 뒷면을 보여줄지말지 결정 */
   backface-visibility: hidden;
 }
 
 .back {
-  /* transform: rotateY(180deg); */
+  transform: rotateY(180deg);
 }
 
 .row {
