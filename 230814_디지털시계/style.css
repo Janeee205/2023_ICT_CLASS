@@ -1,0 +1,212 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+li {
+  list-style: none;
+}
+
+@font-face {
+  font-family: Orbitron;
+  src: url('./fonts/Orbitron-Regular.eot');
+  src: url('./fonts/Orbitron-Regular.woff') format('woff');
+}
+
+body {
+  font-family: Orbitron, sans-serif;
+}
+
+.wrapper {
+  background-image: url(images/bg_morning.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100vh;
+  padding: 20px 50px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.wrapper.morning {
+  background-image: url(images/bg_morning.jpg);
+}
+
+.wrapper.afternoon {
+  background-image: url(images/bg_afternoon.jpg);
+}
+
+.wrapper.evening {
+  background-image: url(images/bg_evening.jpg);
+}
+
+.wrapper.night {
+  background-image: url(images/bg_night.jpg);
+}
+
+
+h1 img {
+  width: 70px;
+  height: 70px;
+}
+
+nav {
+  display: flex;
+  width: 100%;
+  height: 100px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.menu-list {
+  display: flex;
+  margin-right: 100px;
+}
+
+.menu-list li {
+  margin-right: 30px;
+}
+
+.menu-list li:last-of-type {
+  margin-right: 0;
+}
+
+.menu-list li a {
+  font-size: 13px;
+}
+
+.contents {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: space-between;
+  /* border: 1px solid navy; */
+}
+
+.left-contents {
+  width: 50%;
+  height: 100%;
+  position: relative;
+  /* border: 1px solid brown; */
+}
+
+.text {
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  align-items: center;
+  justify-content: center;
+  /* border: 1px solid navy; */
+}
+
+.title span {
+  font-size: 40px;
+}
+
+.title span:first-of-type {
+  color: #222;
+  font-weight: bolder;
+  margin-right: 10px;
+}
+
+.title span:last-of-type {
+  color: #444;
+  font-weight: 500;
+}
+
+.text p {
+  color: #444;
+  font-size: 13px;
+  margin-top: 3px;
+}
+
+/* .right-contents img {
+  position: absolute;
+  top: 10px;
+  right: -250px;
+  height: 600px;
+} */
+
+.right-contents {
+  position: absolute;
+  right: -50px;
+  width: 60%;
+  height: 600px;
+  background-image: url('images/phone_morning.png');
+  /* border: 1px solid red; */
+}
+
+.right-contents.morning {
+  background-image: url('images/phone_morning.png');
+}
+
+.right-contents.afternoon {
+  background-image: url('images/phone_afternoon.png');
+}
+
+.right-contents.evening {
+  background-image: url('images/phone_evening.png');
+}
+
+.right-contents.night {
+  background-image: url('images/phone_night.png');
+}
+
+.clock {
+  position: absolute;
+  top: 30%;
+  left: 20%;
+  transform: translate((-50%, -50%));
+  font-size: 70px;
+  font-weight: bord;
+}
+
+.colon {
+  margin: 0 15px;
+}
+
+.buttons ul {
+  position: absolute;
+  display: flex;
+  left: 50%;
+  bottom: 5%;
+  width: 80%;
+  transform: translate(-50%, -50%);
+}
+
+.buttons ul li {
+  width: calc(100% / 4);
+  height: 30px;
+  margin-right: 10px;
+  line-height: 30px;
+  text-align: center;
+  letter-spacing: 1px;
+  font-size: 13px;
+  color: #000;
+  background-color: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+}
+
+.buttons ul li:last-of-type {
+  margin-right: 0;
+}
+
+
+/* 버튼누를시 */
+.buttons .active {
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.3);
+}
