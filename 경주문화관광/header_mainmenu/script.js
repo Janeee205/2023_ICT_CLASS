@@ -7,10 +7,12 @@ $('.mainmenu-item').hover(function () {
     $('.global-header').css('transition', 'none');
     $('.top-menu').css('color', '#000');
     $('.top-menu a').css('color', '#000');
-    $('.mainmenu-item a').css('color', '#000');
+    $('.mainmenu-item>a').css('color', '#000');
     $('.mainmenu h1 span').css('color', '#000');
     $('.mainmenu h1 span').css('color', '#000');
     $(".mainmenu h1 img").attr("src", "images/logo.png");
+    $(".menu-buttons a, i").css('color', '#000');
+    $(".menu-buttons img").attr("src", "images/home-black2.png");
     $(".top-right-menu img").attr("src", "images/topIcon.png");
 
 }, function () {
@@ -19,9 +21,12 @@ $('.mainmenu-item').hover(function () {
     $('.global-header').css('transition', '1000ms', 'ease-in-out');
     $('.top-menu').css('color', '#fff');
     $('.top-menu a').css('color', '#fff');
-    $('.mainmenu-item a').css('color', '#fff');
+    $('.mainmenu-item>a').css('color', '#fff');
     $('.mainmenu h1 span').css('color', '#fff');
     $(".mainmenu h1 img").attr("src", "images/white-logo.png");
+    $(".menu-buttons a, i").css('color', '#fff');
+    $(".menu-buttons img").css('color', '#fff');
+    $(".menu-buttons img").attr("src", "images/home-white.png");
     $(".top-right-menu img").attr("src", "images/topIcon_white.png");
 });
 
