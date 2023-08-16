@@ -46,14 +46,8 @@ header {
     margin: 0 auto;
     width: 1920px;
     overflow: hidden;
+    background-color: transparent;
 }
-
-/* 
-.header-wrapper {
-    width: 1920px;
-    height: 1080px;
-    overflow: hidden;
-} */
 
 .top-menu {
     display: flex;
@@ -206,8 +200,6 @@ header {
     display: flex;
     width: 1920px;
     height: 500px;
-    background-color: #fff;
-    /* border: 1px solid red; */
     overflow: hidden;
 }
 
@@ -257,32 +249,24 @@ header {
 }
 
 
+
 /*********** img slide ***********/
 
-.slide-wrapper {
-    width: 1920px;
-    height: 1080px;
-    overflow-x: hidden;
-}
-
-.background-list {
+.slider {
     position: absolute;
-    top: 0px;
+    top: -197px;
     display: flex;
-    width: 400vw;
-    height: 100%;
     z-index: -1;
     overflow-x: hidden;
+    width: 1920px;
+    height: 1080px;
+    overflow: hidden;
+
 }
 
-.background-list li {
-    width: 100vw;
-    height: 100%;
-}
-
-.background-list li img {
-    width: 100%;
-    height: 100%;
+.slider img {
+    width: 1920px;
+    height: 1080px;
     object-fit: cover;
 }
 
