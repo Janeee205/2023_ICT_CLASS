@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -31,35 +31,37 @@
 <body>
     <div class="wrapper">
         <header>
-            <!-- 최상단 topmenu -->
-            <nav class="header-wrapper">
-                <!-- 1920*1080 -->
+            <nav class="global-header">
+                <!-- 최상단 메뉴 -->
                 <div class="top-menu">
-                    <div class="top-left">
-                        <span><a href="https://www.gyeongju.go.kr/open_content/ko/index.do"
-                                target="_blank">경주시청</a></span>
-                        <span><a href="https://www.gyeongju.go.kr/gyeongjuimage/index.do"
-                                target="_blank">미디어자료관</a></span>
-                    </div>
-                    <div class="top-right">
-                        <ul>
-                            <li>08.13(일)</li>
-                            <li>36.5°C</li>
-                            <li>미세먼지 좋음</li>
-                            <li><a href="">전체누리집 바로가기
-                                    <img src="images/topIcon.png" alt="전체누리집 바로가기 아이콘"></a></li>
-                        </ul>
-                    </div>
+                    <ul class="top-left-menu">
+                        <li><a href="https://www.gyeongju.go.kr/open_content/ko/index.do" target="_blank">경주시청</a></li>
+                        <li><a href="https://www.gyeongju.go.kr/gyeongjuimage/index.do" target="_blank">미디어자료관</a></li>
+                    </ul>
+
+                    <ul class="top-right-menu">
+                        <li>
+                            <span class="month"></span>.
+                            <span class="date"></span>
+                            (<span class="week"></span>)
+                            <!-- 08.13(일) -->
+                        </li>
+                        <li>36.5°C</li>
+                        <li>미세먼지 좋음</li>
+                        <li><a href="">전체누리집 바로가기
+                                <img src="images/topIcon_white.png" alt="전체누리집 바로가기 아이콘"></a></li>
+                    </ul>
                 </div>
 
-                <!-- height : 108px -->
                 <div class="mainmenu">
-                    <h1><a href="#"><img src="images/white-logo.png" alt="사이트 로고">
+                    <!-- 3개 [로고/메인메뉴/버튼리스트] -->
+                    <h1>
+                        <a href="#"><img src="images/white-logo.png" alt="사이트 로고">
                             <span>경주문화관광</span></a>
                     </h1>
 
                     <ul class="mainmenu-list">
-                        <li><a href="">경주여행</a>
+                        <li class="mainmenu-item"><a href="">경주여행</a>
                             <div class="submenu-list">
                                 <!-- 경주여행 -->
                                 <div class="submenu-left-img"></div>
@@ -74,7 +76,7 @@
                                 </div>
                             </div>
                         </li>
-                        <li><a href="">문화행사</a>
+                        <li class="mainmenu-item"><a href="">문화행사</a>
                             <div class="submenu-list">
                                 <!-- 문화행사 -->
                                 <div class="submenu-left-img"></div>
@@ -90,7 +92,7 @@
                             </div>
                         </li>
 
-                        <li><a href="">문화재/역사</a>
+                        <li class="mainmenu-item"><a href="">문화재/역사</a>
                             <div class="submenu-list">
                                 <!-- 문화재/역사 -->
                                 <div class="submenu-left-img"></div>
@@ -104,7 +106,7 @@
                             </div>
                         </li>
 
-                        <li><a href="">음식/숙박/쇼핑</a>
+                        <li class="mainmenu-item"><a href="">음식/숙박/쇼핑</a>
                             <div class="submenu-list">
                                 <!-- 음식/숙박/쇼핑 -->
                                 <div class="submenu-left-img"></div>
@@ -118,7 +120,7 @@
                             </div>
                         </li>
 
-                        <li><a href="">여행도우미</a>
+                        <li class="mainmenu-item"><a href="">여행도우미</a>
                             <div class="submenu-list">
                                 <!-- 여행도우미 -->
                                 <div class="submenu-left-img"></div>
@@ -143,23 +145,26 @@
                                     <i class="fa-solid fa-bars hamberger"></i></a></li>
                         </ul>
                     </div>
+
                 </div>
             </nav>
-            <!-- 배경화면 -->
-            <!-- FADEOUT -->
-            <!-- 이미지 새로 받기 -->
-            <!-- 배경 약간회색 -->
-            <!-- 이미지사이즈 조절 -->
 
             <div class="slider">
-                <img src="images/메인배경화면/월정교.jpg" alt="">
-                <img src="images/메인배경화면/문무대왕릉2.gif" alt="">
-                <img src="images/메인배경화면/감은사지.gif" alt="">
+                <div class="img-item"><img src="images/메인배경화면/월정교.jpg" alt=""></div>
+                <div class="img-item"><img src="images/메인배경화면/문무대왕릉 봉길해변.jpg" alt=""></div>
+                <div class="img-item"><img src="images/메인배경화면/slide10.gif" alt=""></div>
+                <div class="img-item"><img src="images/메인배경화면/slide11.gif" alt=""></div>
+                <div class="img-item"><img src="images/메인배경화면/slide12.gif" alt=""></div>
+                <div class="img-item"><img src="images/메인배경화면/slide13.gif" alt=""></div>
+                <div class="img-item"><img src="images/메인배경화면/slide14.gif" alt=""></div>
             </div>
-
-
-
         </header>
+        <!-- <div class="slider">
+        <img src="images/메인배경화면/월정교.jpg" alt="">
+        <img src="images/메인배경화면/slide12.gif" alt="">
+        <img src="images/메인배경화면/문무대왕릉2.gif" alt="">
+        <img src="images/메인배경화면/감은사지.gif" alt="">
+    </div> -->
 
         <main>
 
@@ -217,17 +222,17 @@
                                     src="images/축제사진/아트&마켓1918.jpg" alt="아트&마켓1918 포스터"></a></li>
 
                         <!-- <li><a
-                                href="https://www.gyeongju.go.kr/tour/page.do?sortKwd=&srchKwd=&listType=day&mnu_uid=2393&con_uid=7175&cmd=2"><img
-                                    src="images/축제사진/봉황대.jpg" alt="봉황대 포스터"></a></li>
-                        <li><a
-                                href="https://garts.kr/index.do?menuId=00000121&menuLink=/user/sched/detl.do&schedId=SCHED_0000015243&schedCateCd="><img
-                                    src="images/축제사진/토우의어린이음악회.jpg" alt="토우의어린이음악회 포스터"></a></li>
-                        <li><a
-                                href="https://www.gyeongju.go.kr/tour/page.do?sortKwd=&srchKwd=&listType=day&mnu_uid=2393&con_uid=7148&cmd=2"><img
-                                    src="images/축제사진/경주벚꽃축제.jpg" alt="경주벚꽃축제 포스터"></a></li>
-                        <li><a
-                                href="https://garts.kr/index.do?menuId=00000121&menuLink=/user/sched/detl.do&schedId=SCHED_0000015573&schedCateCd="><img
-                                    src="images/축제사진/지브리.jpg" alt="지브리 포스터"></a></li> -->
+                            href="https://www.gyeongju.go.kr/tour/page.do?sortKwd=&srchKwd=&listType=day&mnu_uid=2393&con_uid=7175&cmd=2"><img
+                                src="images/축제사진/봉황대.jpg" alt="봉황대 포스터"></a></li>
+                    <li><a
+                            href="https://garts.kr/index.do?menuId=00000121&menuLink=/user/sched/detl.do&schedId=SCHED_0000015243&schedCateCd="><img
+                                src="images/축제사진/토우의어린이음악회.jpg" alt="토우의어린이음악회 포스터"></a></li>
+                    <li><a
+                            href="https://www.gyeongju.go.kr/tour/page.do?sortKwd=&srchKwd=&listType=day&mnu_uid=2393&con_uid=7148&cmd=2"><img
+                                src="images/축제사진/경주벚꽃축제.jpg" alt="경주벚꽃축제 포스터"></a></li>
+                    <li><a
+                            href="https://garts.kr/index.do?menuId=00000121&menuLink=/user/sched/detl.do&schedId=SCHED_0000015573&schedCateCd="><img
+                                src="images/축제사진/지브리.jpg" alt="지브리 포스터"></a></li> -->
 
                     </ul>
 
@@ -327,9 +332,11 @@
         </footer>
         <!-- footer 끝 -->
 
-    </div>
 
-    <script src="js/script.js"></script>
+
+
+    </div>
+    <script src="script.js"></script>
 </body>
 
 </html>
