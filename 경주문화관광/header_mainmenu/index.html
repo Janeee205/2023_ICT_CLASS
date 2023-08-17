@@ -28,6 +28,8 @@
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 </head>
 
+<!-- 수정사항 : 이미지 고화질로 다시 바꾸기 -->
+
 <body>
     <div class="wrapper">
         <header>
@@ -44,7 +46,6 @@
                             <span class="month"></span>.
                             <span class="date"></span>
                             (<span class="week"></span>)
-                            <!-- 08.13(일) -->
                         </li>
                         <li>36.5°C</li>
                         <li>미세먼지 좋음</li>
@@ -60,6 +61,8 @@
                             <span>경주문화관광</span></a>
                     </h1>
 
+
+                    <!-- 메인메뉴 list 안에 submenu 포함 -->
                     <ul class="mainmenu-list">
                         <li class="mainmenu-item"><a href="">경주여행</a>
                             <div class="submenu-list">
@@ -76,6 +79,7 @@
                                 </div>
                             </div>
                         </li>
+
                         <li class="mainmenu-item"><a href="">문화행사</a>
                             <div class="submenu-list">
                                 <!-- 문화행사 -->
@@ -149,79 +153,81 @@
                 </div>
             </nav>
 
-            <div class="slider">
-                <div class="img-item"><img src="images/메인배경화면/월정교.jpg" alt=""></div>
-                <div class="img-item"><img src="images/메인배경화면/문무대왕릉 봉길해변.jpg" alt=""></div>
-                <div class="img-item"><img src="images/메인배경화면/slide10.gif" alt=""></div>
-                <div class="img-item"><img src="images/메인배경화면/slide11.gif" alt=""></div>
-                <div class="img-item"><img src="images/메인배경화면/slide12.gif" alt=""></div>
-                <div class="img-item"><img src="images/메인배경화면/slide13.gif" alt=""></div>
-                <div class="img-item"><img src="images/메인배경화면/slide14.gif" alt=""></div>
+            <!-- 이미지 슬라이드 -->
+            <!-- 
+                문제점 : 브라우저 화면 확대시 오른쪽에 여백이 생김
+             -->
+            <div class="slider-wrapper">
+                <div class="slider">
+                    <div class="img-item"><img src="images/메인배경화면/월정교.jpg" alt=""></div>
+                    <div class="img-item"><img src="images/메인배경화면/문무대왕릉 봉길해변.jpg" alt=""></div>
+                    <div class="img-item"><img src="images/메인배경화면/문무대왕릉1.gif" alt=""></div>
+                    <div class="img-item"><img src="images/메인배경화면/slide10.gif" alt=""></div>
+                    <div class="img-item"><img src="images/메인배경화면/slide11.gif" alt=""></div>
+                    <div class="img-item"><img src="images/메인배경화면/slide12.gif" alt=""></div>
+                    <div class="img-item"><img src="images/메인배경화면/slide13.gif" alt=""></div>
+                    <div class="img-item"><img src="images/메인배경화면/slide14.gif" alt=""></div>
+                </div>
             </div>
         </header>
-        <!-- <div class="slider">
-        <img src="images/메인배경화면/월정교.jpg" alt="">
-        <img src="images/메인배경화면/slide12.gif" alt="">
-        <img src="images/메인배경화면/문무대왕릉2.gif" alt="">
-        <img src="images/메인배경화면/감은사지.gif" alt="">
-    </div> -->
+    </div>
 
-        <main>
+    <main>
 
-            <!-- section 5 문화재 소개 -->
-            <section class="section5">
-                <div class="section5-wrapper">
-                    <p class="sec5-title title">문화재 소개</p>
-                    <p class="sec5-subtitle">신라 천년의 고도, 경주의 문화재를 소개합니다</p>
+        <!-- section 5 문화재 소개 -->
+        <section class="section5">
+            <div class="section5-wrapper">
+                <p class="sec5-title title">문화재 소개</p>
+                <p class="sec5-subtitle">신라 천년의 고도, 경주의 문화재를 소개합니다</p>
+            </div>
+            <div class="background-text cultural">cultural</div>
+            <div class="background-text properties">properties</div>
+            <div class="image-list-wrapper">
+                <ul class="top-image-list">
+                    <li><img src="images/문화재소개/정혜사지13층석탑.jpg" alt="정혜사지13층석탑"></li>
+                    <li><img src="images/문화재소개/불국사 청운교 백운교.jpg" alt="불국사 청운교 백운교"></li>
+                    <li><img src="images/문화재소개/서악리귀부.jpg" alt="서악리귀부"></li>
+                    <li><img src="images/문화재소개/포석정.jpg" alt="포석정"></li>
+                    <li><img src="images/문화재소개/첨성대.jpg" alt="첨성대"></li>
+                </ul>
+
+                <ul class="bottom-image-list">
+                    <li><img src="images/문화재소개/월정교.jpg" alt="월정교"></li>
+                    <li><img src="images/문화재소개/석굴암.jpg" alt="석굴암"></li>
+                    <li><img src="images/문화재소개/문무대왕릉 봉길해변.jpg" alt="문무대왕릉 봉길해변"></li>
+                    <li><img src="images/문화재소개/이견대.jpg" alt="이견대"></li>
+                    <li><img src="images/문화재소개/안압지.jpg" alt="안압지.jpg"></li>
+                    <li><img src="images/문화재소개/무열왕릉.jpg" alt="무열왕릉"></li>
+                </ul>
+            </div>
+
+        </section>
+        <!-- section 5 문화재 소개 끝 -->
+
+
+        <!-- section 6 축제ㆍ행사 -->
+        <section class="section6">
+            <div class="section6-wrapper">
+                <p class="sec6-title title">축제ㆍ행사</p>
+                <div class="buttons">
+                    <button type="button" class="prev">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+                    <button type="button" class="next">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
                 </div>
-                <div class="background-text cultural">cultural</div>
-                <div class="background-text properties">properties</div>
-                <div class="image-list-wrapper">
-                    <ul class="top-image-list">
-                        <li><img src="images/문화재소개/정혜사지13층석탑.jpg" alt="정혜사지13층석탑"></li>
-                        <li><img src="images/문화재소개/불국사 청운교 백운교.jpg" alt="불국사 청운교 백운교"></li>
-                        <li><img src="images/문화재소개/서악리귀부.jpg" alt="서악리귀부"></li>
-                        <li><img src="images/문화재소개/포석정.jpg" alt="포석정"></li>
-                        <li><img src="images/문화재소개/첨성대.jpg" alt="첨성대"></li>
-                    </ul>
+                <ul class="poster-list">
+                    <li><a href="https://www.gyeongju.go.kr/tour/page.do?mnu_uid=2393&code_uid=300"><img
+                                src="images/축제사진/신라달빛기행.jpg" alt="신라달빛기행 포스터"></a></li>
+                    <li><a href="https://www.gyeongju.go.kr/tour/page.do?cmd=2&mnu_uid=2393&con_uid=7189"><img
+                                src="images/축제사진/천태만상.jpg" alt="천태만상 포스터"></a></li>
+                    <li><a href="https://www.gyeongju.go.kr/tour/page.do?mnu_uid=2393&con_uid=7207&cmd=2"><img
+                                src="images/축제사진/국공립극단페스티벌.jpg" alt="국공립극단페스티벌 포스터"></a></li>
+                    <li><a href="https://www.gyeongju.go.kr/tour/page.do?mnu_uid=2393&con_uid=7168&cmd=2"><img
+                                src="images/축제사진/아트&마켓1918.jpg" alt="아트&마켓1918 포스터"></a></li>
 
-                    <ul class="bottom-image-list">
-                        <li><img src="images/문화재소개/월정교.jpg" alt="월정교"></li>
-                        <li><img src="images/문화재소개/석굴암.jpg" alt="석굴암"></li>
-                        <li><img src="images/문화재소개/문무대왕릉 봉길해변.jpg" alt="문무대왕릉 봉길해변"></li>
-                        <li><img src="images/문화재소개/이견대.jpg" alt="이견대"></li>
-                        <li><img src="images/문화재소개/안압지.jpg" alt="안압지.jpg"></li>
-                        <li><img src="images/문화재소개/무열왕릉.jpg" alt="무열왕릉"></li>
-                    </ul>
-                </div>
-
-            </section>
-            <!-- section 5 문화재 소개 끝 -->
-
-
-            <!-- section 6 축제ㆍ행사 -->
-            <section class="section6">
-                <div class="section6-wrapper">
-                    <p class="sec6-title title">축제ㆍ행사</p>
-                    <div class="buttons">
-                        <button type="button" class="prev">
-                            <i class="fa-solid fa-chevron-left"></i>
-                        </button>
-                        <button type="button" class="next">
-                            <i class="fa-solid fa-chevron-right"></i>
-                        </button>
-                    </div>
-                    <ul class="poster-list">
-                        <li><a href="https://www.gyeongju.go.kr/tour/page.do?mnu_uid=2393&code_uid=300"><img
-                                    src="images/축제사진/신라달빛기행.jpg" alt="신라달빛기행 포스터"></a></li>
-                        <li><a href="https://www.gyeongju.go.kr/tour/page.do?cmd=2&mnu_uid=2393&con_uid=7189"><img
-                                    src="images/축제사진/천태만상.jpg" alt="천태만상 포스터"></a></li>
-                        <li><a href="https://www.gyeongju.go.kr/tour/page.do?mnu_uid=2393&con_uid=7207&cmd=2"><img
-                                    src="images/축제사진/국공립극단페스티벌.jpg" alt="국공립극단페스티벌 포스터"></a></li>
-                        <li><a href="https://www.gyeongju.go.kr/tour/page.do?mnu_uid=2393&con_uid=7168&cmd=2"><img
-                                    src="images/축제사진/아트&마켓1918.jpg" alt="아트&마켓1918 포스터"></a></li>
-
-                        <!-- <li><a
+                    <!-- <li><a
                             href="https://www.gyeongju.go.kr/tour/page.do?sortKwd=&srchKwd=&listType=day&mnu_uid=2393&con_uid=7175&cmd=2"><img
                                 src="images/축제사진/봉황대.jpg" alt="봉황대 포스터"></a></li>
                     <li><a
@@ -234,103 +240,103 @@
                             href="https://garts.kr/index.do?menuId=00000121&menuLink=/user/sched/detl.do&schedId=SCHED_0000015573&schedCateCd="><img
                                 src="images/축제사진/지브리.jpg" alt="지브리 포스터"></a></li> -->
 
+                </ul>
+
+                <div class="slide-btn">
+                    <ul class="slide-btn-list">
+                        <li class="slide-btn-item is-active"></li>
+                        <li class="slide-btn-item"></li>
+                        <li class="slide-btn-item"></li>
                     </ul>
-
-                    <div class="slide-btn">
-                        <ul class="slide-btn-list">
-                            <li class="slide-btn-item is-active"></li>
-                            <li class="slide-btn-item"></li>
-                            <li class="slide-btn-item"></li>
-                        </ul>
-                    </div>
-                </div>
-
-            </section>
-            <!-- section 6 축제ㆍ행사 끝 -->
-
-        </main>
-
-
-        <!-- footer -->
-        <footer>
-
-            <!-- banner -->
-            <div class="banners">
-                <div class="banner-contents">
-                    <h2>배너모음</h2>
-
-                    <div class="banner-list">
-                        <ul class="banner-btn-list">
-                            <li><i class="fa-solid fa-chevron-left"></i></li>
-                            <li><i class="fa-solid fa-pause"></i></li>
-                            <li><i class="fa-solid fa-chevron-right"></i></li>
-                        </ul>
-                        <ul class="banner-site-list">
-                            <li><a href="https://garts.kr/index.do">(재)경주문화재단</a></li>
-                            <li><a href="http://www.cultureexpo.or.kr/" target="_blank">경주세계엑스포</a></li>
-                            <li><a href="https://www.foresttrip.go.kr/indvz/main.do?hmpgId=ID02030027"
-                                    target="_blank">토함산자연휴양림</a></li>
-                            <li><a href="http://yangdong.invil.org/" target="_blank">경주양동마을</a></li>
-                            <li><a href="http://www.dmgyeongju.com/" target="_blank">동리목월문학관</a></li>
-                            <li><a href="http://gjsam.or.kr/ko/" target="_blank">경주솔거미술관</a></li>
-                            <li><a href="http://www.gjtour.or.kr/" target="_blank">경주농촌체험관광</a></li>
-                        </ul>
-                    </div>
                 </div>
             </div>
 
-            <!-- footer contents -->
-            <div class="footer-contents">
+        </section>
+        <!-- section 6 축제ㆍ행사 끝 -->
 
-                <!-- footer top -->
-                <div class="top-contents">
-                    <div class="site-info">
-                        <ul>
-                            <li><a href="https://www.gyeongju.go.kr/open_content/ko/page.do?mnu_uid=1069&">개인정보처리방침</a>
-                            </li>
-                            <li><a href="https://www.gyeongju.go.kr/open_content/ko/page.do?mnu_uid=1068&">이용약관</a></li>
-                            <li><a href="https://www.gyeongju.go.kr/open_content/ko/page.do?mnu_uid=1070&">저작권안내</a>
-                            </li>
-                            <li><a href="https://www.gyeongju.go.kr/open_content/ko/page.do?mnu_uid=1807">관광불편신고</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+    </main>
 
-                <!-- footer bottom -->
-                <div class="bottom-contents">
-                    <div class="contents-wrapper">
-                        <div class="footer-logo">
-                            <a href=""><img src="images/flogo.png" alt="로고"></a>
-                        </div>
-                        <div class="info-contents">
-                            <div class="info">
-                                <span>[38102] 경상북도 경주시 양정로 260 (동천동, 경주시청)</span>
-                                <span>대표전화 : 054-779-8585</span>
-                                <p>Copyright 2019 Gyeongju Tourguide. All rights reserved.</p>
-                            </div>
-                            <ul class="icon-list">
-                                <li><a href="https://www.youtube.com/channel/UCQh-jbXM1DkVnC8vUYqfkVw"><img
-                                            src="images/youtube.png" alt="유튜브"></a></li>
-                                <li><a href="https://www.facebook.com/gj.tour1/"><img src="images/facebook.png"
-                                            alt="페이스북"></a></li>
-                                <li><a href="https://blog.naver.com/gj_tour"><img src="images/blog.png" alt="블로그"></a>
-                                </li>
-                                <li><a href="https://www.instagram.com/gj_tour/"><img src="images/insta.png"
-                                            alt="인스타그램"></a></li>
-                            </ul>
-                        </div>
 
-                        <a
-                            href="http://www.wa.or.kr/board/list.asp?search=c_name&SearchString=%B0%E6%C1%D6%B9%AE%C8%AD%B0%FC%B1%A4&BoardID=0006"><img
-                                src="images/wa.png" alt="웹접근성 인증" class="web-accessibility"></a>
-                    </div>
+    <!-- footer -->
+    <footer>
+
+        <!-- banner -->
+        <div class="banners">
+            <div class="banner-contents">
+                <h2>배너모음</h2>
+
+                <div class="banner-list">
+                    <ul class="banner-btn-list">
+                        <li><i class="fa-solid fa-chevron-left"></i></li>
+                        <li><i class="fa-solid fa-pause"></i></li>
+                        <li><i class="fa-solid fa-chevron-right"></i></li>
+                    </ul>
+                    <ul class="banner-site-list">
+                        <li><a href="https://garts.kr/index.do">(재)경주문화재단</a></li>
+                        <li><a href="http://www.cultureexpo.or.kr/" target="_blank">경주세계엑스포</a></li>
+                        <li><a href="https://www.foresttrip.go.kr/indvz/main.do?hmpgId=ID02030027"
+                                target="_blank">토함산자연휴양림</a></li>
+                        <li><a href="http://yangdong.invil.org/" target="_blank">경주양동마을</a></li>
+                        <li><a href="http://www.dmgyeongju.com/" target="_blank">동리목월문학관</a></li>
+                        <li><a href="http://gjsam.or.kr/ko/" target="_blank">경주솔거미술관</a></li>
+                        <li><a href="http://www.gjtour.or.kr/" target="_blank">경주농촌체험관광</a></li>
+                    </ul>
                 </div>
             </div>
-            <!-- footer contents 끝 -->
+        </div>
 
-        </footer>
-        <!-- footer 끝 -->
+        <!-- footer contents -->
+        <div class="footer-contents">
+
+            <!-- footer top -->
+            <div class="top-contents">
+                <div class="site-info">
+                    <ul>
+                        <li><a href="https://www.gyeongju.go.kr/open_content/ko/page.do?mnu_uid=1069&">개인정보처리방침</a>
+                        </li>
+                        <li><a href="https://www.gyeongju.go.kr/open_content/ko/page.do?mnu_uid=1068&">이용약관</a></li>
+                        <li><a href="https://www.gyeongju.go.kr/open_content/ko/page.do?mnu_uid=1070&">저작권안내</a>
+                        </li>
+                        <li><a href="https://www.gyeongju.go.kr/open_content/ko/page.do?mnu_uid=1807">관광불편신고</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- footer bottom -->
+            <div class="bottom-contents">
+                <div class="contents-wrapper">
+                    <div class="footer-logo">
+                        <a href=""><img src="images/flogo.png" alt="로고"></a>
+                    </div>
+                    <div class="info-contents">
+                        <div class="info">
+                            <span>[38102] 경상북도 경주시 양정로 260 (동천동, 경주시청)</span>
+                            <span>대표전화 : 054-779-8585</span>
+                            <p>Copyright 2019 Gyeongju Tourguide. All rights reserved.</p>
+                        </div>
+                        <ul class="icon-list">
+                            <li><a href="https://www.youtube.com/channel/UCQh-jbXM1DkVnC8vUYqfkVw"><img
+                                        src="images/youtube.png" alt="유튜브"></a></li>
+                            <li><a href="https://www.facebook.com/gj.tour1/"><img src="images/facebook.png"
+                                        alt="페이스북"></a></li>
+                            <li><a href="https://blog.naver.com/gj_tour"><img src="images/blog.png" alt="블로그"></a>
+                            </li>
+                            <li><a href="https://www.instagram.com/gj_tour/"><img src="images/insta.png"
+                                        alt="인스타그램"></a></li>
+                        </ul>
+                    </div>
+
+                    <a
+                        href="http://www.wa.or.kr/board/list.asp?search=c_name&SearchString=%B0%E6%C1%D6%B9%AE%C8%AD%B0%FC%B1%A4&BoardID=0006"><img
+                            src="images/wa.png" alt="웹접근성 인증" class="web-accessibility"></a>
+                </div>
+            </div>
+        </div>
+        <!-- footer contents 끝 -->
+
+    </footer>
+    <!-- footer 끝 -->
 
 
 
