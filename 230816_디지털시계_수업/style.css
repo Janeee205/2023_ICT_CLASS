@@ -29,7 +29,7 @@ li {
   list-style: none;
 }
 
-.wrapper {
+#wrapper {
   position: fixed;
   width: 100%;
   height: 100vh;
@@ -39,23 +39,23 @@ li {
   background-position: center center;
 }
 
-.wrapper.morning {
+#wrapper.morning {
   background-image: url(images/bg_morning.jpg);
 }
 
-.wrapper.afternoon {
+#wrapper.afternoon {
   background-image: url(images/bg_afternoon.jpg);
 }
 
-.wrapper.evening {
+#wrapper.evening {
   background-image: url(images/bg_evening.jpg);
 }
 
-.wrapper.night {
+#wrapper.night {
   background-image: url(images/bg_night.jpg);
 }
 
-.wrapper>img:nth-child(1) {
+#wrapper>img:nth-child(1) {
   position: absolute;
   top: 70;
   left: 0;
@@ -65,7 +65,7 @@ li {
   animation: cloud1 100s linear infinite;
 }
 
-.wrapper>img:nth-child(2) {
+#wrapper>img:nth-child(2) {
   position: absolute;
   top: -100;
   left: -105px;
@@ -148,19 +148,19 @@ li {
   background-position: left;
 }
 
-.wrapper.morning #phone {
+#wrapper.morning #phone {
   background-image: url('images/phone_morning.png');
 }
 
-.wrapper.afternoon #phone {
+#wrapper.afternoon #phone {
   background-image: url('images/phone_afternoon.png');
 }
 
-.wrapper.evening #phone {
+#wrapper.evening #phone {
   background-image: url('images/phone_evening.png');
 }
 
-.wrapper.night #phone {
+#wrapper.night #phone {
   background-image: url('images/phone_night.png');
 }
 
@@ -240,28 +240,28 @@ li {
   background-color: #111;
 }
 
-.wrapper.night .logo {
+#wrapper.night .logo {
   background-image: url('images/logo_w.png');
 }
 
-.wrapper.night .gnb-list li a {
+#wrapper.night .gnb-list li a {
   color: aliceblue;
 }
 
-.wrapper.night .gnb-list li a::after {
+#wrapper.night .gnb-list li a::after {
   border-color: #ddd;
 }
 
-.wrapper.night .lorem-txt p,
-.wrapper.night .lorem-txt em {
-  color: #a4a4a4;
+#wrapper.night .lorem-txt p,
+.wrapper.night .lorem-txt em#{
+ color: #a4a4a4;
 }
 
-.wrapper.night .lorem-txt strong {
+#wrapper.night .lorem-txt strong {
   color: aliceblue;
 }
 
-.wrapper.night .phone-time {
+#wrapper.night .phone-time {
   color: #fff
 }
 
