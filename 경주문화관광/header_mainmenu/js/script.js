@@ -1,6 +1,7 @@
 // mainmenu
 $('.submenu-list').hide();
 
+// 메인메뉴 hover시 폰트색깔, 이미지 바뀜
 $('.mainmenu-item').hover(function () {
     $(this).find('.submenu-list').stop().slideDown(400);
     $('.global-header').css('backgroundColor', '#fbfbfb');
@@ -56,6 +57,7 @@ $('.date').html(dnum);
 $('.week').html(todayLabel);
 
 
+// 이미지 슬라이드
 $('.slider > .img-item:gt(0)').hide();
 setInterval(() => {
     $('.slider .img-item:first-child').fadeTo(1000, 0)

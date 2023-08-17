@@ -214,12 +214,10 @@ header {
 }
 
 /* imgslide */
-
+/* 수정필요 */
 .slider-wrapper {
     position: absolute;
     top: 0;
-    /* left: 50%; */
-    /* transform: translateX(-50); */
     width: 100vw;
     overflow: hidden;
     height: 1080px;
@@ -227,8 +225,6 @@ header {
 }
 
 .slider {
-    /* left: 20%; */
-    /* top: -197px; */
     display: flex;
     width: 700vw;
     height: 1080px;
