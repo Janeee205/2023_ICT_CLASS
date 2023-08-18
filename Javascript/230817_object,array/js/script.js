@@ -20,6 +20,11 @@ let products = [
   }
 ]
 
+// document.querySelector('.box-item img').src = products[0].img;
+// document.querySelector('.sho-info h2').innerHTML = products[0].title;
+// document.querySelectorAll('.sho-info p')[0].innerHTML = products[0].price;
+// document.querySelectorAll('.sho-info p')[1].innerHTML = products[0].size;
+
 // for (i = 1; i < products.length + 1; i++) {
 //   document.querySelector('.box-item:nth-child(' + i + ') img').src = products[i - 1].img;
 //   document.querySelector('.box-item:nth-child(' + i + ') h2').innerHTML = products[i - 1].title;
@@ -27,10 +32,20 @@ let products = [
 //   document.querySelector('.box-item:nth-child(' + i + ') .size').innerHTML = products[i - 1].size;
 // }
 
-let boxItems = document.querySelectorAll('.box-item')
+
+let boxItems = document.querySelectorAll('.box-item');
+
 boxItems.forEach(function (item, index) {
+  // console.log(item, index)
   item.querySelector('img').src = products[index].img;
   item.querySelector('h2').innerHTML = products[index].title;
   item.querySelectorAll('.sho-info p')[0].innerHTML = products[index].price;
   item.querySelectorAll('.sho-info p')[1].innerHTML = products[index].size;
 })
+
+
+// 프론트엔드 개발자가 하는 역할
+// 서버가 보낸 데이터를 html 바인딩
+// 전문 용어로 '데이터 바인딩'이라고 한다.
+// 데이터 바인딩을 쉽고 편하게 할 수 있도록 도와주는 도구(React, Vue, Angular)
+// 시작 기호가 대괄호[], 중괄호{}인지에 따라 Array, object 구분
