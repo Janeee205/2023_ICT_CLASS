@@ -46,7 +46,7 @@ userPw.addEventListener('focusout', function () {
   let pwText = document.querySelector('.userpw .inputbox p');
   let pwImg = document.querySelector('.userpw .inputbox img');
 
-  if (userPw.length == 0) {
+  if (userPwVal.length == 0) {
     pwWarn.innerHTML = essenInfo;
     pwText.innerHTML = '';
     pwImg.src = 'images/m_icon_pw_step_01.png';
