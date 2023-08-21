@@ -143,43 +143,12 @@ shoInfo.appendChild(color);
 
 
 // createElement로 products length만큼 html 생성
+
+/************
+ * * 결과 *
+ * **********/
+
 /*
-for (let i = 0; i < products.length; i++) {
-  let boxItem = document.createElement('div');
-  boxItem.classList.add('box-item');
-  boxList.appendChild(boxItem);
-  
-  let images = document.createElement('img');
-  boxItem.appendChild(images);
-  images.src = products[i].img;
-  
-  let shoInfo = document.createElement('div');
-  shoInfo.classList.add('sho-info');
-  boxItem.appendChild(shoInfo);
-  
-  let title = document.createElement('h2');
-  title.classList.add('title');
-  shoInfo.appendChild(title);
-  title.innerHTML = products[i].title;
-  
-  let price = document.createElement('p');
-  price.classList.add('price');
-  shoInfo.appendChild(price);
-  price.innerHTML = products[i].price;
-  
-  let size = document.createElement('p');
-  size.classList.add('size');
-  shoInfo.appendChild(size);
-  size.innerHTML = products[i].size;
-  
-  let color = document.createElement('p');
-  color.classList.add('color');
-  shoInfo.appendChild(color);
-  color.innerHTML = products[i].color;
-}
-*/
-
-
 let boxList = document.querySelector('.box-list');
 
 // boxItems.forEach(function (item, index) {
@@ -218,3 +187,62 @@ products.forEach(function (item) {
   shoInfo.appendChild(color);
 
 })
+*/
+
+
+// Javascript로 html 생성하는 방법2 (최신문법)
+
+// let pTag = '<p class = "txt"> html 생성했따! </p>'
+
+// .insertAdjacentHTML(추가할 위치) => 문자형 html을 넣어주는 요소
+// 첫번째 파라미터 : 추가 할 위치(beforeend = 안쪽 맨 밑)
+// 두번째 파라미터 : 추가 할 html 문자(pTag)
+
+// document.querySelector('.box-list').insertAdjacentHTML('beforeend', pTag)
+
+
+// insertAdjacentHTML
+
+/*
+ <div class="box-item">
+        <img src="" alt="">
+        <div class="sho-info">
+          <h2 class="title"></h2>
+          <p class="price"></p>
+          <p class="size"></p>
+          <p class="color"></p>
+        </div>
+ </div>
+      */
+let boxList = document.querySelector('.box-list');
+
+let boxItem = '<div class = "box-item"></div>';
+boxList.insertAdjacentHTML('beforeend', boxList);
+
+let images = '<img src="" alt="">';
+boxList.insertAdjacentHTML('beforeend', images);
+images.src = 'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/76c75d04bdb641f5927cc147fe14e812_9366/E5_Beige_IE7062_01_standard.jpg';
+
+let shoInfo = '<div class = "sho-info"></div>';
+boxList.insertAdjacentHTML('beforeend', shoInfo);
+
+let title = '<h2 class = "title"></h2>';
+boxList.insertAdjacentHTML('beforeend', title);
+
+let price = '<div class = "price"></div>';
+boxList.insertAdjacentHTML('beforeend', price);
+
+let size = '<div class = "size"></div>';
+boxList.insertAdjacentHTML('beforeend', size);
+
+let color = '<div class = "color"></div>';
+boxList.insertAdjacentHTML('beforeend', color);
+
+
+products.forEach(function (item) {
+
+})
+
+
+
+
