@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 
 <head>
     <meta charset="UTF-8">
@@ -28,8 +28,22 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
+<!-- 
+    고려사항
+
+중복확인 넣을경우 어떻게 구현해야 하는지
+
+-->
+
+
+
+
+
 <body>
     <div class="wrapper">
+
+        <!-- header -->
+
         <!-- gnb-nav -->
         <div class="gnb-nav">
             <div class="gnb-nav-section">
@@ -52,7 +66,6 @@
                 <form action="" id="signup-form">
                     <table>
                         <!-- 아이디 -->
-                        <!-- input에 타이틀 -->
                         <tr>
                             <th>
                                 <label for="id">
@@ -61,7 +74,7 @@
                             <td class="inputbox userid">
                                 <input type="text" name="userid" id="id">
                                 <button type="button" class="btn-primary">중복확인</button>
-                                <span class="warn">한글, 특수문자를 제외한 4~20자까지의 영문과 숫자로 입력해주세요.</span>
+                                <span class="warn"></span>
                             </td>
                         </tr>
 
@@ -71,9 +84,15 @@
                                 <label for="pw">
                                     <span class="marking">*</span>비밀번호</label>
                             </th>
-                            <td class="inputbox userpw">
-                                <input type="password" name="pw" id="pw">
-                                <span class="warn">비밀번호는 4~12자 사이의 영문과 숫자 조합 형태로 입력해 주세요.</span>
+                            <td class="inputbox ">
+                                <div class="userpw">
+                                    <input type="password" name="pw" id="pw">
+                                    <span class="warn pw-warn"></span>
+                                    <!-- 안전 or 사용불가 텍스트 -->
+                                    <span class="pw-text"></span>
+                                    <!-- 자물쇠 이미지 -->
+                                    <img src="images/signup/m_icon_pw_step_01.png" alt="비밀번호 아이콘" class="pw-img">
+                                </div>
                             </td>
                         </tr>
 
@@ -83,8 +102,15 @@
                                 <label for="pw-chk">
                                     <span class="marking">*</span>비밀번호확인</label>
                             </th>
-                            <td class="inputbox userpw-chk">
-                                <input type="password" name="pw-chk" id="pw-chk">
+                            <td class="inputbox">
+                                <div class="userpw-chk">
+                                    <input type="password" name="pw-chk" id="pw-chk">
+                                    <span class="warn pw-warn"></span>
+                                    <!-- 안전 or 사용불가 텍스트 -->
+                                    <span class="pw-text"></span>
+                                    <!-- 자물쇠 이미지 -->
+                                    <img src="images/signup/m_icon_pw_step_01.png" alt="비밀번호 아이콘" class="pw-img">
+                                </div>
                             </td>
                         </tr>
 
@@ -96,6 +122,8 @@
                             </th>
                             <td class="inputbox username">
                                 <input type="text" name="name" id="name">
+                                <span class="warn"></span>
+
                             </td>
                         </tr>
 
@@ -116,6 +144,7 @@
                                     <option value="hotmail.com">hotmail.com</option>
                                     <option value="gmail.com">gmail.com</option>
                                 </select>
+                                <span class="warn"></span>
                             </td>
                         </tr>
 

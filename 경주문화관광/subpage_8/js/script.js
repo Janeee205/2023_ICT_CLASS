@@ -1,13 +1,135 @@
-$(".gnb-list").hover(function () {
-  $(this).find("ul").stop().slideDown();
-  $(this).find("ul").addClass("active")
-}, function () {
-  $(this).find("ul").stop().slideUp();
-  $(this).find("ul").removeClass("active")
+
+
+/*********************
+ * 회원가입 폼 script *
+ ********************/
+
+
+let idveri = pwveri = pwchkveri = nameveri = birthveri = genderveri = phoneveri = addrveri = emailveri = false;
+// let emailveri = true;
+
+// Essention Infomation
+let essenInfo = '<span class="text-red"> 필수 정보입니다. </span>';
+
+
+// 아이디
+document.querySelector('.userid input').addEventListener('focusout', function () {
+  let userId = this.value;
+  let idExp = /^[a-z0-9]{5,8}$/;
+  let idWarn = document.querySelector('.userid .warn');
+
+  if (userId.length == 0) {
+    // 필수 정보입니다.
+    idWarn.innerHTML = essenInfo
+  } else if (!idExp.test(userId)) {
+    // 정규식에 맞지 않을때
+    idWarn.innerHTML = '<span class="text-red"> 5~8자의 영문 소문자, 숫자만 사용 가능합니다. </span>';
+  } else {
+    idveri = true;
+    idWarn.innerHTML = '<span class="text-green"> 멋진 아이디네요! </span>';
+  }
 })
 
 
-// 우편번호 api 연결
+// 비밀번호
+let userPw = document.querySelector('.userpw input');
+
+userPw.addEventListener('focusout', function () {
+  let userPwVal = userPw.value;
+  let pwExp = /^[A-Za-z0-9`~!@#\$%\^&\*\(\)\{\}\[\]\-_=\+\\|;:'"<>,\./\?]{8,20}$/;
+  let pwWarn = document.querySelector('.userpw .warn');
+  let pwText = document.querySelector('.userpw .pw-text');
+  let pwImg = document.querySelector('.userpw .pw-img');
+
+  if (userPwVal.length == 0) {
+    pwWarn.innerHTML = essenInfo;
+    pwText.innerHTML = '';
+    pwImg.src = 'images/signup/m_icon_pw_step_01.png';
+  } else if (!pwExp.test(userPwVal)) {
+    pwWarn.innerHTML = '<span class="text-red"> 8~20자 영문 대 소문자, 숫자, 특수문자를 사용하세요. </span>';
+    pwText.innerHTML = '<span class="text-red"> 사용불가 </span>';
+    pwImg.src = 'images/signup/m_icon_pw_step_10.png';
+  } else {
+    pwveri = true;
+    pwWarn.innerHTML = '';
+    pwText.innerHTML = '<span class="text-green"> 안전 </span>';
+    pwImg.src = 'images/signup/m_icon_pw_step_04.png';
+  }
+})
+
+
+// 비밀번호 재확인
+document.querySelector('.userpw-chk input').addEventListener('focusout', function () {
+  let userpwChk = this.value;
+  let pwChkWarn = document.querySelector('.userpw-chk .warn');
+  let pwChkText = document.querySelector('.userpw-chk .pw-text');
+  let pwChkImg = document.querySelector('.userpw-chk .pw-img');
+
+  if (userpwChk.length == 0) {
+    pwChkWarn.innerHTML = essenInfo;
+    pwChkText.innerHTML = '';
+    pwChkImg.src = 'images/signup/m_icon_pw_step_01.png';
+  } else if (userpwChk == userPw.value) {
+    pwchkveri = true;
+    pwChkWarn.innerHTML = '';
+    pwChkText.innerHTML = '<span class="text-green"> 안전 </span>';
+    pwChkImg.src = 'images/signup/m_icon_pw_step_07.png';
+  } else {
+    pwChkWarn.innerHTML = '<span class="text-red">비밀번호가 일치하지 않습니다.</span>';
+    pwChkImg.src = 'images/signup/m_icon_pw_step_02.png';
+  }
+})
+
+
+// 이름
+document.querySelector('.username input').addEventListener('focusout', function () {
+  let userName = this.value;
+  let nameExp = /^[가-힣]{2,5}$/;
+  let nameWarn = document.querySelector('.username .warn');
+
+  if (userName.length == 0) {
+    nameWarn.innerHTML = essenInfo;
+  } else if (!nameExp.test(userName)) {
+    nameWarn.innerHTML = '<span class="text-red"> 한글로 2~5글자 사이로 작성하세요. </span>';
+  } else {
+    nameveri = true;
+    nameWarn.innerHTML = '';
+  }
+})
+
+// 이메일
+// 다시 수정
+document.querySelector('.usermail input').addEventListener('focusout', function () {
+  let usermail = this.value;
+  let mailSelect = document.querySelector('.usermail select');
+  let mailSelectVal = mailSelect.options[mailSelect.selectedIndex].value;
+
+  console.log('mailSelect');
+
+  let mailWarn = document.querySelector('.usermail .warn');
+  let mailExp = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
+
+  if (usermail == 0) {
+    mailWarn.innerHTML = essenInfo;
+  } else if (!mailExp.test(usermail)) {
+    mailWarn.innerHTML = '<span class="text-red"> 이메일 주소를 다시 확인 해주세요. </span>';
+  } else {
+    emailveri = true;
+    mailWarn.innerHTML = '';
+  }
+
+})
+
+
+
+
+
+
+
+/********************
+ * 우편번호 api 연결 *
+ *******************/
+
 function sample6_execDaumPostcode() {
   new daum.Postcode({
     oncomplete: function (data) {
