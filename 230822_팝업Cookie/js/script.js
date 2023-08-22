@@ -71,7 +71,7 @@ function getCookie(name) {
 
 
   // cookies라는 배열을 순회하면서 쿠키값을 찾는다.
-  for (let i = 0; cookies.length; i++) {
+  for (let i = 0; i < cookies.length; i++) {
 
     // 현재 순회중인쿠키 문자열을 cookie 변수 담는다.
     let cookie = cookies[i];
@@ -87,3 +87,28 @@ function getCookie(name) {
   // 일치하는 쿠키를 찾지 못했을때, null 값을 반환해서 쿠키가 존재하지 않다는 것을 나타낸다.
   return null;
 }
+
+
+// 문서가 DOMContentLoaded가 로드 될 때 실행될 함수 설정
+document.addEventListener('DOMContentLoaded', function () {
+  let popup = document.querySelector('.popup');
+  let nonePopup = document.getElementById('none-popup');
+  let closeBtn = document.getElementById('close-btn');
+
+  // getCookie에서 
+  if (getCookie("hidePopup")) {
+    popup.style.display = 'none';
+  }
+
+  closeBtn.addEventListener('click', function () {
+    popup.style.display = 'none';
+
+    // 체크박스에 checked 속성이 있다면 setCookie 함수에 name, value, hours
+    // 매개변수 값을 전달해서 hours시간 동안 팝업이 보이지 않게한다.
+    // closeBtn 클릭 했을때 nonPopup에 checked 속성이 있다면 setCookie라는 함수에 name, value, hours라는 매개변수 값 세개를 넘겨준다.
+    if (nonePopup.checked) {
+      setCookie("hidePopup", "true", 24);
+      // 쿠키를 24시간동안 유지
+    }
+  })
+})
