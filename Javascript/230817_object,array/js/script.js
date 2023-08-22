@@ -44,6 +44,9 @@ let products = [
   }
 ]
 
+
+
+
 // document.querySelector('.box-item img').src = products[0].img;
 // document.querySelector('.sho-info h2').innerHTML = products[0].title;
 // document.querySelectorAll('.sho-info p')[0].innerHTML = products[0].price;
@@ -96,17 +99,6 @@ pTag.innerHTML = '졸려어';
 document.querySelector('.box-list').appendChild(pTag);
 
 
-       <div class="box-item">
-        <img src="" alt="">
-        <div class="sho-info">
-          <h2 class="title"></h2>
-          <p class="price"></p>
-          <p class="size"></p>
-          <p class="color"></p>
-        </div>
-      </div>
-*/
-
 
 /*
 let boxItem = document.createElement('div');
@@ -141,11 +133,11 @@ shoInfo.appendChild(color);
 
 
 
-
+// Javascript로 html 생성하는 방법 1
 // createElement로 products length만큼 html 생성
 
 /************
- * * 결과 *
+ * * 결과 * *
  * **********/
 
 /*
@@ -201,48 +193,58 @@ products.forEach(function (item) {
 // document.querySelector('.box-list').insertAdjacentHTML('beforeend', pTag)
 
 
-// insertAdjacentHTML
-
+/************
+ * * 결과 * *
+ * **********/
 /*
- <div class="box-item">
-        <img src="" alt="">
-        <div class="sho-info">
-          <h2 class="title"></h2>
-          <p class="price"></p>
-          <p class="size"></p>
-          <p class="color"></p>
-        </div>
- </div>
-      */
 let boxList = document.querySelector('.box-list');
 
-let boxItem = '<div class = "box-item"></div>';
-boxList.insertAdjacentHTML('beforeend', boxList);
+products.forEach(function (item, index) {
+ let boxItem = `<div class = "box-item"></div>`;
+ document.querySelector('.box-list').insertAdjacentHTML('beforeend', boxItem)
 
-let images = '<img src="" alt="">';
-boxList.insertAdjacentHTML('beforeend', images);
-images.src = 'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/76c75d04bdb641f5927cc147fe14e812_9366/E5_Beige_IE7062_01_standard.jpg';
+ let boxImg = `<img src="${item.img}" alt ="${item.title}">`;
+ document.querySelectorAll('.box-item')[index].insertAdjacentHTML('beforeend', boxImg);
 
-let shoInfo = '<div class = "sho-info"></div>';
-boxList.insertAdjacentHTML('beforeend', shoInfo);
+ let shoInfo = `<div class = "sho-info"></div>`;
+ document.querySelectorAll('.box-item')[index].insertAdjacentHTML('beforeend', shoInfo);
 
-let title = '<h2 class = "title"></h2>';
-boxList.insertAdjacentHTML('beforeend', title);
+ let boxTitle = `<h2>${item.title}</h2>`;
+ document.querySelectorAll('.sho-info')[index].insertAdjacentHTML('beforeend', boxTitle);
 
-let price = '<div class = "price"></div>';
-boxList.insertAdjacentHTML('beforeend', price);
+ let boxPrice = `<p>${item.price}</p>`;
+ document.querySelectorAll('.sho-info')[index].insertAdjacentHTML('beforeend', boxPrice);
 
-let size = '<div class = "size"></div>';
-boxList.insertAdjacentHTML('beforeend', size);
+ let boxSize = `<p>${item.size}</p>`;
+ document.querySelectorAll('.sho-info')[index].insertAdjacentHTML('beforeend', boxSize);
 
-let color = '<div class = "color"></div>';
-boxList.insertAdjacentHTML('beforeend', color);
+ let boxColor = `<p>${item.color}</p>`;
+ document.querySelectorAll('.sho-info')[index].insertAdjacentHTML('beforeend', boxColor);
+})
+*/
 
 
-products.forEach(function (item) {
+
+/************
+ * * 결과 * *
+ * **********/
+
+// insertAdjacentHTML 사용하되, backtick을 이용해서 코드 축약
+
+// item.img => item에서 img라는 key값의 value
+
+products.forEach(function (item, index) {
+  let boxItem = `
+  <div class="box-item">
+        <img src="${item.img}" alt="${item.title}">
+        <div class="sho-info">
+          <h2 class="title">${item.title}</h2>
+          <p class="price">${item.price}</p>
+          <p class="size">${item.size}</p>
+          <p class="color">${item.color}</p>
+        </div>
+      </div>
+  `;
+  document.querySelector('.box-list').insertAdjacentHTML('beforeend', boxItem);
 
 })
-
-
-
-
