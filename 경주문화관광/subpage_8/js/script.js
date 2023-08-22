@@ -99,11 +99,17 @@ document.querySelector('.username input').addEventListener('focusout', function 
 
 // 이메일
 // 다시 수정
+// https://gurtn.tistory.com/98
 document.querySelector('.usermail input').addEventListener('focusout', function () {
   let usermail = this.value;
-  let mailSelect = document.querySelector('.usermail select');
-  let mailSelectVal = mailSelect.options[mailSelect.selectedIndex].value;
 
+  let selectValue = (target) => {
+    const value = target.value;
+    const text = target.options[target.selectedIndex].text;
+
+    console.log(`select` + text);
+    // document.querySelector(`div`).innerHTML = `text: ${text} value: ${value}`;
+  }
   console.log('mailSelect');
 
   let mailWarn = document.querySelector('.usermail .warn');
