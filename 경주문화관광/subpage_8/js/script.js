@@ -5,8 +5,7 @@
  ********************/
 
 
-let idveri = pwveri = pwchkveri = nameveri = birthveri = genderveri = phoneveri = addrveri = emailveri = false;
-// let emailveri = true;
+let idveri = pwveri = pwchkveri = nameveri = genderveri = phoneveri = emailveri = false;
 
 // Essention Infomation
 let essenInfo = '<span class="text-red"> 필수 정보입니다. </span>';
@@ -153,9 +152,6 @@ phoneInputs.forEach(function (input) {
     }
   })
 })
-
-
-
 
 
 
