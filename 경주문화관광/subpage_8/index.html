@@ -135,15 +135,15 @@
                             </th>
                             <td class="inputbox usermail">
                                 <input type="text" name="mail" id="mail">
-                                <span class="at">@</span>
-                                <select name="select-mail" class="select-mail" title="이메일 주소 선택">
-                                    <option value="">선택하세요</option>
-                                    <option value="naver.com">naver.com</option>
-                                    <option value="daum.net">daum.net</option>
-                                    <option value="hanmail.net">hanmail.net</option>
-                                    <option value="hotmail.com">hotmail.com</option>
-                                    <option value="gmail.com">gmail.com</option>
-                                </select>
+                                <!-- <span class="at">@</span>
+                                <select name="select-mail" id="select-mail" title="이메일 주소 선택" onchange="getEmail()">
+                                    <option name=" select-mail" value="">선택하세요</option>
+                                    <option name="select-mail" value=" naver.com">naver.com</option>
+                                    <option name="select-mail" value="daum.net">daum.net</option>
+                                    <option name="select-mail" value="hanmail.net">hanmail.net</option>
+                                    <option name="select-mail" value="hotmail.com">hotmail.com</option>
+                                    <option name="select-mail" value="gmail.com">gmail.com</option>
+                                </select> -->
                                 <span class="warn"></span>
                             </td>
                         </tr>
@@ -159,6 +159,7 @@
                                         for="male">남성</label>
                                     <input type="radio" name="gender" value="1" id="female"><label
                                         for="female">여성</label>
+                                    <input type="radio" name="gender" value="2" id="none"><label for="none">선택안함</label>
                                 </div>
                             </td>
                         </tr>
@@ -169,19 +170,19 @@
                                 <label for="phonenum1">
                                     <span class="marking">*</span>연락처</label>
                             </th>
-                            <td class="inputbox phonenum">
-                                <select name="phonenum1" id="phonenum1">
-                                    <option value="010">010</option>
-                                    <option value="011">011</option>
-                                    <option value="016">016</option>
-                                    <option value="017">017</option>
-                                    <option value="018">018</option>
-                                    <option value="019">019</option>
+                            <td class="inputbox phone">
+                                <select name="phonenum1" id="phonenum1" class="phone1">
+                                    <option name="phonenum1" value="010">010</option>
+                                    <option name="phonenum1" value="011">011</option>
+                                    <option name="phonenum1" value="016">016</option>
+                                    <option name="phonenum1" value="017">017</option>
+                                    <option name="phonenum1" value="018">018</option>
+                                    <option name="phonenum1" value="019">019</option>
                                 </select>
                                 <span class="hyphen">-</span>
-                                <input type="text" name="phonenum2" maxlength="4">
+                                <input type="text" name="phonenum2" maxlength="4" class="phone2">
                                 <span class="hyphen">-</span>
-                                <input type="text" name="phonenum3" maxlength="4">
+                                <input type="text" name="phonenum3" maxlength="4" class="phone3">
                                 <span class="warn">해당 연락처는 아이디 비밀번호 찾기시 이용합니다.</span>
                             </td>
                         </tr>

@@ -556,12 +556,16 @@ button {
     height: 22px;
 }
 
-.at {
+/* .at {
     margin: 0 3px;
 }
 
 select {
     font-size: 14px;
+} */
+
+.usermail input[type="text"] {
+    width: 310px;
 }
 
 .gender label {
@@ -576,12 +580,12 @@ input[type="radio"] {
     padding: 0;
 }
 
-input[type="radio"]:last-of-type {
+input[type="radio"]:not(:first-child) {
     margin-left: 9px;
 }
 
-.phonenum select,
-.phonenum input[type="text"] {
+.phone select,
+.phone input[type="text"] {
     width: 88px;
 }
 

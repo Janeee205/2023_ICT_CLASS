@@ -97,16 +97,21 @@ document.querySelector('.username input').addEventListener('focusout', function 
   }
 })
 
+
 // 이메일
 // 다시 수정
+
+// 이메일 주소 가져오기
+// function getEmail() {
+//   var mailSelect = document.getElementById('select-mail');
+//   var mailSelecttextVal = mailSelect.value;
+//   let mail = mailSelecttextVal;
+// }
+
 document.querySelector('.usermail input').addEventListener('focusout', function () {
   let usermail = this.value;
-  let mailSelect = document.querySelector('.usermail select');
-  let mailSelectVal = mailSelect.options[mailSelect.selectedIndex].value;
-
-  console.log('mailSelect');
-
   let mailWarn = document.querySelector('.usermail .warn');
+
   let mailExp = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
 
   if (usermail == 0) {
@@ -117,8 +122,39 @@ document.querySelector('.usermail input').addEventListener('focusout', function 
     emailveri = true;
     mailWarn.innerHTML = '';
   }
-
 })
+
+
+// 성별
+let genderInputs = document.querySelectorAll('.gender input');
+
+genderInputs.forEach(function (item) {
+  item.addEventListener('click', function () {
+    this.querySelector('input[type="radio"]').checked = true;
+    genderveri = true;
+  })
+})
+
+
+// 휴대전화
+
+let numWarn = document.querySelector('.phone .warn');
+let phoneInputs = document.querySelectorAll('.phone input');
+phoneInputs.forEach(function (input) {
+  input.addEventListener('focusout', function () {
+
+    // select값 가져오는것 다시 알아봐야함
+
+    if (document.querySelector('.phone2').value.length == 0 || document.querySelector('.phone3').value.length == 0) {
+      numWarn.innerHTML = '<span class="text-red"> 전화번호를 다시 입력해주세요. </span>';
+    } else {
+      phoneveri = true
+      numWarn.innerHTML = '';
+    }
+  })
+})
+
+
 
 
 
