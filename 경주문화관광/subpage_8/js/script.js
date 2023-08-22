@@ -340,10 +340,6 @@ phoneInputs.forEach(function (input) {
 })
 
 
-
-
-
-
 /********************
  * 우편번호 api 연결 *
  *******************/
@@ -395,3 +391,19 @@ function sample6_execDaumPostcode() {
     }
   }).open();
 }
+
+
+
+// 가입하기 제출
+document.getElementById('submit').addEventListener('click', function (e) {
+  let isTrue = idveri && pwveri && pwchkveri && nameveri && genderveri && phoneveri && emailveri;
+
+  if (isTrue) {
+    document.getElementById('signup-form').submit();
+  } else {
+    e.preventDefault();
+    document.querySelectorAll('input').forEach(function (input) {
+      input.dispatchEvent(new Event('focusout'));
+    })
+  }
+})
