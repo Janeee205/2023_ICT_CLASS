@@ -100,6 +100,7 @@ document.querySelector('.username input').addEventListener('focusout', function 
 // 이메일
 // 다시 수정
 // https://gurtn.tistory.com/98
+
 document.querySelector('.usermail input').addEventListener('focusout', function () {
   let usermail = this.value;
 
