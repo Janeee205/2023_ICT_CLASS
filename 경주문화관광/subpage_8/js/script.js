@@ -72,7 +72,7 @@ document.querySelector('.userpw-chk input').addEventListener('focusout', functio
   } else if (userpwChk == userPw.value) {
     pwchkveri = true;
     pwChkWarn.innerHTML = '';
-    pwChkText.innerHTML = '<span class="text-green"> 안전 </span>';
+    pwChkText.innerHTML = '<span class="text-green"> 일치 </span>';
     pwChkImg.src = 'images/signup/m_icon_pw_step_07.png';
   } else {
     pwChkWarn.innerHTML = '<span class="text-red">비밀번호가 일치하지 않습니다.</span>';
