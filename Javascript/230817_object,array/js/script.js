@@ -216,33 +216,25 @@ products.forEach(function (item) {
       */
 let boxList = document.querySelector('.box-list');
 
-let boxItem = '<div class = "box-item"></div>';
-boxList.insertAdjacentHTML('beforeend', boxList);
+products.forEach(function (item, index) {
+  let boxItem = `<div class = "box-item"></div>`;
+  document.querySelector('.box-list').insertAdjacentHTML('beforeend', boxItem)
 
-let images = '<img src="" alt="">';
-boxList.insertAdjacentHTML('beforeend', images);
-images.src = 'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/76c75d04bdb641f5927cc147fe14e812_9366/E5_Beige_IE7062_01_standard.jpg';
+  let boxImg = `<img src="${item.img}" alt ="${item.title}">`;
+  document.querySelectorAll('.box-item')[index].insertAdjacentHTML('beforeend', boxImg);
 
-let shoInfo = '<div class = "sho-info"></div>';
-boxList.insertAdjacentHTML('beforeend', shoInfo);
+  let shoInfo = `<div class = "sho-info"></div>`;
+  document.querySelectorAll('.box-item')[index].insertAdjacentHTML('beforeend', shoInfo);
 
-let title = '<h2 class = "title"></h2>';
-boxList.insertAdjacentHTML('beforeend', title);
+  let boxTitle = `<h2>${item.title}</h2>`;
+  document.querySelectorAll('.sho-info')[index].insertAdjacentHTML('beforeend', boxTitle);
 
-let price = '<div class = "price"></div>';
-boxList.insertAdjacentHTML('beforeend', price);
+  let boxPrice = `<p>${item.price}</p>`;
+  document.querySelectorAll('.sho-info')[index].insertAdjacentHTML('beforeend', boxPrice);
 
-let size = '<div class = "size"></div>';
-boxList.insertAdjacentHTML('beforeend', size);
+  let boxSize = `<p>${item.size}</p>`;
+  document.querySelectorAll('.sho-info')[index].insertAdjacentHTML('beforeend', boxSize);
 
-let color = '<div class = "color"></div>';
-boxList.insertAdjacentHTML('beforeend', color);
-
-
-products.forEach(function (item) {
-
+  let boxColor = `<p>${item.color}</p>`;
+  document.querySelectorAll('.sho-info')[index].insertAdjacentHTML('beforeend', boxColor);
 })
-
-
-
-
