@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,11 +16,18 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
-
-    <!-- JQuery CDN -->
-    <script src="https://code.jquery.com/jquery-3.7.0.min.js"
-        integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
-
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../Project-images/favicon_package_v0.16/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../Project-images/favicon_package_v0.16/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../Project-images/favicon_package_v0.16/favicon-16x16.png">
+    <link rel="manifest" href="../Project-images/favicon_package_v0.16/site.webmanifest">
+    <link rel="mask-icon" href="../Project-images/favicon_package_v0.16/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <!-- slickslider -->
+    <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script type="text/javascript" src="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <!-- 우편번호 api -->
     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 
@@ -46,9 +56,9 @@
                             <span class="date"></span>
                             (<span class="week"></span>)
                         </li>
-                        <li>36.5°C</li>
+                        <li class="weather"><span class="temp"></span><span class="weather-icon"></span></li>
                         <li>미세먼지 좋음</li>
-                        <li><a href="">전체누리집 바로가기
+                        <li class="menu-img"><a href="">전체누리집 바로가기
                                 <img src="../Project-images/header/topIcon_white.png" alt="전체누리집 바로가기 아이콘"></a></li>
                     </ul>
                 </div>
@@ -66,7 +76,9 @@
                         <li class="mainmenu-item"><a href="">경주여행</a>
                             <div class="submenu-list">
                                 <!-- 경주여행 -->
-                                <div class="submenu-left-img"></div>
+                                <div class="submenu-left-img">
+                                    <p></p>
+                                </div>
                                 <div class="ul-wrapper">
                                     <ul>
                                         <li><a href="">권역별 관광지</a></li>
@@ -77,12 +89,15 @@
                                     </ul>
                                 </div>
                             </div>
+                            <div class="submenu-back"></div>
                         </li>
 
                         <li class="mainmenu-item"><a href="">문화행사</a>
                             <div class="submenu-list">
                                 <!-- 문화행사 -->
-                                <div class="submenu-left-img"></div>
+                                <div class="submenu-left-img">
+                                    <p></p>
+                                </div>
                                 <div class="ul-wrapper">
                                     <ul>
                                         <li><a href="">이달의 축제 및 행사</a></li>
@@ -96,7 +111,9 @@
                         <li class="mainmenu-item"><a href="">문화재/역사</a>
                             <div class="submenu-list">
                                 <!-- 문화재/역사 -->
-                                <div class="submenu-left-img"></div>
+                                <div class="submenu-left-img">
+                                    <p></p>
+                                </div>
                                 <div class="ul-wrapper">
                                     <ul>
                                         <li><a href="">세계문화유산</a></li>
@@ -110,7 +127,9 @@
                         <li class="mainmenu-item"><a href="">음식/숙박/쇼핑</a>
                             <div class="submenu-list">
                                 <!-- 음식/숙박/쇼핑 -->
-                                <div class="submenu-left-img"></div>
+                                <div class="submenu-left-img">
+                                    <p></p>
+                                </div>
                                 <div class="ul-wrapper">
                                     <ul>
                                         <li><a href="">음식</a></li>
@@ -124,7 +143,9 @@
                         <li class="mainmenu-item"><a href="">여행도우미</a>
                             <div class="submenu-list">
                                 <!-- 여행도우미 -->
-                                <div class="submenu-left-img"></div>
+                                <div class="submenu-left-img">
+                                    <p></p>
+                                </div>
                                 <div class="ul-wrapper">
                                     <ul>
                                         <li><a href="">교통정보</a></li>
@@ -284,8 +305,8 @@
                                     <span class="marking">*</span>연락처</label>
                             </th>
                             <td class="inputbox phone">
-                                <select name="phonenum1" id="phonenum1" class="phone1">
-                                    <option name="phonenum1" value="010">010</option>
+                                <select name="phonenum1" id="phonenum1" class="phone1" onchange="getPhone()">
+                                    <option name=" phonenum1" value="010">010</option>
                                     <option name="phonenum1" value="011">011</option>
                                     <option name="phonenum1" value="016">016</option>
                                     <option name="phonenum1" value="017">017</option>

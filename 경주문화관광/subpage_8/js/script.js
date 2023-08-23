@@ -1,13 +1,19 @@
 // mainmenu
 $('.submenu-list').hide();
 
+$(".mainmenu-list").hover(function () {
+  $(".submenu-back").stop().slideDown(500);
+}, function () {
+  $(".submenu-back").stop().slideUp(500);
+})
+
 // 메인메뉴 hover시 폰트색깔, 이미지 바뀜
 $('.mainmenu-item').hover(function () {
   $(this).find('.submenu-list').stop().slideDown(500);
   $('.global-header').css('backgroundColor', '#fbfbfb');
   $('.global-header').css('transition', 'none');
   $('.top-menu, .top-menu a').css('color', '#000');
-  $(".top-right-menu img").attr("src", "../Project-images/header/topIcon.png");
+  $(".menu-img img").attr("src", "../Project-images/header/topIcon.png");
   $('.mainmenu').css('border-color', '#bbb');
   $('.mainmenu-item>a').css('color', '#000');
   $('.mainmenu h1 span').css('color', '#000');
@@ -15,21 +21,35 @@ $('.mainmenu-item').hover(function () {
   $(".menu-buttons a, i").css('color', '#000');
   $(".menu-buttons img").attr("src", "../Project-images/header/home-black2.png");
   $(".submenu-list").css("border-top", "1px solid #bbb")
-  $(".ul-wrapper ul li").stop().fadeIn();
+  $(this).find(".ul-wrapper").stop().fadeIn(1000);
+  $(this).find(".submenu-left-img").stop().fadeIn(1000);
+  $(".submenu-left-img p").text($(this).children("a").text())
 
 }, function () {
   $(this).find('.submenu-list').stop().slideUp();
   $('.global-header').css('backgroundColor', 'transparent');
   $('.global-header').css('transition', '1000ms', 'ease-in-out');
   $('.top-menu, .top-menu a').css('color', '#fff');
-  $(".top-right-menu img").attr("src", "../Project-images/header/topIcon_white.png");
+  $(".menu-img img").attr("src", "../Project-images/header/topIcon_white.png");
   $('.mainmenu-item>a').css('color', '#fff');
   $('.mainmenu h1 span').css('color', '#fff');
   $(".mainmenu h1 img").attr("src", "../Project-images/header/white-logo.png");
   $(".menu-buttons a, i").css('color', '#fff');
   $(".menu-buttons img").attr("src", "../Project-images/header/home-white.png");
-  $(".ul-wrapper ul li").stop().fadeOut();
+  $(this).find(".ul-wrapper").stop().fadeOut(500);
+  $(this).find(".submenu-left-img").stop().fadeOut(500);
 });
+// 날씨 API
+
+$.getJSON(`https://api.openweathermap.org/data/2.5/weather?q=Seoul&limit=5&appid=1255e4aac90af2ff4a1905e43962ab4b&units=metric`, function (result) {
+
+  // 현재온도
+  $(".temp").append(result.main.temp); //현재온도
+
+  // 현재온도 아이콘
+  let wiconUrl = '<img src="http://openweathermap.org/img/wn/' + result.weather[0].icon + '.png" alt="' + result.weather[0].description + '">';
+  $(".weather-icon").html(wiconUrl);
+})
 
 // gnb script
 
@@ -184,8 +204,6 @@ $(".play").click(function () {
 
 
 
-
-
 /*********************
  * 회원가입 폼 script *
  ********************/
@@ -325,19 +343,27 @@ genderInputs.forEach(function (item) {
 
 let numWarn = document.querySelector('.phone .warn');
 let phoneInputs = document.querySelectorAll('.phone input');
-phoneInputs.forEach(function (input) {
-  input.addEventListener('focusout', function () {
 
-    // select값 가져오는것 다시 알아봐야함
+$('.phone input').focusout(function () {
+  // console.log($('.phone2').val());
 
-    if (document.querySelector('.phone2').value.length == 0 || document.querySelector('.phone3').value.length == 0) {
-      numWarn.innerHTML = '<span class="text-red"> 전화번호를 다시 입력해주세요. </span>';
-    } else {
-      phoneveri = true
-      numWarn.innerHTML = '';
-    }
-  })
+  let phoneExp = /^\d{3,4}$/;;
+  let phone2Val = $('.phone2').val();
+  let phone3Val = $('.phone3').val();
+
+  // console.log(phone2Val, phone3Val);
+
+  if ($('.phone2').val().length == 0 || $('.phone3').val().length == 0) {
+    $('.phone .warn').html('<span class="text-red">필수 정보입니다.</span>');
+  } else if (!phoneExp.test(phone2Val) || !phoneExp.test(phone3Val)) {
+    $('.phone .warn').html('<span class="text-red"> 형식에 맞지않는 번호입니다. </span>');
+  } else {
+    $('.phone .warn').empty();
+    phoneveri = true;
+  }
 })
+
+
 
 
 /********************
@@ -391,7 +417,6 @@ function sample6_execDaumPostcode() {
     }
   }).open();
 }
-
 
 
 // 가입하기 제출
