@@ -42,18 +42,12 @@ body {
 }
 
 .item:hover h1 {
-  width: 100%;
-  left: 0%;
-  transform: translateX(-35%);
+  text-align: left;
 }
 
 h1 {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
   text-align: center;
   margin-bottom: 20px;
-  transition: left 300ms ease-in-out;
 }
 
 img {
