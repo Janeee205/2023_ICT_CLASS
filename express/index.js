@@ -3,7 +3,9 @@
 // cd, cd .., ls
 
 
-// express설치방법
+/******************
+ * express설치방법 *
+ ******************/
 
 /*
 express 폴더 하나 만들고 터미널 열어서 
@@ -22,6 +24,7 @@ express 폴더 하나 만들고 터미널 열어서
 
 6. 재실행 하고싶으면 ctrl + c 서버접속 끊고 node index.js 명령어 재입력
 */
+
 
 
 const express = require('express');
@@ -58,6 +61,38 @@ app.get('/', function (requests, response) {
 app.get('/test', function (requests, response) {
   response.send('Test 페이지입니다.');
 })
+
+app.get('/login', function (requests, response) {
+  response.sendFile(__dirname + '/login/login.html')
+})
+
+
+
+
+
+/*********************
+ * 서버 재실행 자동화 *
+ ********************/
+/*
+ 서버 종료시 => ctrl + c
+
+-g(global)로 컴퓨터 전역에서 이용 가능하게 설치
+
+npm install -g nodemon
+nodemon index.js
+
+
+*****   powershell 보안오류 뜰 시    *****
+
+1. powershell 관리자 모드로 실행
+
+2. Restricted 뜨면, set-executionpolicy unrestricted 입력 
+
+3. 실행 정책을 변경하시겠습니까? -> y
+
+4. 이후 터미널에서   nodemon index.js 재입력
+
+
 
 
 
