@@ -62,10 +62,15 @@ app.get('/test', function (requests, response) {
   response.send('Test 페이지입니다.');
 })
 
+// 로그인 연결
 app.get('/login', function (requests, response) {
   response.sendFile(__dirname + '/login/login.html')
 })
 
+// 지도 연결
+app.get('/map', function (requests, response) {
+  response.sendFile(__dirname + '/map.html')
+})
 
 
 
