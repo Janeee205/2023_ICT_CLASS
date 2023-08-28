@@ -5,9 +5,8 @@
 
 /******************
  * express설치방법 *
- ******************/
+ ******************
 
-/*
 express 폴더 하나 만들고 터미널 열어서 
 
 1. npm init  
@@ -48,12 +47,13 @@ app.listen(7000, function () {
 })
 
 
-
-// 서버에 GET요청으로 정보 받아오기
-// 유저가 localhost:7000으로 접속하면 send, sendFile
-// app.get('경로', function(){})
-// requests(요청), response(응답)
-// slash / 메인경로 (localhost:7000)
+/*
+서버에 GET요청으로 정보 받아오기
+유저가 localhost:7000으로 접속하면 send, sendFile
+app.get('경로', function(){})
+requests(요청), response(응답)
+slash / 메인경로 (localhost:7000)
+*/
 app.get('/', function (requests, response) {
   response.sendFile(__dirname + '/index.html')
 })
@@ -69,7 +69,7 @@ app.get('/login', function (requests, response) {
 
 // 지도 연결
 app.get('/map', function (requests, response) {
-  response.sendFile(__dirname + '/map.html')
+  response.sendFile(__dirname + '/map/map.html')
 })
 
 
@@ -77,8 +77,8 @@ app.get('/map', function (requests, response) {
 
 /*********************
  * 서버 재실행 자동화 *
- ********************/
-/*
+ ********************
+
  서버 종료시 => ctrl + c
 
 -g(global)로 컴퓨터 전역에서 이용 가능하게 설치
@@ -87,25 +87,39 @@ npm install -g nodemon
 nodemon index.js
 
 
-*****   powershell 보안오류 뜰 시    *****
+*****   powershell 보안오류 뜰 시   *****
 
 1. powershell 관리자 모드로 실행
 
-2. Restricted 뜨면, set-executionpolicy unrestricted 입력 
+2. Restricted 뜨면, set-executionpolicy unrestricted 입력
 
 3. 실행 정책을 변경하시겠습니까? -> y
 
 4. 이후 터미널에서   nodemon index.js 재입력
+*/
 
 
 
+/*****************
+ * 지도 api 연결 *
+ ****************
+
+카카오 개발자 가입 후, 어플리케이션 등록
+https://developers.kakao.com/console/app/960928/config/appKey
+
+아래 링크에서 '지도를 띄우는 코드 작성' 참조하여 코드 복사
+https://apis.map.kakao.com/web/guide/
+
+좌표는 아래 링크에서 가져온다
+https://apis.map.kakao.com/web/sample/addMapClickEventWithMarker/
+*/
 
 
 
+/****************
+ * node.js 설명 *
+ ***************
 
-
-
-/*
 서버 : 요청한 정보를 보내주는 프로그램
 HTTP 요청 방식 네가지
 
@@ -128,5 +142,3 @@ node.js를 만들었다.
 // 장점 : 가벼운 요청부터 먼저 처리
 // 단점 : 이미지, 동영상, 연산처리가 필요한 서비스를 개발해야 할 경우 속도도 떨어지고 라이브러리도 부족
 */
-
-
