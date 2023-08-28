@@ -119,7 +119,7 @@ nodemon index.js
 
 *****   powershell 보안오류 뜰 시   *****
 
-1. powershell 관리자 모드로 실행
+1. powershell 관리자 모드로 실행, executionpolicy
 
 2. Restricted 뜨면, set-executionpolicy unrestricted 입력
 
