@@ -19,6 +19,8 @@ express 폴더 하나 만들고 터미널 열어서
    터미널 창에 콘솔로그 찍힘
 
 5. 브라우저 열고 http://localhost:7000/ 로 접속
+
+6. 재실행 하고싶으면 ctrl + c 서버접속 끊고 node index.js 명령어 재입력
 */
 
 
@@ -41,6 +43,24 @@ localhost:7000(port number)
 app.listen(7000, function () {
   console.log('7000번 포트')
 })
+
+
+
+// 서버에 GET요청으로 정보 받아오기
+// 유저가 localhost:7000으로 접속하면 send, sendFile
+// app.get('경로', function(){})
+// requests(요청), response(응답)
+// slash / 메인경로 (localhost:7000)
+app.get('/', function (requests, response) {
+  response.sendFile(__dirname + '/index.html')
+})
+
+app.get('/test', function (requests, response) {
+  response.send('Test 페이지입니다.');
+})
+
+
+
 
 
 
@@ -67,8 +87,6 @@ node.js를 만들었다.
 // Node.js 장단점
 // 장점 : 가벼운 요청부터 먼저 처리
 // 단점 : 이미지, 동영상, 연산처리가 필요한 서비스를 개발해야 할 경우 속도도 떨어지고 라이브러리도 부족
-
-
 */
 
 
