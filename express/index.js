@@ -3,6 +3,36 @@
 // cd, cd .., ls
 
 
+
+/****************
+ * node.js 설명 *
+ ***************
+
+서버 : 요청한 정보를 보내주는 프로그램
+HTTP 요청 방식 네가지
+
+1. GET (읽기)
+2. POST (쓰기)
+3. PUT (수정)
+4. DELETE (삭제)
+
+Node.js
+Javascript runtime
+
+Javascript는 프로그래밍적 연산을 하기 위한 언어가 아니라
+html요소를 조작하기 위해 만들어진 언어
+Javascript 언어는 브라우저가 해석한다. (크롬, 사파리, 파이어폭스, 엣지 등)
+
+크롬 브라우저에 v8엔진에서 브라우저 환경 외에 다른 환경에서도 사용할 수 있도록
+node.js를 만들었다.
+
+// Node.js 장단점
+// 장점 : 가벼운 요청부터 먼저 처리
+// 단점 : 이미지, 동영상, 연산처리가 필요한 서비스를 개발해야 할 경우 속도도 떨어지고 라이브러리도 부족
+*/
+
+
+
 /******************
  * express설치방법 *
  ******************
@@ -47,6 +77,7 @@ app.listen(7000, function () {
 })
 
 
+
 /*
 서버에 GET요청으로 정보 받아오기
 유저가 localhost:7000으로 접속하면 send, sendFile
@@ -71,7 +102,6 @@ app.get('/login', function (requests, response) {
 app.get('/map', function (requests, response) {
   response.sendFile(__dirname + '/map/map.html')
 })
-
 
 
 
@@ -112,33 +142,4 @@ https://apis.map.kakao.com/web/guide/
 
 좌표는 아래 링크에서 가져온다
 https://apis.map.kakao.com/web/sample/addMapClickEventWithMarker/
-*/
-
-
-
-/****************
- * node.js 설명 *
- ***************
-
-서버 : 요청한 정보를 보내주는 프로그램
-HTTP 요청 방식 네가지
-
-1. GET (읽기)
-2. POST (쓰기)
-3. PUT (수정)
-4. DELETE (삭제)
-
-Node.js
-Javascript runtime
-
-Javascript는 프로그래밍적 연산을 하기 위한 언어가 아니라
-html요소를 조작하기 위해 만들어진 언어
-Javascript 언어는 브라우저가 해석한다. (크롬, 사파리, 파이어폭스, 엣지 등)
-
-크롬 브라우저에 v8엔진에서 브라우저 환경 외에 다른 환경에서도 사용할 수 있도록
-node.js를 만들었다.
-
-// Node.js 장단점
-// 장점 : 가벼운 요청부터 먼저 처리
-// 단점 : 이미지, 동영상, 연산처리가 필요한 서비스를 개발해야 할 경우 속도도 떨어지고 라이브러리도 부족
 */
