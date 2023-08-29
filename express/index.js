@@ -54,6 +54,31 @@ express 폴더 하나 만들고 터미널 열어서
 6. 재실행 하고싶으면 ctrl + c 서버접속 끊고 node index.js 명령어 재입력
 */
 
+
+
+/*********************
+ * 서버 재실행 자동화 *
+ ********************
+
+ 서버 종료시 => ctrl + c
+
+-g(global)로 컴퓨터 전역에서 이용 가능하게 설치
+
+npm install -g nodemon
+nodemon index.js
+
+
+*****   powershell 보안오류 뜰 시   *****
+
+1. powershell 관리자 모드로 실행, executionpolicy
+
+2. Restricted 뜨면, set-executionpolicy unrestricted 입력
+
+3. 실행 정책을 변경하시겠습니까? -> y
+
+4. 이후 터미널에서   nodemon index.js 재입력
+*/
+
 /************************************
  * 재 실행시 cd express 로 폴더 이동 *
  *  nodemon index.js 입력          *
@@ -131,27 +156,12 @@ app.post('/add', function (requests, response) {
 // 서버한테 정보를 보내주는 코드
 // 서버에 보낸 정보를 영구 저장하려면 DB에 저장해야 한다.
 
-
-/*********************
- * 서버 재실행 자동화 *
- ********************
-
- 서버 종료시 => ctrl + c
-
--g(global)로 컴퓨터 전역에서 이용 가능하게 설치
-
-npm install -g nodemon
-nodemon index.js
-
-
-*****   powershell 보안오류 뜰 시   *****
-
-1. powershell 관리자 모드로 실행, executionpolicy
-
-2. Restricted 뜨면, set-executionpolicy unrestricted 입력
-
-3. 실행 정책을 변경하시겠습니까? -> y
-
-4. 이후 터미널에서   nodemon index.js 재입력
+/*
+ url 이름 작명법
+1. URL 명사로 작성 추천 /명사
+2. 하위 문서를 나타낼 때 / slash(하위폴더)
+3. 파일 확장자 사용X(.html, .css 등)
+4. 띄어쓰기 대신 (-) 사용
+5. 자료 하나당 하나의 URL 사용
+6. URL을 봤을 때 어떤 페이지인지 알 수 있어야 한다.
 */
-
