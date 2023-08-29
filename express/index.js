@@ -37,8 +37,6 @@ node.js를 만들었다.
  * express설치방법 *
  ******************
 
-<경주폴더 하나 복사하여 express 안에 넣고 시도해보기>
-
 express 폴더 하나 만들고 터미널 열어서 
 
 1. npm init  
@@ -55,6 +53,11 @@ express 폴더 하나 만들고 터미널 열어서
 
 6. 재실행 하고싶으면 ctrl + c 서버접속 끊고 node index.js 명령어 재입력
 */
+
+/************************************
+ * 재 실행시 cd express 로 폴더 이동 *
+ *  nodemon index.js 입력          *
+ **********************************/
 
 
 
@@ -78,7 +81,8 @@ app.listen(7000, function () {
   console.log('7000번 포트')
 })
 
-
+// 폴더 내 모든 정적파일 제공(js, css, images, fonts)
+app.use(express.static(__dirname))
 
 /*
 서버에 GET요청으로 정보 받아오기
@@ -86,9 +90,8 @@ app.listen(7000, function () {
 app.get('경로', function(){})
 requests(요청), response(응답)
 slash / 메인경로 (localhost:7000)
-
-css : https://minu0807.tistory.com/39 (아마 나중에 할듯)
 */
+
 app.get('/', function (requests, response) {
   response.sendFile(__dirname + '/index.html')
 })
