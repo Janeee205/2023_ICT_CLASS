@@ -37,6 +37,8 @@ node.js를 만들었다.
  * express설치방법 *
  ******************
 
+<경주폴더 하나 복사하여 express 안에 넣고 시도해보기>
+
 express 폴더 하나 만들고 터미널 열어서 
 
 1. npm init  
@@ -84,6 +86,8 @@ app.listen(7000, function () {
 app.get('경로', function(){})
 requests(요청), response(응답)
 slash / 메인경로 (localhost:7000)
+
+css : https://minu0807.tistory.com/39 (아마 나중에 할듯)
 */
 app.get('/', function (requests, response) {
   response.sendFile(__dirname + '/index.html')
@@ -101,6 +105,11 @@ app.get('/login', function (requests, response) {
 // 지도 연결
 app.get('/map', function (requests, response) {
   response.sendFile(__dirname + '/map/map.html')
+})
+
+// subpage4
+app.get('/sub4', function (requests, response) {
+  response.sendFile(__dirname + '/subpage_4/index.html')
 })
 
 
