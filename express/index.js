@@ -92,7 +92,7 @@ requests(요청), response(응답)
 slash / 메인경로 (localhost:7000)
 */
 
-app.get('/', function (requests, response) {
+app.get('', function (requests, response) {
   response.sendFile(__dirname + '/index.html')
 })
 
@@ -110,11 +110,26 @@ app.get('/map', function (requests, response) {
   response.sendFile(__dirname + '/map/map.html')
 })
 
-// subpage4
-app.get('/sub4', function (requests, response) {
-  response.sendFile(__dirname + '/subpage_4/index.html')
+// POST
+// body-parser -> 요청 데이터해석을 도와주는 라이브러라
+// npm install body-parser
+
+const bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({ extended: true }));
+
+// input 태그 값을 서버에 전송하려면 name 속성 추가
+
+// app.post('', function*(){})
+// input에 작성된 내용은 requests 파라미터가 갖고 있는 것
+app.post('/add', function (requests, response) {
+  response.send('전송완료!');
+  console.log(requests.body);
+  // console.log(requests.body.id);
+  // console.log(requests.body.pw);
 })
 
+// 서버한테 정보를 보내주는 코드
+// 서버에 보낸 정보를 영구 저장하려면 DB에 저장해야 한다.
 
 
 /*********************
@@ -140,18 +155,3 @@ nodemon index.js
 4. 이후 터미널에서   nodemon index.js 재입력
 */
 
-
-
-/*****************
- * 지도 api 연결 *
- ****************
-
-카카오 개발자 가입 후, 어플리케이션 등록
-https://developers.kakao.com/console/app/960928/config/appKey
-
-아래 링크에서 '지도를 띄우는 코드 작성' 참조하여 코드 복사
-https://apis.map.kakao.com/web/guide/
-
-좌표는 아래 링크에서 가져온다
-https://apis.map.kakao.com/web/sample/addMapClickEventWithMarker/
-*/
