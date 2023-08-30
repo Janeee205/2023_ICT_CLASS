@@ -146,13 +146,14 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // app.post('', function*(){})
 // input에 작성된 내용은 requests 파라미터가 갖고 있는 것
+/*
 app.post('/add', function (requests, response) {
-  response.send('전송완료!');
-  console.log(requests.body);
-  // console.log(requests.body.id);
-  // console.log(requests.body.pw);
+response.send('전송완료!');
+console.log(requests.body);
+console.log(requests.body.id);
+console.log(requests.body.pw);
 })
-
+*/
 // 서버한테 정보를 보내주는 코드
 // 서버에 보낸 정보를 영구 저장하려면 DB에 저장해야 한다.
 
@@ -165,3 +166,64 @@ app.post('/add', function (requests, response) {
 5. 자료 하나당 하나의 URL 사용
 6. URL을 봤을 때 어떤 페이지인지 알 수 있어야 한다.
 */
+
+
+
+/************************************
+ * MongnDB 설치필요                 *
+ * npm install mongodb@3.6.4       *
+ **********************************/
+
+const MongoClient = require('mongodb').MongoClient;
+
+
+// 데이터를 저장할 변수 하나 선언
+let db;
+
+// Database access에서 만든 아이디 : 비밀번호
+MongoClient.connect('mongodb+srv://admin:qewr1324@cluster0.yb4lr5p.mongodb.net/?retryWrites=true&w=majority', function (error, client) {
+  // 커넥션 에러의 99.9%가 url오타
+  // mongodb+srv://admin:qewr1324@cluster0.yb4lr5p.mongodb.net/?retryWrites=true&w=majority
+
+  if (error) {
+    return console.log(error)
+  }
+
+  db = client.db('data')
+  app.listen('7070', function () {
+    console.log('success')
+  })
+
+})
+
+
+app.post('/add', function (requests, response) {
+  console.log(requests.body)
+  response.send('전송 완료!')
+
+  db.collection('post').insertOne({ 아이디: requests.body.id, 비밀번호: requests.body.pw }, function (error, result) {
+    console.log('db에 저장완료!')
+  })
+})
+
+
+
+//  /add로 접속하면 GET 요청으로 DB에 저장된 데이터를 보여준다.
+//
+// .html -> .ejs로 확장자만 바꿔서 사용하면 된다.
+/*******************
+ * npm install ejs *
+ *******************/
+
+app.set('view engine', 'ejs')
+
+app.get('/add', function (requests, response) {
+  // post라는 collection에 저장된 데이터를 꺼낸다.
+  // collection 이름
+  db.collection('post').find().toArray(function (error, result) {
+    console.log(result);
+  })
+
+  response.render('data.ejs', { log: result })
+
+})
