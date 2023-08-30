@@ -1,3 +1,24 @@
 body {
   background-image: url('../images/cat02.jpg');
 }
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1{
+  background-color: #fff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, .8);
+}
+
+.info-box{
+  display: flex;
+  gap: 30px;
+  margin: 5px;
+  padding: 10px;
+  width: 500px;
+  background-color: #ffffff9a;
+  border: 1px solid lightcoral;
+}
