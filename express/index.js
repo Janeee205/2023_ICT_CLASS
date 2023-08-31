@@ -196,7 +196,7 @@ MongoClient.connect('mongodb+srv://admin:qewr1324@cluster0.yb4lr5p.mongodb.net/?
 
 })
 
-// mongoDB에 데이터 넣기 ★★★★★★★★★★★★★★
+// ★★★★★★★ mongoDB에 데이터 넣기 ★★★★★★★
 
 app.post('/add', function (requests, response) {
   console.log(requests.body)
