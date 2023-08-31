@@ -8,17 +8,36 @@ body {
   box-sizing: border-box;
 }
 
-h1{
-  background-color: #fff;
+.title{
+  padding-left: 10px;
+  background-color: #ffffff7a;
   box-shadow: 0 0 20px rgba(0, 0, 0, .8);
+  margin-bottom: 10px;
+}
+
+h1{
+  display: inline;
+}
+
+span a{
+  color: #000;
+  padding-left:15px
 }
 
 .info-box{
   display: flex;
   gap: 30px;
   margin: 5px;
-  padding: 10px;
+  padding: 10px 7px 7px 20px;
   width: 500px;
   background-color: #ffffff9a;
-  border: 1px solid lightcoral;
+  border: 2px solid lightpink;
+  }
+
+.info-box button{
+border: none;
+padding: 3px 10px;
+border-radius: 5px;
+background-color: orange;
+cursor: pointer;
 }
