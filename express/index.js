@@ -211,6 +211,7 @@ app.post('/add', function (requests, response) {
 //  /add로 접속하면 GET 요청으로 DB에 저장된 데이터를 보여준다.
 //
 // .html -> .ejs로 확장자만 바꿔서 사용하면 된다.
+
 /*******************
  * npm install ejs *
  *******************/
