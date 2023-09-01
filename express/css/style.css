@@ -10,7 +10,7 @@ body {
 
 
 .title {
-  padding-left: 25px;
+  padding: 10px 10px 10px 25px;
   background-color: #ffffff7a;
   box-shadow: 0 0 20px rgba(0, 0, 0, .8);
 }
@@ -21,12 +21,12 @@ h1 {
 
 span a {
   color: #000;
-  padding-left: 15px
+  padding-left: 20px
 }
 
 
-main{
-  padding: 15px;
+main {
+  padding: 20px;
 }
 
 .box-item {
@@ -47,7 +47,7 @@ main{
   gap: 30px;
 }
 
-.info-box p{
+.info-box p {
   font-size: 20px;
   color: darkslategrey;
   font-weight: bold;

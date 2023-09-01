@@ -236,7 +236,7 @@ app.post('/add', function (requests, response) {
     {$set : {totalData : 변경 할 값}}
     {$inc : {totalData : 기존값에 더해줄 값}}
     */
-   
+
     db.collection('total').updateOne({ name: 'dataLength' }, { $inc: { totalData: 1 } }, function (error, result) {
       if (error) {
         return console.log(error);
@@ -262,8 +262,31 @@ app.set('view engine', 'ejs');
 app.get('/add', function (requests, response) {
   // post라는 collection에 저장된 데이터를 꺼낸다.
   db.collection('post').find().toArray(function (error, result) {
-    console.log(result)
+    // console.log(result)
     response.render('data.ejs', { log: result })
   })
+
+})
+
+
+
+// delete 버튼 눌렀을때
+app.delete('/delete', function (requests, response) {
+  console.log(requests.body)
+  requests.body._id = parseInt(requests.body._id);
+
+  db.collection('post').deleteOne({ _id: requests.body._id }, function (error, result) {
+    if (error) {
+      console.log(error)
+    }
+    console.log('삭제완료!!')
+  })
+
+  // 성공적으로 끝났음을 Ajax에게 알림
+  // HTTP response status codes
+  // 2xx -> 요청성공
+  // 4xx -> 고객 문제로 요청 실패
+  // 5xx -> 서버 문제로 요청 실패
+  response.status(200).send({ measage: '성공!' })
 
 })
