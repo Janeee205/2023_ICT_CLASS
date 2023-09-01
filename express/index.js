@@ -236,6 +236,7 @@ app.post('/add', function (requests, response) {
     {$set : {totalData : 변경 할 값}}
     {$inc : {totalData : 기존값에 더해줄 값}}
     */
+   
     db.collection('total').updateOne({ name: 'dataLength' }, { $inc: { totalData: 1 } }, function (error, result) {
       if (error) {
         return console.log(error);

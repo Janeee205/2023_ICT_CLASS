@@ -2,42 +2,61 @@ body {
   background-image: url('../images/cat02.jpg');
 }
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-.title{
-  padding-left: 10px;
+
+.title {
+  padding-left: 25px;
   background-color: #ffffff7a;
   box-shadow: 0 0 20px rgba(0, 0, 0, .8);
-  margin-bottom: 10px;
 }
 
-h1{
+h1 {
   display: inline;
 }
 
-span a{
+span a {
   color: #000;
-  padding-left:15px
+  padding-left: 15px
 }
 
-.info-box{
+
+main{
+  padding: 15px;
+}
+
+.box-item {
   display: flex;
-  gap: 30px;
+  width: 700px;
   margin: 5px;
-  padding: 10px 7px 7px 20px;
-  width: 500px;
+  padding: 10px 10px 10px 20px;
+  align-items: center;
+  justify-content: space-between;
   background-color: #ffffff9a;
   border: 2px solid lightpink;
-  }
+}
 
-.info-box button{
-border: none;
-padding: 3px 10px;
-border-radius: 5px;
-background-color: orange;
-cursor: pointer;
+.info-box {
+  display: flex;
+  align-items: center;
+  width: auto;
+  gap: 30px;
+}
+
+.info-box p{
+  font-size: 20px;
+  color: darkslategrey;
+  font-weight: bold;
+}
+
+.box-item button {
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: orange;
+  cursor: pointer;
 }

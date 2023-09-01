@@ -10,25 +10,27 @@
 <!-- ejs파일은 무조건 views폴더 안에 넣어야 한다. -->
 
 <body>
+  
   <div class="title">
     <h1>DB에서 받아온 데이터</h1>
     <span><a href="/login">로그인</a></span>
   </div>
 
-<% for(let i = 0; i < log.length; i++){ %>
-  <div class="info-box">
-    <h4>NUM : <%= log[i]._id %></h4>
-    <h3>ID : <%= log[i].아이디 %></h3>
-    <h3>PW : <%= log[i].비밀번호 %></h3>
-    <button type="button">삭제</button>
-  </div>
-<% } %>
+  <main>
+    <% for(let i = 0; i < log.length; i++){ %>
+      <div class="box-item">
+        <div class="info-box">
 
-
-
-
-
-
+          <!-- 고유 id값, 삭제버튼 -->
+          <p><%= log[i]._id %></p>
+          <h3>ID : <%= log[i].아이디 %></h3>
+          <h3>PW : <%= log[i].비밀번호 %></h3>
+          
+        </div>
+        <button type="button" class="delete">삭제</button>
+      </div>
+    <% } %>
+  </main>
 </body>
 
 </html>
