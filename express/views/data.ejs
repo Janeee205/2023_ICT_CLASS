@@ -26,7 +26,11 @@
         <div class="info-box">
 
           <!-- 고유 id값, 삭제버튼 -->
-          <!-- <p><%= log[i]._id %></p> -->
+          <p>
+            <a href="/info/<%= log[i]._id %>">
+              <%= log[i]._id %>
+            </a>
+          </p>
           <h3>ID : <%= log[i].아이디 %>
           </h3>
           <h3>PW : <%= log[i].비밀번호 %>

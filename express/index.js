@@ -244,8 +244,6 @@ app.post('/add', function (requests, response) {
     })
 
   })
-
-
 })
 
 
@@ -288,5 +286,34 @@ app.delete('/delete', function (requests, response) {
   // 4xx -> 고객 문제로 요청 실패
   // 5xx -> 서버 문제로 요청 실패
   response.status(200).send({ measage: '성공!' })
+
+})
+
+
+
+// 데이터마다 고유의 아이디값이 있다
+// 아이디값을 파라미터로 사용한다
+
+// url에 데이터가 가지고 있는 _id 값을 파라미터로 받는다.
+// 각 페이지에 보여줄 내용이 다르기때문에 내용에 따라서 경로 변경(_id)
+// /info/1  /info/2  
+//  url 파라미터 == 함수 파라미터
+// '/info/:id' : 콜론 뒤에 아무 문자나 입력 했을때
+
+app.get('/info/:id', function (requests, response) {
+  // params.id : url 파라미터중 id 값
+  // 'post' collection에서 params.id 값에 해당하는 데이터 찾아오기
+  // 데이터 찾을때  requests.params.id String => int로 형변환
+  // 'post' collection에 _id 값이 int기 때문
+
+
+  db.collection('post').findOne({ _id: parseInt(requests.params.id) }, function (error, result) {
+
+    // console.log(result)
+    response.render('info.ejs', { data: result })
+
+  })
+
+
 
 })
