@@ -8,6 +8,11 @@ body {
   box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+  color: darkolivegreen
+}
+
 
 .title {
   padding: 10px 10px 10px 25px;
@@ -53,10 +58,17 @@ main {
   font-weight: bold;
 }
 
-.box-item button {
+.buttons button {
   border: none;
   padding: 5px 10px;
   border-radius: 5px;
-  background-color: orange;
   cursor: pointer;
+}
+
+.delete {
+  background-color: orange;
+}
+
+.edit {
+  background-color: lightgreen;
 }
