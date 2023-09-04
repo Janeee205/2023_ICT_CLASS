@@ -291,6 +291,8 @@ app.delete('/delete', function (requests, response) {
 
 
 
+
+
 // 데이터마다 고유의 아이디값이 있다
 // 아이디값을 파라미터로 사용한다
 
@@ -313,7 +315,17 @@ app.get('/info/:id', function (requests, response) {
     response.render('info.ejs', { data: result })
 
   })
-
-
-
 })
+
+// 수정하기 연결
+// params로 받은 _id 값 db collection post에서 가져오기
+app.get('/edit/:id', function (requests, response) {
+
+  db.collection('post').findOne({ _id: parseInt(requests.params.id) }, function (error, result) {
+
+    console.log(result)
+
+    response.render('edit.ejs', { data: result })
+  })
+})
+

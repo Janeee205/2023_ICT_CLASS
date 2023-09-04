@@ -24,20 +24,23 @@
     <% for(let i=0; i < log.length; i++){ %>
       <div class="box-item">
         <div class="info-box">
-
           <!-- 고유 id값, 삭제버튼 -->
           <p>
-            <a href="/info/<%= log[i]._id %>">
-              <%= log[i]._id %>
-            </a>
+            <%= log[i]._id %>
           </p>
           <h3>ID : <%= log[i].아이디 %>
           </h3>
           <h3>PW : <%= log[i].비밀번호 %>
           </h3>
-
         </div>
-        <button type="button" class="delete" data-id="<%= log[i]._id %>">삭제</button>
+
+        <div class="buttons">
+          <a href="/edit/<%= log[i]._id %>">
+            <button type="button" class="edit" data-id="<%= log[i]._id %>">수정</button>
+          </a>
+
+          <button type="button" class="delete" data-id="<%= log[i]._id %>">삭제</button>
+        </div>
       </div>
       <% } %>
   </main>
