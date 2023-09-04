@@ -71,7 +71,7 @@
       }).done(function (result) {
         console.log('요청 성공!');
         // 클릭한 삭제버튼의 부모요소인 div박스를 fadeOut시켜라
-        curClick.parent('.box-item').fadeOut();
+        curClick.parent().parent('.box-item').fadeOut();
       })
     })
 
