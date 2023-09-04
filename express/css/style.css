@@ -63,6 +63,9 @@ main {
   padding: 5px 10px;
   border-radius: 5px;
   cursor: pointer;
+  color: #333;
+  font-weight: 600;
+  font-size: 15px;
 }
 
 .delete {
