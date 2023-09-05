@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ko">
+<html lang="en">
 
 <head>
   <!-- Required meta tags -->
@@ -10,6 +10,8 @@
     integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
   <title>수정하기</title>
 </head>
+
+
 <style>
   body {
     width: 700px;
@@ -56,19 +58,23 @@
     <!-- method : 정보를 어떤 형태로 전달할건지 지정 GET / POST -->
     <!-- 서버랑 통신할 수 있는 방법 네가지 get, post, put, delete -->
     <!-- add 경로로 post 요청함 -->
-    <form action="/add" method="POST">
+
+    <!-- mothod-override 라이브러리를 사용해서 form태그에서 PUT요청을 할 때는 method가 아니라 action에 작성한다. /경로?_method=PUT -->
+    <form action="/edit?_method=PUT" method="POST">
       <div class="form-group">
         <label>ID</label>
         <!-- 서버에서 input을 구분하기 위해 name 속성 작성 -->
-        <input type="text" class="form-control" name="id" value="<%= data.아이디 %>">
+        <input type="text" value="<%= data._id %>" name="_id" style="display: none;">
+        <input value="<%= data.아이디 %>" type="text" class="form-control" name="id">
       </div>
       <div class="form-group">
         <label>PW</label>
-        <input type="password" class="form-control" name="pw" value="<%= data.비밀번호 %>">
+        <input value="<%= data.비밀번호 %>" type="password" class="form-control" name="pw">
       </div>
-      <button type="submit" class="btn btn-success">Login</button>
+      <button type="submit" class="btn btn-success">수정</button>
     </form>
   </section>
+
 
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
@@ -77,7 +83,6 @@
     integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous">
     </script>
 
-  <script src="./index.js"></script>
 </body>
 
 </html>
