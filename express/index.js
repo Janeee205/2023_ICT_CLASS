@@ -67,18 +67,6 @@ express 폴더 하나 만들고 터미널 열어서
 npm install -g nodemon
 nodemon index.js
 
-
-*****   powershell 보안오류 뜰 시   *****
-
-1. powershell 관리자 모드로 실행, executionpolicy
-
-2. Restricted 뜨면, set-executionpolicy unrestricted 입력
-
-3. 실행 정책을 변경하시겠습니까? -> y
-
-4. 이후 터미널에서   nodemon index.js 재입력
-*/
-
 /************************************
  * 재 실행시 cd express 로 폴더 이동 *
  *  nodemon index.js 입력          *
@@ -127,8 +115,25 @@ app.get('/test', function (requests, response) {
 
 // 로그인 연결
 app.get('/login', function (requests, response) {
-  response.sendFile(__dirname + '/login/login.html')
+  // response.sendFile(__dirname + '/login/login.html')
+  db.collection('login').find().toArray(function (error, result) {
+    response.render('login.ejs', { log: result })
+  })
+
 })
+
+
+/*
+app.get('/add', function (requests, response) {
+  db.collection('post').find().toArray(function (error, result) {
+    // console.log(result)
+    response.render('data.ejs', { log: result })
+  })
+
+})
+*/
+
+
 
 // 지도 연결
 app.get('/map', function (requests, response) {
@@ -153,18 +158,6 @@ console.log(requests.body);
 console.log(requests.body.id);
 console.log(requests.body.pw);
 })
-*/
-// 서버한테 정보를 보내주는 코드
-// 서버에 보낸 정보를 영구 저장하려면 DB에 저장해야 한다.
-
-/*
- url 이름 작명법
-1. URL 명사로 작성 추천 /명사
-2. 하위 문서를 나타낼 때 / slash(하위폴더)
-3. 파일 확장자 사용X(.html, .css 등)
-4. 띄어쓰기 대신 (-) 사용
-5. 자료 하나당 하나의 URL 사용
-6. URL을 봤을 때 어떤 페이지인지 알 수 있어야 한다.
 */
 
 
@@ -224,9 +217,9 @@ app.post('/add', function (requests, response) {
     console.log("result.totalData : " + result.totalData);
     let totalDataLength = result.totalData;
 
-
-    db.collection('post').insertOne({ _id: totalDataLength + 1, 아이디: requests.body.id, 비밀번호: requests.body.pw }, function (error, result) {
-      console.log('db에 저장완료!')
+    // login db로 변경
+    db.collection('login').insertOne({ _id: totalDataLength + 1, 아이디: requests.body.id, 비밀번호: requests.body.pw }, function (error, result) {
+      console.log('login에 저장완료!')
     })
 
     /*
@@ -290,18 +283,16 @@ app.delete('/delete', function (requests, response) {
 })
 
 
+/*
+  데이터마다 고유의 아이디값이 있다
+  아이디값을 파라미터로 사용한다
 
-
-
-// 데이터마다 고유의 아이디값이 있다
-// 아이디값을 파라미터로 사용한다
-
-// url에 데이터가 가지고 있는 _id 값을 파라미터로 받는다.
-// 각 페이지에 보여줄 내용이 다르기때문에 내용에 따라서 경로 변경(_id)
-// /info/1  /info/2  
-//  url 파라미터 == 함수 파라미터
-// '/info/:id' : 콜론 뒤에 아무 문자나 입력 했을때
-
+  url에 데이터가 가지고 있는 _id 값을 파라미터로 받는다.
+  각 페이지에 보여줄 내용이 다르기때문에 내용에 따라서 경로 변경(_id)
+  /info/1  /info/2  
+  url 파라미터 == 함수 파라미터
+  '/info/:id' : 콜론 뒤에 아무 문자나 입력 했을때
+*/
 app.get('/info/:id', function (requests, response) {
   // params.id : url 파라미터중 id 값
   // 'post' collection에서 params.id 값에 해당하는 데이터 찾아오기
@@ -328,4 +319,111 @@ app.get('/edit/:id', function (requests, response) {
     response.render('edit.ejs', { data: result })
   })
 })
+
+
+
+/*
+계정 수정가능하게 하기
+HTML form 태그에서는 GET, POST요청만 가능!
+PUT, DELETE 요청을 하고싶다면 외부 라이브러리 설치
+*/
+
+/*******************************
+ * npm install method-override *
+ *******************************/
+
+const methodOverride = require('method-override');
+app.use(methodOverride('_method'))
+
+app.put('/edit', function (requests, response) {
+
+  // {바꿀요소}, {바꿔줄 값}
+  db.collection('post').updateOne({ _id: parseInt(requests.body._id) }, { $set: { 아이디: requests.body.id, 비밀번호: requests.body.pw } }, function (error, result) {
+    console.log('수정 완료!')
+    // 해당 요청이 완료되면 /add라는 경로로 redirection
+    // /add. 라는 url 경로로 다시 이동
+    response.redirect('/add');
+  })
+})
+
+
+// Login 기능구현
+// 1. join.ejs 파일 생성
+// 2. 회원가입 폼 작성
+// 3. db.collection('login')에 join.ejs 파일에 있는 input value값 저장
+
+
+
+// -------------------------------------------------------------------------
+// 0. 서버란?
+// 서버 : 요청한 정보를 보내주는 프로그램
+
+// HTTP 요청 방식 네가지
+// 1. GET(읽기)
+// 2. POST(쓰기)
+// 3. PUT(수정)
+// 4. DELETE(삭제)
+
+// Node.js : Javascript runtime
+// Javascript는 프로그래밍적 연산을 하기 위한 언어가 아니고, HTML을 조작하기 위해 만들어진 언어다.
+// Javascript는 브라우저가 해석한다. (크롬, 사파리, 엣지, 파이어폭스 등) => 그래서 별도의 설치없이 이용 가능!
+// 크롬 브라우저 V8 엔진에서 브라우저 환경 외에 다른 환경에서도 Javascript를 사용할 수 있도록 Node.js를 만들었다.
+
+// Node.js 장단점
+// 장점 : 가벼운 요청부터 먼저 처리
+// 단점 : 이미지, 동영상, 연산 처리가 필요한 서비스를 개발해야 될 경우 속도가 떨어지고, 라이브러리도 부족하다.
+// 이에 최적화된 언어 = python(빅데이터, 데이터 시각화 등)
+
+
+// 1. Node.js express 서버 구축하는 방법
+// Express 라이브러리로 서버 구축
+// 폴더 생성 -> cd로 해당 폴더로 경로 이동
+// cd 폴더명
+// cd(Change Directory), cd .., ls
+
+// npm init => package.json 파일 생성된다.
+// npm init 후 쭉 엔터 entry point 부분에 작성된 파일명과
+// package.json 파일에 작성된 "main": "index.js", 파일명이 동일해야 한다.
+// 다른 이름으로 파일 생성 했을 경우, package.josn 에서 파일명 수정!
+
+// npm install express  => node_modules 생성된다.
+// npm : 라이브러리를 설치하기 위한 도구
+// npm은 Node.js를 설치하면 자동으로 같이 설치되기 때문에 별도의 설치 필요 X
+// node_modules : 라이브러리 사용할 때 필요한 것들이 담긴 폴더
+
+
+// 서버 종료 => ctrl + c
+
+// 서버 재실행 자동화 (nodemon)
+// -g(global)로 컴퓨터 전역에서 이용 가능하도록 설치
+// npm install -g nodemon
+
+// 서버 실행
+// nodemon index.js
+
+// powershell 보안 에러
+// 에러 원인 : Restricted일 때 허가된 script외에 막아버리기 때문에 에러가 발생한다.
+
+// 검색 -> powershell(관리자 권한으로 실행)
+// executionpolicy
+// set-executionpolicy unrestricted => enter
+// y => enter
+
+// 서버한테 정보를 보내주는 코드
+// 서버에 보낸 정보를 영구 저장 하려면 DB(Data Base)에 저장
+
+// url 이름짓기
+// 1. URL 명사로 작성 추천 '/명사'
+// 2. 하위 문서를 나타낼 때 / slash (하위폴더 나누듯이 사용)
+// 3. 파일 확장자 사용 X (.html, .css 등)
+// 4. 띄어쓰기 대신 (-) 사용
+// 5. 자료 하나당 하나의 URL 사용
+// 6. URL을 봤을 때 어떤 페이지인지 알 수 있어야 한다.
+
+
+// 서버에 GET, POST, PUT, DELETE 요청하는 방법
+// DB CRUD (Create(생성), Read(읽기), Update(수정), Delete(삭제))
+// insert, find, update, delete
+// insertOne, findOne, updateOne, deleteOne
+
 
