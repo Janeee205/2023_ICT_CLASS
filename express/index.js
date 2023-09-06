@@ -114,12 +114,9 @@ app.get('/test', function (requests, response) {
 })
 
 // 로그인 연결
+// localhost:7000/login 으로 접속시 보여줄 화면 => login.html
 app.get('/login', function (requests, response) {
-  // response.sendFile(__dirname + '/login/login.html')
-  db.collection('login').find().toArray(function (error, result) {
-    response.render('login.ejs', { log: result })
-  })
-
+  response.sendFile(__dirname + '/login/login.html')
 })
 
 
@@ -217,9 +214,8 @@ app.post('/add', function (requests, response) {
     console.log("result.totalData : " + result.totalData);
     let totalDataLength = result.totalData;
 
-    // login db로 변경
-    db.collection('login').insertOne({ _id: totalDataLength + 1, 아이디: requests.body.id, 비밀번호: requests.body.pw }, function (error, result) {
-      console.log('login에 저장완료!')
+    db.collection('post').insertOne({ _id: totalDataLength + 1, 아이디: requests.body.id, 비밀번호: requests.body.pw }, function (error, result) {
+      console.log('db 저장완료!')
     })
 
     /*
@@ -347,12 +343,34 @@ app.put('/edit', function (requests, response) {
 })
 
 
-// Login 기능구현
+// 로그인 기능구현
 // 1. join.ejs 파일 생성
 // 2. 회원가입 폼 작성
 // 3. db.collection('login')에 join.ejs 파일에 있는 input value값 저장
 
+app.get('/join', function (requests, response) {
+  response.render('join.ejs')
+})
 
+app.post('/join', function (requests, response) {
+
+  db.collection('total').findOne({ name: 'dataLength' }, function (error, result) {
+    console.log(result.totalData)
+
+    let totalDataLength = result.totalData;
+
+    db.collection('login').insertOne({ _id: totalDataLength + 1, name: requests.body.name, id: requests.body.id, pw: requests.body.pw }, function (error, result) {
+      console.log('login collection에 저장완료!')
+    })
+
+    db.collection('total').updateOne({ name: 'dataLength' }, { $inc: { totalData: 1 } }, function (error, result) {
+      if (error) {
+        return console.log(error);
+      } response.redirect('/login');
+    })
+  })
+
+})
 
 // -------------------------------------------------------------------------
 // 0. 서버란?
