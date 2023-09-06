@@ -392,7 +392,6 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const session = require('express-session');
 
-
 // app.use (미들웨어)
 // 서버와 요청 사이에 중간에서 실행하고 싶은 코드가 있을 때 사용한다.
 // passport 라이브러리 : 미들웨어 제공
@@ -404,6 +403,52 @@ app.get('/login', function (requests, response) {
   response.render('login.ejs');
 })
 
+// 유저가 로그인 페이지에서 로그인 했을 때
+// 데이터를 비교해서 일치하면 응답, 
+// 중간에 응답하기 전에 일치하지 않는다면 
+// /fail 이라는 경로로 이동한다
+
+app.post('/login', passport.authenticate('local', {
+  failureRedirect: '/fail'
+}), function (requests, response) {
+  response.redirect('/')
+})
+
+// 로그인 실패 했을 때  /fail 경로에서 보여줄 화면
+app.get('/fail', function (requests, response) {
+  response.send('<h1>로그인 실패!</h1>');
+})
+
+// localStrategy로 아이디, 비밀번호 값의 일치여부
+passport.use(new LocalStrategy({
+  // 유저가 입력한 아이디, 비밀번호에 필드 이름설정
+  usernameField: 'id',
+  passwordField: 'pw',
+  // 사용자의 로그인 세션 유지 여부
+  session: true,
+  // 아이디, 비밀번호 외에 다른정보를 추가로 검증하고 싶을 때
+  // req 매개변수 값을 콜백함수로 전달
+  passReqToCallback: false
+
+  // 콜백함수에서 유저 아이디 / 비밀번호 검증
+}, function (userID, userPW, done) {
+  db.collection('login').findOne({ id: userID }, function (error, result) {
+    // result가 없을 경우 = 유저가 입력한 userID 값과 db에 일치하는 값이 없을 경우
+    // done() => 파라미터 3개 받는다.
+    // done(서버에러, db데이터, 에러메세지)
+    if (!result) {
+      return done(null, false, { message: '없는 아이디임' })
+    }
+
+    if (userPW == result.pw) {
+      return done(null, result)
+
+    } else {
+      return done(null, false, { message: '비밀번호 불일치' })
+    }
+  })
+
+}))
 
 
 
@@ -478,5 +523,3 @@ app.get('/login', function (requests, response) {
 // DB CRUD (Create(생성), Read(읽기), Update(수정), Delete(삭제))
 // insert, find, update, delete
 // insertOne, findOne, updateOne, deleteOne
-
-
