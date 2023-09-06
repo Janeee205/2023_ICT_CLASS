@@ -343,6 +343,7 @@ app.put('/edit', function (requests, response) {
 })
 
 
+
 // 로그인 기능구현
 // 1. join.ejs 파일 생성
 // 2. 회원가입 폼 작성
@@ -371,6 +372,21 @@ app.post('/join', function (requests, response) {
   })
 
 })
+
+
+
+// 로그인을 위해 라이브러리 설치
+/*
+1. npm install passport
+2. npm install passport-local
+3. npm install express-session
+*/
+
+
+
+
+
+
 
 // -------------------------------------------------------------------------
 // 0. 서버란?
