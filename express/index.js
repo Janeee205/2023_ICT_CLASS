@@ -115,9 +115,9 @@ app.get('/test', function (requests, response) {
 
 // 로그인 연결
 // localhost:7000/login 으로 접속시 보여줄 화면 => login.html
-app.get('/login', function (requests, response) {
-  response.sendFile(__dirname + '/login/login.html')
-})
+// app.get('/login', function (requests, response) {
+//   response.sendFile(__dirname + '/login/login.html')
+// })
 
 
 /*
@@ -375,15 +375,34 @@ app.post('/join', function (requests, response) {
 
 
 
+// 회원가입, 로그인을 구현 할 수 있는 여러가지 방법 중
+// Session을 사용하여 기능 구현(가장 많이 사용하는 방법)
+// 유저가 로그인 하면 Session ID 하나 발급
+// 서버측도 가지고 있고, 유저도 컴퓨터에 그 값을 가진다.
+// Session ID : 유저가 로그인 할 때 작성한 정보
+
 // 로그인을 위해 라이브러리 설치
-/*
-1. npm install passport
-2. npm install passport-local
-3. npm install express-session
-*/
+/**********************************
+ * 1. npm install passport
+ * 2. npm install passport-local
+ * 3. npm install express-session
+ **********************************/
+
+const passport = require('passport');
+const LocalStrategy = require('passport-local').Strategy;
+const session = require('express-session');
 
 
+// app.use (미들웨어)
+// 서버와 요청 사이에 중간에서 실행하고 싶은 코드가 있을 때 사용한다.
+// passport 라이브러리 : 미들웨어 제공
+app.use(session({ secret: 'secret', resave: true, saveUninitialized: false }));
+app.use(passport.initialize());
+app.use(passport.session());
 
+app.get('/login', function (requests, response) {
+  response.render('login.ejs');
+})
 
 
 
