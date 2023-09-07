@@ -9,43 +9,59 @@ queryParams += '&' + encodeURIComponent('numOfRows') + '=' + encodeURIComponent(
 queryParams += '&' + encodeURIComponent('pageNo') + '=' + encodeURIComponent('1'); /* 페이지 번호 설정 */
 queryParams += '&' + encodeURIComponent('sidoName') + '=' + encodeURIComponent('경북'); /* 조회할 데이터 시도 이름 설정 */
 queryParams += '&' + encodeURIComponent('searchCondition') + '=' + encodeURIComponent('DAILY'); /* 데이터 기간 */
+
+
 xhr.open('GET', url + queryParams);
-xhr.onreadystatechange = function () {
-  if (this.readyState == 4) { // 서버 응답 완료 상태 확인
-    if (this.status === 200) { // HTTP 상태코드 200 (성공)
 
-      // 서버로부터 받은 json 형식의 문자열 데이터를 Javascript 객체로 변환
-      // responseText : 객체가 서버로부터 응답 받은 문자열이 담긴 변수
-      let responseData = JSON.parse(this.responseText);
-      console.log(responseData.response.body.items)
+function updateData() {
 
-      // responseData에서 원하는 데이터만 추출해서 html 표기
-      if (responseData.response.body.items) {
-        console.log(responseData.response.body.items[1])
+  xhr.onreadystatechange = function () {
+    if (this.readyState == 4) { // 서버 응답 완료 상태 확인
+      if (this.status === 200) { // HTTP 상태코드 200 (성공)
 
-        let items = responseData.response.body.items;
-        let dataDisplay = document.getElementById('data');
+        // 서버로부터 받은 json 형식의 문자열 데이터를 Javascript 객체로 변환
+        // responseText : 객체가 서버로부터 응답 받은 문자열이 담긴 변수
+        let responseData = JSON.parse(this.responseText);
+        console.log(responseData.response.body.items)
 
+        // responseData에서 원하는 데이터만 추출해서 html 표기
+        if (responseData.response.body.items) {
+          console.log(responseData.response.body.items[1])
 
-        for (let i = 0; i < items.length; i++) {
+          let items = responseData.response.body.items;
+          let dataDisplay = document.getElementById('data');
+          let latestData = null;
 
-          let item = items[i];
+          for (let i = 0; i < items.length; i++) {
 
-          if (item.cityName == '경주시') {
-            let dataItem = document.createElement('div');
-            dataItem.innerHTML = item.cityName + ' 미세먼지 : ' + item.pm10Value;
+            let item = items[i];
+            if (item.cityName == '경주시') {
 
-            dataDisplay.appendChild(dataItem);
+              // 가장 최근 데이터 가져오기
+              // 의도적으로 해당 변수에 아무런 데이터가 할당되지 않았음을 나타내기 위해 null로 초기값 설정
+
+              if (!latestData || item.dataTime > latestData.dataTime) {
+                latestData = item.dataTime;
+
+                let dataItem = document.createElement('div');
+                dataItem.innerHTML = item.cityName + ' 미세먼지 : ' + item.pm10Value;
+                dataDisplay.appendChild(dataItem)
+              }
+            }
           }
+        } else {
+          console.log('데이터 구조 다시 확인해라ㅡㅡ')
         }
+
       } else {
-        console.log('데이터 구조 다시 확인해라ㅡㅡ')
+        console.log('HTTP 요청 실패! ' + this.status)
       }
-
-    } else {
-      console.log('HTTP 요청 실패! ' + this.status)
     }
-  }
-};
+  };
 
-xhr.send('');
+  xhr.send('');
+
+}
+
+
+updateData();
