@@ -138,7 +138,7 @@ app.get('/map', function (requests, response) {
 })
 
 // POST
-// body-parser -> 요청 데이터해석을 도와주는 라이브러라
+// body-parser -> 요청 데이터해석을 도와주는 라이브러리
 // npm install body-parser
 
 const bodyParser = require('body-parser');
@@ -442,7 +442,6 @@ passport.use(new LocalStrategy({
 
     if (userPW == result.pw) {
       return done(null, result)
-
     } else {
       return done(null, false, { message: '비밀번호 불일치' })
     }
@@ -478,7 +477,7 @@ app.get('/mypage', getLogin, function (requests, response) {
 // 로그인 여부를 판단하는 미들웨어
 function getLogin(requests, response, next) {
   if (requests.user) {
-    next();
+    next()
   } else {
     response.send('<h3>로그인 먼저 하세요!😥</h3>')
   }
