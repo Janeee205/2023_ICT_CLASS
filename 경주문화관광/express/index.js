@@ -67,29 +67,39 @@ MongoClient.connect('mongodb+srv://admin:qewr1324@cluster0.yb4lr5p.mongodb.net/?
 /*************************
  * 회원가입 폼 데이터 저장
  * db명 gyeongju_join
- *
  ************************/
-
 
 // 회원가입 폼 작성시 db로 데이터 넘어감
 // 설치 : npm install ejs
 app.post('/join', function (requests, response) {
     let bodyData = requests.body;
     console.log(bodyData);
-    // response.redirect('/login');
-    // response.send('전송완료!')
 
 
-    // 넘겨줄 값
-    // 값이 잘 입력됐는지
-    let isTrue = bodyData.id && bodyData.pw && bodyData.name && bodyData.mail;
-    // 값이 잘 입력됐다면 db로 넘긴다
-    if (isTrue) {
-        db.collection('gyeongju_join').insertOne({ id: requests.body.id, pw: requests.body.pw, name: requests.body.name, email: requests.body.mail }, function (error, result) {
-            console.log('db 저장완료!');
-            response.redirect('/login');
+    db.collection('gyeongju_join_total').findOne({ name: 'dataLength' }, function (error, result) {
+
+        // 넘겨줄 값
+        // 값이 잘 입력됐는지
+        let isTrue = bodyData.id && bodyData.pw && bodyData.name && bodyData.mail;
+        // 값이 잘 입력됐다면 db로 넘긴다
+        if (isTrue) {
+            console.log("result.totalData : " + result.totalData);
+            let totalDataLength = result.totalData;
+
+            db.collection('gyeongju_join').insertOne({ _id: totalDataLength + 1, id: requests.body.id, pw: requests.body.pw, name: requests.body.name, email: requests.body.mail }, function (error, result) {
+                console.log('db 저장완료!');
+                response.redirect('/login');
+            })
+        }
+
+        db.collection('gyeongju_join_total').updateOne({ name: 'dataLength' }, { $inc: { totalData: 1 } }, function (error, result) {
+            if (error) {
+                return console.log(error);
+            } else {
+                console.log('id num 저장완료');
+            }
         })
-    }
+    })
 })
 
 
@@ -152,11 +162,10 @@ passport.use(new LocalStrategy({
         } else {
             return done(null, false, { message: '비밀번호 불일치' })
         }
-
     })
-
-
 }))
+
+
 
 // 로그인 성공 -> 세션정보 만들고,
 // 씨리얼라이즈유저(serializeUser) : 유저 정보를 암호화 
@@ -172,26 +181,22 @@ passport.deserializeUser(function (id, done) {
 })
 
 
-
-
-
-// 계정관리페이지
+// 계정관리페이지 연결
 app.get('/admin', function (requests, response) {
     // collection에 저장된 데이터를 꺼낸다.
     db.collection('gyeongju_join').find().toArray(function (error, result) {
-        // console.log(result)
         response.render('data.ejs', { log: result })
     })
-
 })
 
 
-// delete 버튼 눌렀을때
+// delete 버튼 눌렀을때(계정삭제)
 app.delete('/delete', function (requests, response) {
     console.log(requests.body)
+    console.log('아이디값 ' + requests.body._id)
     requests.body._id = parseInt(requests.body._id);
 
-    db.collection('post').deleteOne({ _id: requests.body._id }, function (error, result) {
+    db.collection('gyeongju_join').deleteOne({ _id: requests.body._id }, function (error, result) {
         if (error) {
             console.log(error)
         }
@@ -205,4 +210,42 @@ app.delete('/delete', function (requests, response) {
     // 5xx -> 서버 문제로 요청 실패
     response.status(200).send({ measage: '성공!' })
 
+})
+
+
+// 수정하기 연결
+// params로 받은 _id 값 db collection post에서 가져오기
+app.get('/edit/:id', function (requests, response) {
+
+    db.collection('gyeongju_join').findOne({ _id: parseInt(requests.params.id) }, function (error, result) {
+
+        console.log(result)
+
+        response.render('edit.ejs', { data: result })
+    })
+})
+
+
+/*
+계정 수정가능하게 하기
+HTML form 태그에서는 GET, POST요청만 가능!
+PUT, DELETE 요청을 하고싶다면 외부 라이브러리 설치
+*/
+
+/*******************************
+ * npm install method-override *
+ *******************************/
+
+const methodOverride = require('method-override');
+app.use(methodOverride('_method'))
+
+app.put('/edit', function (requests, response) {
+
+    // {바꿀요소}, {바꿔줄 값}
+    db.collection('gyeongju_join').updateOne({ _id: parseInt(requests.body._id) }, { $set: { id: requests.body.id, pw: requests.body.pw, name: requests.body.name, email: requests.body.mail } }, function (error, result) {
+        console.log('수정 완료!')
+        // 해당 요청이 완료되면 /add라는 경로로 redirection
+        // /add. 라는 url 경로로 다시 이동
+        response.redirect('/admin');
+    })
 })
