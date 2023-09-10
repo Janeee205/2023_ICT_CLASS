@@ -1,10 +1,4 @@
 
-/**
- * 회원가입시 데이터 입력하지 않아도 db로 넘어가는 문제가 있음
- * 회원가입 script.js의 마지막 summit버튼 부분에서
- * e.preventDefault() 때문에 데이터를 넘기지 못하므로 주석처리 하였음
- */
-
 const express = require('express');
 const app = express();
 
@@ -20,24 +14,41 @@ app.use(express.static("./subpage_8/js"))
 app.use(express.static("./subpage(로그인)"))
 
 
-// ***************** 링크연결 *****************
+/*************************
+ * 링크 연결
+ * 설치 : npm install ejs
+ * ***********************/
 app.set('view engine', 'ejs');
 
+// 메인페이지
 app.get('', function (requests, response) {
     response.sendFile(__dirname + '/index.html')
 })
 
+// 로그인
+app.get('/login', function (requests, response) {
+    response.render('login.ejs')
+})
 
 // 회원가입
 app.get('/join', function (requests, response) {
     response.render('join.ejs')
 })
 
+// 계정관리페이지 연결
+app.get('/admin', function (requests, response) {
+    // collection에 저장된 데이터를 꺼낸다.
+    db.collection('gyeongju_join').find().toArray(function (error, result) {
+        response.render('data.ejs', { log: result })
+    })
+})
 
 
-// body-parser -> 요청 데이터해석을 도와주는 라이브러리
-// 설치 : npm install body-parser
 
+/*********************************
+ * DB 연결
+ * 설치 : npm install body-parser
+ * *******************************/
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -57,20 +68,20 @@ MongoClient.connect('mongodb+srv://admin:qewr1324@cluster0.yb4lr5p.mongodb.net/?
     app.listen('7080', function () {
         console.log('success')
     })
-
 })
 
 
-// 
-// 
+/**********************************
+ * DB명
+ * 계정 저장 : gyeongju_join 
+ * 계정 개수 : gyeongju_join_total
+ **********************************/
 
 /*************************
  * 회원가입 폼 데이터 저장
- * db명 gyeongju_join
- ************************/
-
+ * 설치 : npm install ejs
+ *************************/
 // 회원가입 폼 작성시 db로 데이터 넘어감
-// 설치 : npm install ejs
 app.post('/join', function (requests, response) {
     let bodyData = requests.body;
     console.log(bodyData);
@@ -81,6 +92,7 @@ app.post('/join', function (requests, response) {
         // 넘겨줄 값
         // 값이 잘 입력됐는지
         let isTrue = bodyData.id && bodyData.pw && bodyData.name && bodyData.mail;
+
         // 값이 잘 입력됐다면 db로 넘긴다
         if (isTrue) {
             console.log("result.totalData : " + result.totalData);
@@ -103,7 +115,15 @@ app.post('/join', function (requests, response) {
 })
 
 
-// 로그인
+
+/**********************************
+ * 로그인
+ * 
+ * 설치목록 
+ * 1. npm install passport
+ * 2. npm install passport-local
+ * 3. npm install express-session
+ **********************************/
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const session = require('express-session');
@@ -112,14 +132,6 @@ app.use(session({ secret: 'secret', resave: true, saveUninitialized: false }));
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.get('/login', function (requests, response) {
-    response.render('login.ejs')
-})
-
-// 유저가 로그인 페이지에서 로그인 했을 때
-// 데이터를 비교해서 일치하면 응답, 
-// 중간에 응답하기 전에 일치하지 않는다면 
-// /fail 이라는 경로로 이동한다
 
 app.post('/login', passport.authenticate('local', {
     failureRedirect: '/fail'
@@ -129,12 +141,9 @@ app.post('/login', passport.authenticate('local', {
     console.log(response);
 })
 
-
 app.get('/fail', function (requests, response) {
     response.send("<script>alert('아이디 또는 비밀번호가 잘못되었습니다.');location.href='/login';</script>");
-
 })
-
 
 passport.use(new LocalStrategy({
     // 유저가 입력한 아이디, 비밀번호에 필드 이름 설정
@@ -165,8 +174,6 @@ passport.use(new LocalStrategy({
     })
 }))
 
-
-
 // 로그인 성공 -> 세션정보 만들고,
 // 씨리얼라이즈유저(serializeUser) : 유저 정보를 암호화 
 passport.serializeUser(function (user, done) {
@@ -181,16 +188,9 @@ passport.deserializeUser(function (id, done) {
 })
 
 
-// 계정관리페이지 연결
-app.get('/admin', function (requests, response) {
-    // collection에 저장된 데이터를 꺼낸다.
-    db.collection('gyeongju_join').find().toArray(function (error, result) {
-        response.render('data.ejs', { log: result })
-    })
-})
-
-
-// delete 버튼 눌렀을때(계정삭제)
+/*******************
+ * 계정 삭제 링크연결
+ *******************/
 app.delete('/delete', function (requests, response) {
     console.log(requests.body)
     console.log('아이디값 ' + requests.body._id)
@@ -202,40 +202,24 @@ app.delete('/delete', function (requests, response) {
         }
         console.log('삭제완료!!')
     })
-
-    // 성공적으로 끝났음을 Ajax에게 알림
-    // HTTP response status codes
-    // 2xx -> 요청성공
-    // 4xx -> 고객 문제로 요청 실패
-    // 5xx -> 서버 문제로 요청 실패
     response.status(200).send({ measage: '성공!' })
-
 })
 
 
-// 수정하기 연결
+/*******************
+ * 계정 수정 링크연결
+ *******************/
 // params로 받은 _id 값 db collection post에서 가져오기
 app.get('/edit/:id', function (requests, response) {
-
     db.collection('gyeongju_join').findOne({ _id: parseInt(requests.params.id) }, function (error, result) {
-
         console.log(result)
-
         response.render('edit.ejs', { data: result })
     })
 })
 
-
-/*
-계정 수정가능하게 하기
-HTML form 태그에서는 GET, POST요청만 가능!
-PUT, DELETE 요청을 하고싶다면 외부 라이브러리 설치
-*/
-
-/*******************************
- * npm install method-override *
- *******************************/
-
+/*************************************
+ * 설치 : npm install method-override
+ *************************************/
 const methodOverride = require('method-override');
 app.use(methodOverride('_method'))
 
@@ -251,39 +235,3 @@ app.put('/edit', function (requests, response) {
         })
     }
 })
-
-
-
-
-/*
-app.post('/join', function (requests, response) {
-    let bodyData = requests.body;
-    console.log(bodyData);
-
-
-    db.collection('gyeongju_join_total').findOne({ name: 'dataLength' }, function (error, result) {
-
-        // 넘겨줄 값
-        // 값이 잘 입력됐는지
-        let isTrue = bodyData.id && bodyData.pw && bodyData.name && bodyData.mail;
-        // 값이 잘 입력됐다면 db로 넘긴다
-        if (isTrue) {
-            console.log("result.totalData : " + result.totalData);
-            let totalDataLength = result.totalData;
-
-            db.collection('gyeongju_join').insertOne({ _id: totalDataLength + 1, id: requests.body.id, pw: requests.body.pw, name: requests.body.name, email: requests.body.mail }, function (error, result) {
-                console.log('db 저장완료!');
-                response.redirect('/login');
-            })
-        }
-
-        db.collection('gyeongju_join_total').updateOne({ name: 'dataLength' }, { $inc: { totalData: 1 } }, function (error, result) {
-            if (error) {
-                return console.log(error);
-            } else {
-                console.log('id num 저장완료');
-            }
-        })
-    })
-})
-*/
