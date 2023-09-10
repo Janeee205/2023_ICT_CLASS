@@ -240,12 +240,50 @@ const methodOverride = require('method-override');
 app.use(methodOverride('_method'))
 
 app.put('/edit', function (requests, response) {
+    let bodyData = requests.body;
+    console.log(bodyData);
 
-    // {바꿀요소}, {바꿔줄 값}
-    db.collection('gyeongju_join').updateOne({ _id: parseInt(requests.body._id) }, { $set: { id: requests.body.id, pw: requests.body.pw, name: requests.body.name, email: requests.body.mail } }, function (error, result) {
-        console.log('수정 완료!')
-        // 해당 요청이 완료되면 /add라는 경로로 redirection
-        // /add. 라는 url 경로로 다시 이동
-        response.redirect('/admin');
+    let isTrue = bodyData.id && bodyData.pw && bodyData.name && bodyData.mail;
+    if (isTrue) {
+        db.collection('gyeongju_join').updateOne({ _id: parseInt(requests.body._id) }, { $set: { id: requests.body.id, pw: requests.body.pw, name: requests.body.name, email: requests.body.mail } }, function (error, result) {
+            console.log('수정 완료!')
+            response.redirect('/admin');
+        })
+    }
+})
+
+
+
+
+/*
+app.post('/join', function (requests, response) {
+    let bodyData = requests.body;
+    console.log(bodyData);
+
+
+    db.collection('gyeongju_join_total').findOne({ name: 'dataLength' }, function (error, result) {
+
+        // 넘겨줄 값
+        // 값이 잘 입력됐는지
+        let isTrue = bodyData.id && bodyData.pw && bodyData.name && bodyData.mail;
+        // 값이 잘 입력됐다면 db로 넘긴다
+        if (isTrue) {
+            console.log("result.totalData : " + result.totalData);
+            let totalDataLength = result.totalData;
+
+            db.collection('gyeongju_join').insertOne({ _id: totalDataLength + 1, id: requests.body.id, pw: requests.body.pw, name: requests.body.name, email: requests.body.mail }, function (error, result) {
+                console.log('db 저장완료!');
+                response.redirect('/login');
+            })
+        }
+
+        db.collection('gyeongju_join_total').updateOne({ name: 'dataLength' }, { $inc: { totalData: 1 } }, function (error, result) {
+            if (error) {
+                return console.log(error);
+            } else {
+                console.log('id num 저장완료');
+            }
+        })
     })
 })
+*/

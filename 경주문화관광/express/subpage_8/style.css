@@ -537,7 +537,7 @@ tr {
     border-bottom: 1px solid #EAECF1;
 }
 
-tr:last-child th {
+tr:last-child th:not(.mail) {
     height: 153px;
 }
 

@@ -2,6 +2,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Anton', sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
 }
 
 a {
@@ -37,7 +39,7 @@ span a {
 main {
   margin: 0 auto;
   width: 800px;
-  padding-top: 10px;
+  padding-top: 30px;
 }
 
 .box-item {
