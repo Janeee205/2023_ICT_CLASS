@@ -277,14 +277,14 @@ document.querySelector('.userpw-chk input').addEventListener('focusout', functio
   } else if (userpwChk == userPw.value) {
     pwchkveri = true;
     pwChkWarn.innerHTML = '';
-    pwChkText.innerHTML = '<span class="text-green"> 안전 </span>';
+    pwChkText.innerHTML = '<span class="text-green"> 일치 </span>';
     pwChkImg.src = '../Project-images/login/m_icon_pw_step_07.png';
   } else {
     pwChkWarn.innerHTML = '<span class="text-red">비밀번호가 일치하지 않습니다.</span>';
+    pwChkText.innerHTML = '';
     pwChkImg.src = '../Project-images/login/m_icon_pw_step_02.png';
   }
 })
-
 
 // 이름
 document.querySelector('.username input').addEventListener('focusout', function () {
