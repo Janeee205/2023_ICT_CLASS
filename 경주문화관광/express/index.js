@@ -13,11 +13,8 @@ app.use(express.static("./subpage_8"))
 app.use(express.static("./subpage_8/js"))
 app.use(express.static("./subpage(로그인)"))
 app.use(express.static("./Sub_page1(map)"))
-<<<<<<< HEAD
 app.use(express.static("./tripHelper_sub5"))
 app.use(express.static("./loginPages"))
-=======
->>>>>>> 3d7c864bd3bf3f14e9afa4d1b9f9104aad8635d0
 
 
 /*************************
