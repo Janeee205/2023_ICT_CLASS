@@ -17,13 +17,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
     <!-- favicon -->
-    <!-- <link rel="apple-touch-icon" sizes="180x180" href="../Project-images/favicon_package_v0.16/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="../Project-images/favicon_package_v0.16/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="../Project-images/favicon_package_v0.16/favicon-16x16.png">
-    <link rel="manifest" href="../Project-images/favicon_package_v0.16/site.webmanifest">
-    <link rel="mask-icon" href="../Project-images/favicon_package_v0.16/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../Project-images/favicon_package_v0.16/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../Project-images/favicon_package_v0.16/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../Project-images/favicon_package_v0.16/favicon-16x16.png">
+    <link rel="manifest" href="../../Project-images/favicon_package_v0.16/site.webmanifest">
+    <link rel="mask-icon" href="../../Project-images/favicon_package_v0.16/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff"> -->
+    <meta name="theme-color" content="#ffffff">
     <!-- slickslider -->
     <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
@@ -32,7 +32,7 @@
     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 
     <!-- css 연결 -->
-    <link rel="stylesheet" href="../subpage_8/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -56,24 +56,24 @@
                             <span class="date"></span>
                             (<span class="week"></span>)
                         </li>
-                        <li class="weather"><span class="temp"></span><span class="weather-icon"></span></li>
-                        <li>미세먼지 좋음</li>
+                        <li class="weather"><span class="temp"></span>°C<span class="weather-icon"></span></li>
+                        <li id="data"></li>
                         <li class="menu-img"><a href="">전체누리집 바로가기
-                                <img src="../Project-images/header/topIcon_white.png" alt="전체누리집 바로가기 아이콘"></a></li>
+                                <img src="../../Project-images/header/topIcon_white.png" alt="전체누리집 바로가기 아이콘"></a></li>
                     </ul>
                 </div>
 
                 <div class="mainmenu">
                     <!-- 3개구역 [로고/메인메뉴/버튼리스트] -->
                     <h1>
-                        <a href="#"><img src="../Project-images/header/white-logo.png" alt="사이트 로고">
+                        <a href="/main"><img src="../../Project-images/header/white-logo.png" alt="사이트 로고">
                             <span>경주문화관광</span></a>
                     </h1>
 
 
                     <!-- 메인메뉴 list 안에 submenu 포함 -->
                     <ul class="mainmenu-list">
-                        <li class="mainmenu-item"><a href="">경주여행</a>
+                        <li class="mainmenu-item"><a href="../../travel_sub1/travel.html">경주여행</a>
                             <div class="submenu-list">
                                 <!-- 경주여행 -->
                                 <div class="submenu-left-img">
@@ -82,7 +82,7 @@
                                 <div class="ul-wrapper">
                                     <ul>
                                         <li><a href="">권역별 관광지</a></li>
-                                        <li><a href="">여행코스추천</a></li>
+                                        <li><a href="../../travel_sub1/travel.html">여행코스추천</a></li>
                                         <li><a href="">경주의 자연</a></li>
                                         <li><a href="">체험과 레저</a></li>
                                         <li><a href="">투어프로그램</a></li>
@@ -92,7 +92,7 @@
                             <div class="submenu-back"></div>
                         </li>
 
-                        <li class="mainmenu-item"><a href="">문화행사</a>
+                        <li class="mainmenu-item"><a href="../../festival_sub2/festival.html">문화행사</a>
                             <div class="submenu-list">
                                 <!-- 문화행사 -->
                                 <div class="submenu-left-img">
@@ -101,14 +101,14 @@
                                 <div class="ul-wrapper">
                                     <ul>
                                         <li><a href="">이달의 축제 및 행사</a></li>
-                                        <li><a href="">정기축제 행사안내</a></li>
+                                        <li><a href="../../festival_sub2/festival.html">정기축제 행사안내</a></li>
                                         <li><a href="">공연전시 정보</a></li>
                                     </ul>
                                 </div>
                             </div>
                         </li>
 
-                        <li class="mainmenu-item"><a href="">문화재/역사</a>
+                        <li class="mainmenu-item"><a href="../../culture_sub3/culture.html">문화재·역사</a>
                             <div class="submenu-list">
                                 <!-- 문화재/역사 -->
                                 <div class="submenu-left-img">
@@ -116,7 +116,7 @@
                                 </div>
                                 <div class="ul-wrapper">
                                     <ul>
-                                        <li><a href="">세계문화유산</a></li>
+                                        <li><a href="../../culture_sub3/culture.html">세계문화유산</a></li>
                                         <li><a href="">경주의 역사</a></li>
                                         <li><a href="">분류별 국가유산</a></li>
                                     </ul>
@@ -124,7 +124,7 @@
                             </div>
                         </li>
 
-                        <li class="mainmenu-item"><a href="">음식/숙박/쇼핑</a>
+                        <li class="mainmenu-item"><a href="../../food_sub4/food.html">음식·숙박·쇼핑</a>
                             <div class="submenu-list">
                                 <!-- 음식/숙박/쇼핑 -->
                                 <div class="submenu-left-img">
@@ -132,7 +132,7 @@
                                 </div>
                                 <div class="ul-wrapper">
                                     <ul>
-                                        <li><a href="">음식</a></li>
+                                        <li><a href="../../food_sub4/food.html">음식</a></li>
                                         <li><a href="">숙박</a></li>
                                         <li><a href="">쇼핑</a></li>
                                     </ul>
@@ -140,7 +140,7 @@
                             </div>
                         </li>
 
-                        <li class="mainmenu-item"><a href="">여행도우미</a>
+                        <li class="mainmenu-item"><a href="/map">여행도우미</a>
                             <div class="submenu-list">
                                 <!-- 여행도우미 -->
                                 <div class="submenu-left-img">
@@ -148,7 +148,7 @@
                                 </div>
                                 <div class="ul-wrapper">
                                     <ul>
-                                        <li><a href="">교통정보</a></li>
+                                        <li><a href="/map">교통정보</a></li>
                                         <li><a href="">문화관광 해설사</a></li>
                                         <li><a href="">관광안내지도</a></li>
                                         <li><a href="">공중화장실</a></li>
@@ -161,8 +161,9 @@
 
                     <div class="menu-buttons">
                         <ul>
-                            <li><a href="" class="login">로그인</a></li>
-                            <li><a href="#"><img src="../Project-images/header/home-white.png" alt="메인페이지로 가기"></a></li>
+                            <li><a href="../login/login.html" class="login">로그인</a></li>
+                            <li><a href="/main"><img src="../../Project-images/header/home-white.png"
+                                        alt="메인페이지로 가기"></a></li>
                             <li><a href="">
                                     <i class="fa-solid fa-bars hamberger"></i></a></li>
                         </ul>
@@ -173,23 +174,23 @@
 
             <!-- header-img -->
             <div class="header-img">
-                <img src="../Project-images/section_culture/첨성대.jpg" alt="">
+                <img src="../../Project-images/section_culture/첨성대.jpg" alt="">
                 <p>회원가입</p>
             </div>
         </header>
-
         <!-- gnb-nav -->
         <div class="gnb-nav">
             <div class="gnb-nav-section">
                 <div class="home-section">
-                    <h2 class="home-btn"><a href=""><img src="images/home-white.png" alt="홈버튼"></a></h2>
+                    <h2 class="home-btn"><a href=""><img src="../../Project-images/header/home-white.png" alt="홈버튼"></a>
+                    </h2>
                 </div>
                 <ul>
                     <li class="gnb-list"><a href="">회원가입</a></li>
                 </ul>
             </div>
         </div>
-
+        <!-- main -->
         <main>
             <section class="title">
                 <p class="title1">회원가입</p>
@@ -226,7 +227,8 @@
                                     <!-- 안전 or 사용불가 텍스트 -->
                                     <span class="pw-text"></span>
                                     <!-- 자물쇠 이미지 -->
-                                    <img src="images/signup/m_icon_pw_step_01.png" alt="비밀번호 아이콘" class="pw-img">
+                                    <img src="../Project-images/login/m_icon_pw_step_01.png" alt="비밀번호 아이콘"
+                                        class="pw-img">
                                 </div>
                             </td>
                         </tr>
@@ -244,7 +246,8 @@
                                     <!-- 안전 or 사용불가 텍스트 -->
                                     <span class="pw-text"></span>
                                     <!-- 자물쇠 이미지 -->
-                                    <img src="images/signup/m_icon_pw_step_01.png" alt="비밀번호 아이콘" class="pw-img">
+                                    <img src="../Project-images/login/m_icon_pw_step_01.png" alt="비밀번호 아이콘"
+                                        class="pw-img">
                                 </div>
                             </td>
                         </tr>
@@ -347,30 +350,38 @@
 
     <!-- footer -->
     <footer>
-
         <!-- banner -->
         <div class="banners">
             <div class="banner-contents">
-                <h2>배너모음</h2>
-                <!-- <h3>찬미</h3> -->
                 <div class="banner-list">
-                    <ul class="banner-btn-list">
-                        <li><i class="fa-solid fa-chevron-left"></i></li>
-                        <li><i class="fa-solid fa-pause"></i></li>
-                        <li><i class="fa-solid fa-chevron-right"></i></li>
-                    </ul>
-                    <ul class="banner-site-list">
-                        <li><a href="https://garts.kr/index.do">(재)경주문화재단</a></li>
-                        <li><a href="http://www.cultureexpo.or.kr/" target="_blank">경주세계엑스포</a></li>
-                        <li><a href="https://www.foresttrip.go.kr/indvz/main.do?hmpgId=ID02030027"
-                                target="_blank">토함산자연휴양림</a>
-                        </li>
-                        <li><a href="http://yangdong.invil.org/" target="_blank">경주양동마을</a></li>
-                        <li><a href="http://www.dmgyeongju.com/" target="_blank">동리목월문학관</a></li>
-                        <li><a href="http://gjsam.or.kr/ko/" target="_blank">경주솔거미술관</a></li>
-                        <li><a href="http://www.gjtour.or.kr/" target="_blank">경주농촌체험관광</a></li>
-                    </ul>
+                    <h2>배너모음</h2>
+                    <div class="banner-btn-list">
+                        <button type="button" class="prev"><i class="fa-solid fa-chevron-left"></i></button>
+
+                        <div class="stop-play">
+                            <button type="button" class="first"><i class="fa-solid fa-pause stop"></i></button>
+                            <button type="button" class="second"><i class="fa-solid fa-play play"></i></button>
+                        </div>
+
+                        <button type="button" class="next"><i class="fa-solid fa-chevron-right"></i></button>
+                    </div>
                 </div>
+
+
+                <ul class="banner-site-list">
+                    <li><a href="https://garts.kr/index.do">(재)경주문화재단</a></li>
+                    <li><a href="http://www.cultureexpo.or.kr/" target="_blank">경주세계엑스포</a></li>
+                    <li><a href="https://www.foresttrip.go.kr/indvz/main.do?hmpgId=ID02030027"
+                            target="_blank">토함산자연휴양림</a>
+                    </li>
+                    <li><a href="http://yangdong.invil.org/" target="_blank">경주양동마을</a></li>
+                    <li><a href="http://www.dmgyeongju.com/" target="_blank">동리목월문학관</a></li>
+                    <li><a href="http://gjsam.or.kr/ko/" target="_blank">경주솔거미술관</a></li>
+                    <li><a href="http://www.gjtour.or.kr/" target="_blank">경주농촌체험관광</a></li>
+                    <li><a href="https://www.gyeongju.go.kr/gyochon/index.do" target="_blank">경주교촌마을</a></li>
+                    <li><a href="https://www.gyeongju.go.kr/hwarang/index.do" target="_blank">화랑마을</a></li>
+                    <li><a href="https://xn--wk0bx2gp2g1p7a.kr/index.nm?contentId=448" target="_blank">상상황리단길</a></li>
+                </ul>
             </div>
         </div>
 
@@ -396,7 +407,7 @@
             <div class="bottom-contents">
                 <div class="contents-wrapper">
                     <div class="footer-logo">
-                        <a href=""><img src="images/flogo.png" alt="로고"></a>
+                        <a href="/main"><img src="../../Project-images/footer/flogo.png" alt="로고"></a>
                     </div>
                     <div class="info-contents">
                         <div class="info">
@@ -406,19 +417,20 @@
                         </div>
                         <ul class="icon-list">
                             <li><a href="https://www.youtube.com/channel/UCQh-jbXM1DkVnC8vUYqfkVw"><img
-                                        src="images/youtube.png" alt="유튜브"></a></li>
-                            <li><a href="https://www.facebook.com/gj.tour1/"><img src="images/facebook.png"
-                                        alt="페이스북"></a></li>
-                            <li><a href="https://blog.naver.com/gj_tour"><img src="images/blog.png" alt="블로그"></a>
+                                        src="../../Project-images/footer/youtube.png" alt="유튜브"></a></li>
+                            <li><a href="https://www.facebook.com/gj.tour1/"><img
+                                        src="../../Project-images/footer/facebook.png" alt="페이스북"></a></li>
+                            <li><a href="https://blog.naver.com/gj_tour"><img src="../../Project-images/footer/blog.png"
+                                        alt="블로그"></a>
                             </li>
-                            <li><a href="https://www.instagram.com/gj_tour/"><img src="images/insta.png"
-                                        alt="인스타그램"></a></li>
+                            <li><a href="https://www.instagram.com/gj_tour/"><img
+                                        src="../../Project-images/footer/insta.png" alt="인스타그램"></a></li>
                         </ul>
                     </div>
 
                     <a
                         href="http://www.wa.or.kr/board/list.asp?search=c_name&SearchString=%B0%E6%C1%D6%B9%AE%C8%AD%B0%FC%B1%A4&BoardID=0006"><img
-                            src="images/wa.png" alt="웹접근성 인증" class="web-accessibility"></a>
+                            src="../../Project-images/footer/wa.png" alt="웹접근성 인증" class="web-accessibility"></a>
                 </div>
             </div>
         </div>
@@ -426,7 +438,7 @@
 
     </footer>
     <!-- footer 끝 -->
-    <script src="js/script.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
