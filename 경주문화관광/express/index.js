@@ -192,6 +192,7 @@ passport.use(new LocalStrategy({
     })
 }))
 
+
 // 로그인 성공 -> 세션정보 만들고,
 // 씨리얼라이즈유저(serializeUser) : 유저 정보를 암호화 
 passport.serializeUser(function (user, done) {
