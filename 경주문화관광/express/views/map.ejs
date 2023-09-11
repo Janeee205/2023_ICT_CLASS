@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>여행도우미</title>
+  <link rel="stylesheet" href="../Sub_page1(map)/style.css" />
+  <!-- Fontawesome -->
+  <script src="https://kit.fontawesome.com/0fd51a53f4.js" crossorigin="anonymous"></script>
+  <!-- jQuery CDN -->
+  <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+    integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div class="wrapper">
+    <!-- header -->
+    <header>
+      <!-- nav -->
+      <nav></nav>
+    </header>
+    <!-- gnb-nav -->
+    <div class="gnb-nav">
+      <div class="gnb-nav-section">
+        <div class="home-section">
+          <h2 class="home-btn">
+            <a href=""><img src="./images/home-white.png" alt="홈버튼" /></a>
+          </h2>
+        </div>
+        <ul>
+          <li class="gnb-list">
+            <a href="">여행도우미</a>
+            <ul>
+              <li><a href="">경주여행</a></li>
+              <li><a href="">문화행사</a></li>
+              <li><a href="">문화재/역사</a></li>
+              <li><a href="">음식/숙박/쇼핑</a></li>
+              <li><a href="">여행도우미</a></li>
+            </ul>
+          </li>
+          <li class="gnb-list">
+            <a href="">교통정보</a>
+            <ul>
+              <li><a href="">교통정보</a></li>
+              <li><a href="">문화관광 해설사</a></li>
+              <li><a href="">관광안내지도</a></li>
+              <li><a href="">공중화장실</a></li>
+              <li><a href="">경주관광코스</a></li>
+            </ul>
+          </li>
+          <li class="gnb-list">
+            <a href="">경주오는길</a>
+            <ul>
+              <li><a href="">경주오는길</a></li>
+              <li><a href="">비행기,기차,고속버스,시내버스</a></li>
+              <li><a href="">교통정보센터</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- main -->
+    <main>
+      <!-- sub-list -->
+      <div class="sub-list">
+        <h2>경주오는길</h2>
+        <div class="utile-wrapper">
+          <ul class="location-wrapper">
+            <li class="arrow-rigth">
+              <a href=""><img src="./images/home-black.png" alt="홈페이지아이콘" /></a>
+            </li>
+            <li class="arrow-rigth">여행도우미</li>
+            <li class="arrow-rigth">교통정보</li>
+            <li class="line">경주오는길</li>
+          </ul>
+          <ul class="icon-wrapper">
+            <li><img src="./images/ilnk.png" alt="링크아이콘" /></li>
+            <li><img src="./images/copy.png" alt="복사아이콘" /></li>
+            <li><img src="./images/print.png" alt="프린트아이콘" /></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- section1 지도 api 시작-->
+      <section>
+        <div class="map_wrap">
+          <div id="map" style="width: 100%; height: 100%; position: relative; overflow: hidden;"></div>
+          <ul id="category">
+            <li id="BK9" data-order="0">
+              <span class="category_bg bank"></span>
+              은행
+            </li>
+            <li id="MT1" data-order="1">
+              <span class="category_bg mart"></span>
+              마트
+            </li>
+            <li id="PM9" data-order="2">
+              <span class="category_bg pharmacy"></span>
+              약국
+            </li>
+            <li id="OL7" data-order="3">
+              <span class="category_bg oil"></span>
+              주유소
+            </li>
+            <li id="CE7" data-order="4">
+              <span class="category_bg cafe"></span>
+              카페
+            </li>
+            <li id="CS2" data-order="5">
+              <span class="category_bg store"></span>
+              편의점
+            </li>
+          </ul>
+
+          <!-- 지도 확대, 축소 컨트롤 div 입니다 -->
+          <div class="custom_zoomcontrol radius_border">
+            <span onclick="zoomIn()"><img src="https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/ico_plus.png"
+                alt="확대"></span>
+            <span onclick="zoomOut()"><img src="https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/ico_minus.png"
+                alt="축소"></span>
+          </div>
+          <div class="rotate">
+            <span onclick="panTo()"><img src="https://cdn-icons-png.flaticon.com/128/121/121118.png" alt=""></span>
+          </div>
+        </div>
+      </section>
+      <!-- 지도 api 끝 -->
+
+      <!-- section2(traffic) -->
+      <section>
+        <div class="traffic">
+          <h2>교통안내</h2>
+          <div class="cont-box">
+            <div class="icon-box">
+              <p></p>
+              <span><img src="./images/car.png" alt="자동차아이콘" /></span>
+            </div>
+
+            <div class="cont-txt">
+              <p>자가용으로 오시는 경우</p>
+              <div class="cont-item">
+                <span>서울출발</span>
+                <ul>
+                  <li>
+                    신갈JC → 영동고속도로 → 김천JC → 경부고속도록 → 경주IC
+                  </li>
+                </ul>
+              </div>
+              <div class="cont-item">
+                <span>대구출발</span>
+                <ul>
+                  <li>북대구TG → 경부고속도로(하행) →경주IC</li>
+                </ul>
+              </div>
+              <div class="cont-item">
+                <span>부산출발</span>
+                <ul>
+                  <li>부산TG → 경부고속도로(상행) →경주IC</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="cont-box">
+            <div class="icon-box">
+              <p></p>
+              <span><img src="./images/train.png" alt="고속철도아이콘" /></span>
+            </div>
+
+            <div class="cont-txt">
+              <p>고속철도로 오시는 경우</p>
+              <div class="cont-item">
+                <span>고속철도(KTX)</span>
+                <ul>
+                  <li>서울-신경주:2시간 10분</li>
+                  <li>동대구-신경주:20분</li>
+                  <li>부산-신경주:30분</li>
+                </ul>
+              </div>
+              <div class="cont-item">
+                <span>KTX경부선 하행</span>
+                <ul>
+                  <li>
+                    서울역-신경주역:07:37 ~ 00:07분까지 약 1시간간격으로 운행
+                  </li>
+                </ul>
+              </div>
+              <div class="cont-item">
+                <span>KTX경부선 상행</span>
+                <ul>
+                  <li>
+                    신경주역-서울역:05:59 ~ 22:34분까지 약 1시간 간격으로 운행
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="cont-box">
+            <div class="icon-box">
+              <p></p>
+              <span><img src="./images/bus.png" alt="버스아이콘" /></span>
+            </div>
+
+            <div class="cont-txt">
+              <p>고속버스로 오시는 경우</p>
+              <div class="cont-item">
+                <span>서울출발</span>
+                <ul>
+                  <li>
+                    서울고속버스터미널-경주 고속버스터미널: 약 3시간 25분
+                  </li>
+                </ul>
+              </div>
+              <div class="cont-item">
+                <span>대구출발</span>
+                <ul>
+                  <li>동양고속버스터미널-경주 고속버스터미널: 약50분</li>
+                </ul>
+              </div>
+              <div class="cont-item">
+                <span>부산출발</span>
+                <ul>
+                  <li>부산종합버스터미널-경주 고속버스터미널: 약50분</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- footer -->
+    <footer>
+      <!-- banner -->
+      <div class="banners">
+        <div class="banner-contents">
+          <h2>배너모음</h2>
+          <div class="banner-list">
+            <ul class="banner-btn-list">
+              <li><i class="fa-solid fa-chevron-left"></i></li>
+              <li><i class="fa-solid fa-pause"></i></li>
+              <li><i class="fa-solid fa-chevron-right"></i></li>
+            </ul>
+            <ul class="banner-site-list">
+              <li>
+                <a href="https://garts.kr/index.do">(재)경주문화재단</a>
+              </li>
+              <li>
+                <a href="http://www.cultureexpo.or.kr/" target="_blank">경주세계엑스포</a>
+              </li>
+              <li>
+                <a href="https://www.foresttrip.go.kr/indvz/main.do?hmpgId=ID02030027" target="_blank">토함산자연휴양림</a>
+              </li>
+              <li>
+                <a href="http://yangdong.invil.org/" target="_blank">경주양동마을</a>
+              </li>
+              <li>
+                <a href="http://www.dmgyeongju.com/" target="_blank">동리목월문학관</a>
+              </li>
+              <li>
+                <a href="http://gjsam.or.kr/ko/" target="_blank">경주솔거미술관</a>
+              </li>
+              <li>
+                <a href="http://www.gjtour.or.kr/" target="_blank">경주농촌체험관광</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- footer contents -->
+      <div class="footer-contents">
+        <!-- footer top -->
+        <div class="top-contents">
+          <div class="site-info">
+            <ul>
+              <li>
+                <a href="https://www.gyeongju.go.kr/open_content/ko/page.do?mnu_uid=1069&">개인정보처리방침</a>
+              </li>
+              <li>
+                <a href="https://www.gyeongju.go.kr/open_content/ko/page.do?mnu_uid=1068&">이용약관</a>
+              </li>
+              <li>
+                <a href="https://www.gyeongju.go.kr/open_content/ko/page.do?mnu_uid=1070&">저작권안내</a>
+              </li>
+              <li>
+                <a href="https://www.gyeongju.go.kr/open_content/ko/page.do?mnu_uid=1807">관광불편신고</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- footer bottom -->
+        <div class="bottom-contents">
+          <div class="contents-wrapper">
+            <div class="footer-logo">
+              <a href=""><img src="images/flogo.png" alt="로고" /></a>
+            </div>
+            <div class="info-contents">
+              <div class="info">
+                <span>[38102] 경상북도 경주시 양정로 260 (동천동, 경주시청)</span>
+                <span>대표전화 : 054-779-8585</span>
+                <p>Copyright 2019 Gyeongju Tourguide. All rights reserved.</p>
+              </div>
+              <ul class="icon-list">
+                <li>
+                  <a href="https://www.youtube.com/channel/UCQh-jbXM1DkVnC8vUYqfkVw"><img src="images/youtube.png"
+                      alt="유튜브" /></a>
+                </li>
+                <li>
+                  <a href="https://www.facebook.com/gj.tour1/"><img src="images/facebook.png" alt="페이스북" /></a>
+                </li>
+                <li>
+                  <a href="https://blog.naver.com/gj_tour"><img src="images/blog.png" alt="블로그" /></a>
+                </li>
+                <li>
+                  <a href="https://www.instagram.com/gj_tour/"><img src="images/insta.png" alt="인스타그램" /></a>
+                </li>
+              </ul>
+            </div>
+
+            <a
+              href="http://www.wa.or.kr/board/list.asp?search=c_name&SearchString=%B0%E6%C1%D6%B9%AE%C8%AD%B0%FC%B1%A4&BoardID=0006"><img
+                src="images/wa.png" alt="웹접근성 인증" class="web-accessibility" /></a>
+          </div>
+        </div>
+      </div>
+      <!-- footer contents 끝 -->
+    </footer>
+    <!-- footer 끝 -->
+  </div>
+  <!-- script -->
+
+
+  <!-- 에러가 나는 경우 여기서 사이트 도메인 추가하기
+  https://developers.kakao.com/console/app/967658/config/platform
+  -->
+  <script type="text/javascript"
+    src="//dapi.kakao.com/v2/maps/sdk.js?appkey=0fc04b07f2bc976d7cc2052fd3468d7d&libraries=services"></script>
+  <script src="../Sub_page1(map)/script/script.js"></script>
+
+
+
+
+
+
+</body>
+
+</html>
