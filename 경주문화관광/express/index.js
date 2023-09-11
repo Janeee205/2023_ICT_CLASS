@@ -9,10 +9,6 @@ app.listen(7000, function () {
 // 폴더 내 모든 정적파일 제공(js, css, images, fonts)
 // 폴더명 다를시 변경해야함
 app.use(express.static(__dirname))
-app.use(express.static("./subpage_8"))
-app.use(express.static("./subpage_8/js"))
-app.use(express.static("./subpage(로그인)"))
-app.use(express.static("./Sub_page1(map)"))
 app.use(express.static("./tripHelper_sub5"))
 app.use(express.static("./loginPages"))
 
@@ -47,6 +43,12 @@ app.get('/map', function (requests, response) {
 app.get('/main', function (requests, response) {
     response.render('main.ejs')
 })
+/*
+app.get('/main', getLogin, function (requests, response) {
+    response.render('main.ejs')
+})
+*/
+
 
 // 약관동의
 app.get('/agree', function (requests, response) {
@@ -205,6 +207,62 @@ passport.deserializeUser(function (id, done) {
         done(null, result)
     })
 })
+
+
+
+/*************************↓↓↓ 수정필요 ↓↓↓*************************/
+/*
+// 로그인 한 사람만 접속할 수 있는 경로 /mypage
+app.get('/mypage', getLogin, function (requests, response) {
+  console.log(requests.user)
+  response.render('mypage.ejs', { info: requests.user })
+})
+
+*/
+
+// 로그인 시 닉네임 뜨게
+app.get('/info/:name', function (requests, response) {
+    // params.id : url 파라미터중 id 값
+    // 'post' collection에서 params.id 값에 해당하는 데이터 찾아오기
+    // 데이터 찾을때  requests.params.id String => int로 형변환
+    // 'post' collection에 _id 값이 int기 때문
+
+
+    db.collection('gyeongju_join').findOne({ _id: parseInt(requests.params.id) }, function (error, result) {
+
+        // console.log(result)
+        response.render('info.ejs', { data: result })
+
+    })
+})
+
+
+
+// 로그인 여부를 판단하는 미들웨어
+function getLogin(requests, response, next) {
+    if (requests.user) {
+        response.render('main.ejs', { info: requests.user })
+        console.log('requests.user ' + requests.user);
+        next()
+    }
+    else {
+        response.render('main.ejs')
+    }
+}
+
+
+
+app.post('/logout', function (requests, response) {
+    requests.session.destroy();
+    console.log('로그아웃!')
+    response.redirect('/login');
+})
+
+
+/*************************↑↑↑ 수정필요 ↑↑↑*************************/
+
+
+
 
 
 /*******************
