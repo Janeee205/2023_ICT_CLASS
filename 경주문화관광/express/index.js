@@ -12,6 +12,7 @@ app.use(express.static(__dirname))
 app.use(express.static("./subpage_8"))
 app.use(express.static("./subpage_8/js"))
 app.use(express.static("./subpage(로그인)"))
+app.use(express.static("./Sub_page1(map)"))
 
 
 /*************************
@@ -35,6 +36,14 @@ app.get('/join', function (requests, response) {
     response.render('join.ejs')
 })
 
+<<<<<<< HEAD
+=======
+// 지도
+app.get('/map', function (requests, response) {
+    response.render('map.ejs')
+})
+
+>>>>>>> 3d7c864 (🚧 프로젝트작업중 🚧)
 // 계정관리페이지 연결
 app.get('/admin', function (requests, response) {
     // collection에 저장된 데이터를 꺼낸다.

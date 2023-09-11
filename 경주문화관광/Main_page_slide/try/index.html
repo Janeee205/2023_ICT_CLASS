@@ -2,54 +2,99 @@
 <html lang="ko">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="css/style.css">
-  <!-- jQuery CDN -->
-  <script src="https://code.jquery.com/jquery-3.7.0.min.js"
-    integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+        integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <!-- fontawesome -->
+    <script src="https://kit.fontawesome.com/0fd51a53f4.js" crossorigin="anonymous"></script>
 </head>
 
+
+<!-- 
+    memo
+1. 6개의 버튼을 누르면 이미지를 띄운다.
+2. 슬라이드 쇼를 만든다.
+
+-->
+
 <body>
-  <div class="wrapper">
-    <section>
+    <div class="wrapper">
+        <section>
+            <div class="tab-content">
+                <!-- map slider 섹션 -->
+
+                <div class="slider-box">
+                    <!-- 가운데에 슬라이더를 배치한다. -->
+                    <div class="slider-title">
+                        <p class="title">경주여행<span>핵심코스</span>
+                        </p>
+                        <p>경주문화관광이 추천하는 5가지<br>
+                            경주여행테마코스!</p>
+                    </div>
+                    <!-- 슬라이드 -->
+                    <div class="slider-container">
+                        <div class="slider-wrapper">
+                            <!-- js object  -->
+
+                            <!-- <div class="slider">
+                           
+                            <div class="slider-img">
+                                <img src="" alt="">
+                                <button class="prev"><i class="fa-solid fa-chevron-left"></i></button>
+                                <button class="next"><i class="fa-solid fa-chevron-right"></i></button>
+                            </div>
+                            <div class="slide-txt">
+                                <span class="sub-txt">팔방미인</span>
+                                <strong>
+                                    <h2>보문관광단지</h2><i></i>경주동궁원
+                                </strong>
+                                <p>동궁과 월지 이야기에서 모티프를 조성된 사계절 테마관광시설<br>
+                                    사계절 테마관광지 경주동궁원</p>
+                            </div>
+
+                        </div> -->
+
+                        </div>
+                        <div class="buttons">
+                            <button class="prev"><i class="fa-solid fa-chevron-left"></i></button>
+                            <button class="next"><i class="fa-solid fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 지도 -->
+                <div class="map-box">
+                    <!-- 위는 지도를 배치, 아래는 버튼을 배치한다. -->
+                    <img src="./images/back5.png" alt="경주동해바다 코스 지도">
 
 
-      <div class="slider-container">
-        <div class="slider-wrapper" >
-
-            <!-- js object -->
-         <!--  
-          <div class="slider">
-
-            <div class="slide-txt">
-              <span class="sub-txt">경주시내권</span>
-              <strong>
-                <h2>핵심바이블</h2><i></i>월정교
-              </strong>
-              <p>남천 위를 수놓고 선 그림 같은 목조교량 월정교.<br>
-                원효대사와 요석공주의 사랑이야기가 얽힌 길.</p>
+                </div>
             </div>
+            <!-- wid 100% -->
+            <div class="tab-box">
+                <div class="tab-wrapper">
+                    <ul class="tab-list">
+                        <li class="tab-btn active">경주시내권 핵심코스</li>
+                        <li class="tab-btn">보문관광단지 코스</li>
+                        <li class="tab-btn">세계문화유산 코스</li>
+                        <li class="tab-btn">천년경주 코스</li>
+                        <li class="tab-btn">경주동해바다 코스</li>
+                        <!-- 서브 페이지 연결 -->
+                        <li><a class="link-btn" href="">여행지 더보기</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
 
-          </div> 
-         -->
-          <!-- js object -->
-
-          <div class="buttons">
-            <button> < </button>
-            <button> > </button>
-          </div>
-        </div>
-      </div>
-
-
-    </section>
-  </div>
 
 
 
-  <script src="js/script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>
