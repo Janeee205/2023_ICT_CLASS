@@ -13,8 +13,11 @@ app.use(express.static("./subpage_8"))
 app.use(express.static("./subpage_8/js"))
 app.use(express.static("./subpage(로그인)"))
 app.use(express.static("./Sub_page1(map)"))
+<<<<<<< HEAD
 app.use(express.static("./tripHelper_sub5"))
 app.use(express.static("./loginPages"))
+=======
+>>>>>>> 3d7c864bd3bf3f14e9afa4d1b9f9104aad8635d0
 
 
 /*************************
@@ -43,6 +46,7 @@ app.get('/map', function (requests, response) {
     response.render('map.ejs')
 })
 
+<<<<<<< HEAD
 // main
 app.get('/main', function (requests, response) {
     response.render('main.ejs')
@@ -53,6 +57,8 @@ app.get('/agree', function (requests, response) {
     response.sendFile(__dirname + '/loginPages/agree/agree.html')
 })
 
+=======
+>>>>>>> 3d7c864bd3bf3f14e9afa4d1b9f9104aad8635d0
 // 계정관리페이지 연결
 app.get('/admin', function (requests, response) {
     // collection에 저장된 데이터를 꺼낸다.
@@ -154,7 +160,11 @@ app.use(passport.session());
 app.post('/login', passport.authenticate('local', {
     failureRedirect: '/fail'
 }), function (requests, response) {
+<<<<<<< HEAD
     response.redirect('/main')
+=======
+    response.redirect('/')
+>>>>>>> 3d7c864bd3bf3f14e9afa4d1b9f9104aad8635d0
     console.log(requests);
     console.log(response);
 })
