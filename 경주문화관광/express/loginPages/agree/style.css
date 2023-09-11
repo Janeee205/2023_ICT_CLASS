@@ -444,12 +444,18 @@ input[type=checkbox] {
   transition: all 300ms ease-in-out;
 }
 
+#main a {
+  color: #fff;
+}
+
 #main:hover {
   background-color: #fff;
   border: solid 1px #76777E;
-  color: #76777E;
 }
 
+#main:hover a {
+  color: #76777E;
+}
 
 /* footer css */
 

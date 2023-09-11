@@ -249,16 +249,16 @@ userPw.addEventListener('focusout', function () {
   if (userPwVal.length == 0) {
     pwWarn.innerHTML = essenInfo;
     pwText.innerHTML = '';
-    pwImg.src = '../subpage_8/images/signup/m_icon_pw_step_01.png';
+    pwImg.src = '../Project-images/login/m_icon_pw_step_01.png';
   } else if (!pwExp.test(userPwVal)) {
     pwWarn.innerHTML = '<span class="text-red"> 8~20자 영문 대 소문자, 숫자, 특수문자를 사용하세요. </span>';
     pwText.innerHTML = '<span class="text-red"> 사용불가 </span>';
-    pwImg.src = '../subpage_8/images/signup/m_icon_pw_step_10.png';
+    pwImg.src = '../Project-images/login/m_icon_pw_step_10.png';
   } else {
     pwveri = true;
     pwWarn.innerHTML = '';
     pwText.innerHTML = '<span class="text-green"> 안전 </span>';
-    pwImg.src = '../subpage_8/images/signup/m_icon_pw_step_04.png';
+    pwImg.src = '../Project-images/login/m_icon_pw_step_04.png';
   }
 })
 
@@ -273,15 +273,15 @@ document.querySelector('.userpw-chk input').addEventListener('focusout', functio
   if (userpwChk.length == 0) {
     pwChkWarn.innerHTML = essenInfo;
     pwChkText.innerHTML = '';
-    pwChkImg.src = '../subpage_8/images/signup/m_icon_pw_step_01.png';
+    pwChkImg.src = '../Project-images/login/m_icon_pw_step_01.png';
   } else if (userpwChk == userPw.value) {
     pwchkveri = true;
     pwChkWarn.innerHTML = '';
     pwChkText.innerHTML = '<span class="text-green"> 안전 </span>';
-    pwChkImg.src = '../subpage_8/images/signup/m_icon_pw_step_07.png';
+    pwChkImg.src = '../Project-images/login/m_icon_pw_step_07.png';
   } else {
     pwChkWarn.innerHTML = '<span class="text-red">비밀번호가 일치하지 않습니다.</span>';
-    pwChkImg.src = '../subpage_8/images/signup/m_icon_pw_step_02.png';
+    pwChkImg.src = '../Project-images/login/m_icon_pw_step_02.png';
   }
 })
 
