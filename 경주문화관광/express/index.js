@@ -220,32 +220,18 @@ app.get('/logout', function (requests, response) {
 
 
 /*************************↓↓↓ 수정필요 ↓↓↓*************************/
-/*
-// 로그인 한 사람만 접속할 수 있는 경로 /mypage
-app.get('/mypage', getLogin, function (requests, response) {
-  console.log(requests.user)
-  response.render('mypage.ejs', { info: requests.user })
-})
 
-*/
 
 // 로그인 시 닉네임 뜨게
 app.get('/info/:name', function (requests, response) {
-    // params.id : url 파라미터중 id 값
-    // 'post' collection에서 params.id 값에 해당하는 데이터 찾아오기
-    // 데이터 찾을때  requests.params.id String => int로 형변환
-    // 'post' collection에 _id 값이 int기 때문
 
 
     db.collection('gyeongju_join').findOne({ _id: parseInt(requests.params.id) }, function (error, result) {
-
         // console.log(result)
         response.render('info.ejs', { data: result })
 
     })
 })
-
-
 
 // 로그인 여부를 판단하는 미들웨어
 function getLogin(requests, response, next) {
@@ -258,8 +244,6 @@ function getLogin(requests, response, next) {
         response.render('main.ejs')
     }
 }
-
-
 
 app.post('/logout', function (requests, response) {
     requests.session.destroy();
