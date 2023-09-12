@@ -40,9 +40,9 @@ app.get('/map', function (requests, response) {
 })
 
 // main
-app.get('/main', function (requests, response) {
-    response.render('main.ejs')
-})
+// app.get('/main', function (requests, response) {
+//     response.render('main.ejs')
+// })
 /*
 app.get('/main', getLogin, function (requests, response) {
     response.render('main.ejs')
@@ -206,6 +206,15 @@ passport.deserializeUser(function (id, done) {
     db.collection('gyeongju_join').findOne({ id: id }, function (error, result) {
         done(null, result)
     })
+})
+
+
+app.get('/main', function (requests, response) {
+    response.render('main.ejs', { info: requests.user })
+})
+
+app.get('/logout', function (requests, response) {
+    response.redirect('/login');
 })
 
 

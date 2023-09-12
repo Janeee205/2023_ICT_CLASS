@@ -159,11 +159,18 @@
 
           <div class="menu-buttons">
             <ul>
-
-              <li><a href="/login" class="login">로그인</a></li>
-              <li><a href="#"><img src="../Project-images/header/home-white.png" alt="메인페이지로 가기"></a></li>
-              <li><a href="">
-                  <i class="fa-solid fa-bars hamberger"></i></a></li>
+              <% if (info) { %>
+                <div>
+                  <%= info.name %>님 환영합니다!
+                </div>
+                <li><a href="/logout" class="login">로그아웃</a></li>
+                <% } else { %>
+                  <li><a href="/login" class="login">로그인</a></li>
+                  <% } %>
+                    <!-- <li><a href="/login" class="login">로그인</a></li> -->
+                    <li><a href="#"><img src="../Project-images/header/home-white.png" alt="메인페이지로 가기"></a></li>
+                    <li><a href="">
+                        <i class="fa-solid fa-bars hamberger"></i></a></li>
             </ul>
           </div>
 
