@@ -1,8 +1,9 @@
 
 /*
-google cloud를 위해 파일명을 server.js로 바꿈
+google cloud를 통해 배포하기 위해 파일명을 server.js로 바꿈
 package.json에서도 index.js -> server.js로 변경해야 함
 
+코드 수정 후 재 실행시 아래 명령어를 입력한다.
     gcloud init
     gcloud app deploy
 */
