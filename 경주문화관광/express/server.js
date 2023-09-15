@@ -1,4 +1,9 @@
-// google cloud를 위해 server.js로 바꿈
+
+/*
+google cloud를 위해 server.js로 바꿈
+    gcloud init
+    gcloud app deploy
+*/
 
 
 
