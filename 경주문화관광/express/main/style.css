@@ -8,8 +8,8 @@
 :root {
   --sub-color: #fac43d;
   --main-color: #3c84ab;
-  --main-text-color:#333333;
-  --sub-text-color:#000000;
+  --main-text-color: #333333;
+  --sub-text-color: #000000;
   --sub-title-text: #282d61;
   --menu-text-color: #354141;
 }
@@ -261,16 +261,38 @@ header {
 .menu-buttons ul {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   min-width: 150px;
+}
+
+
+.login-name {
+  font-size: 14px;
+  color: #fff;
+  margin-top: -5px;
+}
+
+.logout {
+  font-size: 20px;
+  margin-top: -7px;
+}
+
+.logout i {
+  color: #fff;
 }
 
 .login {
   font-size: 14px;
   color: #fff;
+
+}
+
+.login-home {
+  width: 30px
 }
 
 .menu-buttons img {
-  margin: 0 19px 0 38px;
+  /* margin: 0 19px 0 38px; */
   width: 29px;
   height: 29px;
 }
@@ -384,7 +406,7 @@ header {
   opacity: 0.7;
 }
 
- .help-list ul li:first-child img {
+.help-list ul li:first-child img {
   width: 75px;
   margin-top: 7px;
 }
@@ -495,7 +517,7 @@ header {
   background-color: #fff;
 }
 
-.slide-out > div{
+.slide-out>div {
   display: none;
 }
 
@@ -628,7 +650,7 @@ header {
 
 .slide-wrap1 .slick-arrow:hover {
   background-color: var(--main-color);
-} 
+}
 
 /* slide-wrap1 dots 위치잡기 */
 /* page1 */
@@ -919,7 +941,7 @@ header {
 
 
 .top-image-list li,
-.bottom-image-list li{
+.bottom-image-list li {
   cursor: pointer;
 }
 
@@ -1070,7 +1092,7 @@ footer {
   width: 1400px;
   height: 56px;
   align-items: center;
-  border-right: 1px solid #ddd ;
+  border-right: 1px solid #ddd;
 }
 
 .banner-site-list {
