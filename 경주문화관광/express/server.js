@@ -1,6 +1,8 @@
 
 /*
-google cloud를 위해 server.js로 바꿈
+google cloud를 위해 파일명을 server.js로 바꿈
+package.json에서도 index.js -> server.js로 변경해야 함
+
     gcloud init
     gcloud app deploy
 */
@@ -104,6 +106,7 @@ MongoClient.connect('mongodb+srv://admin:qewr1324@cluster0.yb4lr5p.mongodb.net/?
     }
 
     db = client.db('data')
+    // 사이트 배포를 위해 8080으로 변경
     app.listen('8080', function () {
         console.log('success')
     })
