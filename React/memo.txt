@@ -1,0 +1,18 @@
+우선 버전 확인한다.
+  node --version
+  -> v18.16.1
+
+  npm --version
+  -> 9.5.1
+    
+npx create-react-app react-basic
+
+설치 끝나면
+npm start
+
+app.js가 메인
+
+ctrl + , 로 설정 열어서
+include Languages 검색
+key : value 추가
+javascript : javascriptreact
