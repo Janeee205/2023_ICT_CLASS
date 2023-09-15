@@ -9,7 +9,7 @@ package.json에서도 index.js -> server.js로 변경해야 함
 
 /*
 [설치 목록]
- * 링크 연결
+ * ejs링크 연결
  * 설치 : npm install ejs
 
  * DB 연결
