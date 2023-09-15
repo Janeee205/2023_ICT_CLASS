@@ -5,6 +5,26 @@ google cloud를 위해 server.js로 바꿈
     gcloud app deploy
 */
 
+/*
+[설치 목록]
+ * 링크 연결
+ * 설치 : npm install ejs
+
+ * DB 연결
+ * 설치 : npm install body-parser
+ 
+ * 회원가입 폼 데이터 저장
+ * 설치 : npm install ejs
+ * 
+ * 로그인 설치목록 
+ * 1. npm install passport
+ * 2. npm install passport-local
+ * 3. npm install express-session
+ * 
+ * 회원계정 수정
+ * 설치 : npm install method-override
+*/
+
 
 
 
@@ -287,6 +307,7 @@ app.get('/edit/:id', function (requests, response) {
 })
 
 /*************************************
+ * 회원계정 수정
  * 설치 : npm install method-override
  *************************************/
 const methodOverride = require('method-override');
