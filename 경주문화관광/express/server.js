@@ -232,7 +232,7 @@ passport.deserializeUser(function (id, done) {
 })
 
 
-app.get('/main', function (requests, response) {
+app.get('', function (requests, response) {
     response.render('main.ejs', { info: requests.user })
 })
 
