@@ -52,10 +52,10 @@ app.use(express.static("./loginPages"))
 app.set('view engine', 'ejs');
 
 // 메인페이지
-app.get('', function (requests, response) {
-    response.render('main.ejs')
-    // response.sendFile(__dirname + '/index.html')
-})
+// app.get('/main', function (requests, response) {
+//     response.render('main.ejs')
+//     // response.sendFile(__dirname + '/index.html')
+// })
 
 // 로그인
 app.get('/login', function (requests, response) {
@@ -231,12 +231,13 @@ passport.deserializeUser(function (id, done) {
     })
 })
 
-
-app.get('', function (requests, response) {
+app.get('/main', function (requests, response) {
     response.render('main.ejs', { info: requests.user })
 })
 
 app.get('/logout', function (requests, response) {
+    // 임시방편으로 넣은 코드
+    requests.session.destroy();
     response.redirect('/login');
 })
 
@@ -247,7 +248,6 @@ app.get('/logout', function (requests, response) {
 
 // 로그인 시 닉네임 뜨게
 app.get('/info/:name', function (requests, response) {
-
 
     db.collection('gyeongju_join').findOne({ _id: parseInt(requests.params.id) }, function (error, result) {
         // console.log(result)
@@ -271,7 +271,7 @@ function getLogin(requests, response, next) {
 app.post('/logout', function (requests, response) {
     requests.session.destroy();
     console.log('로그아웃!')
-    response.redirect('/login');
+    response.redirect('/main');
 })
 
 
