@@ -29,3 +29,13 @@ let arr = [1, 2, 3, 4, 5]
 
 let [num1, num2, num3, num4] = arr;
 console.log(num1, num2, num3, num4)
+
+// 배열 안에 나머지 값 가져오기
+// ...rest
+// 배열 안에서 원하는 값을 뽑아낸 후, 나머지 값을 저장하고 싶을 때 사용한다.
+// rest 대신 다른 이름을 사용해도 상관없다.
+// 변수 앞에 ...이 가장 마지막에 위치해야 한다.
+
+
+let [a, ...rest] = arr
+console.log('나머지 : ' + rest);
