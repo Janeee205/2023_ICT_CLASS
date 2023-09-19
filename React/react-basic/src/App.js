@@ -1,6 +1,7 @@
 import './App.css';
-import Practice from './component/Practice';
+// import Practice from './component/Practice';
 import User from './component/User';
+import State from './component/State';
 
 // cd react-basic
 // npm start
@@ -14,9 +15,9 @@ function App() {
 
     <div className="App">
 
+      {/* <Practice /> */}
       <User />
-      <Practice />
-
+      <State />
     </div>
   );
 }
