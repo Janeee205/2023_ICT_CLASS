@@ -2,7 +2,7 @@ import React from "react";
 import Box from "./Box";
 
 function Practice() {
-  let element = <h1>졸려!</h1>
+  let element = <h3>졸려!</h3>
 
   // html 코드 return() 안에 작성해야한다.
   // return()안에는 무조건 하나의 태그로 시작해서 하나의 태그로 끝나야 한다.(태그를 병렬로 기입x)
