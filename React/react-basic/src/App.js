@@ -2,7 +2,8 @@ import './App.css';
 // import Practice from './component/Practice';
 // import User from './component/User';
 // import State from './component/State';
-import Map from './component/Map';
+// import Map from './component/Map';
+import Nav from './component/Header/Nav';
 
 // cd react-basic
 // npm start
@@ -18,7 +19,8 @@ function App() {
       {/* <Practice /> */}
       {/* <User /> */}
       {/* <State /> */}
-      <Map></Map>
+      {/* <Map /> */}
+      <Nav />
 
     </div>
   );
