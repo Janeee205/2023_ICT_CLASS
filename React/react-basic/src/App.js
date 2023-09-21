@@ -1,7 +1,8 @@
 import './App.css';
 // import Practice from './component/Practice';
-import User from './component/User';
-import State from './component/State';
+// import User from './component/User';
+// import State from './component/State';
+import Map from './component/Map';
 
 // cd react-basic
 // npm start
@@ -14,10 +15,11 @@ function App() {
   return (
 
     <div className="App">
-
       {/* <Practice /> */}
-      <User />
-      <State />
+      {/* <User /> */}
+      {/* <State /> */}
+      <Map></Map>
+
     </div>
   );
 }
