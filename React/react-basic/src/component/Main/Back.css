@@ -1,0 +1,46 @@
+.background {
+  height: 600px;
+  background-image: url('../back.jpeg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #fff;
+}
+
+.front-txt {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 600px;
+}
+
+h2,
+p {
+  margin-bottom: 20px;
+}
+
+button {
+  padding: 5px 20px;
+  border-radius: 10px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.top {
+  margin-top: -100px;
+}
+
+.second-txt {
+  width: 500px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 40px 20px;
+  color: #fff;
+  text-align: center;
+  background-color: black;
+  border-radius: 20px;
+  box-shadow: 5px 5px 5px #666;
+}
