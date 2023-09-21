@@ -1,15 +1,19 @@
 import React from 'react';
 
+// map() 함수
+// 코드를 간결하고 가독성 있게 유지하는데 유용하다.
+// 모든 Array(배열) 뒤에 사용할 수 있다.
 const Map = () => {
-  // 변수 선언은 return 밖에서
   let num = [1, 2, 3, 4, 5];
-  let arrPlus = num.map((num) => num + 1);
+  let arrPlus = num.map((num) => num + 1)
   // console.log(num)
   // console.log(arrPlus)
+
+  // num의 제곱근
   let newArr = num.map((num) => {
-    // 제곱 구하는 함수 Math.pow();
-    return Math.pow(num, 2);
-  });
+    // 제곱 구하는 함수 Math.pow()
+    return Math.pow(num, 2)
+  })
   console.log(newArr)
 
   return (

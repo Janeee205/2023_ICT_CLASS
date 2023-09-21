@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+nav {
+  display: flex;
+  height: 80px;
+  padding: 0 30px;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #333;
+}
+
+.logo img {
+  width: 40px;
+}
+
+.gnb-list {
+  display: flex;
+  width: 250px;
+  justify-content: space-between;
+}
+
+.gnb-list a {
+  color: #fff;
+}
