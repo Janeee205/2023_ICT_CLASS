@@ -19,13 +19,15 @@ function App() {
   return (
 
     <div className="App">
-      {/* <Practice /> */}
-      {/* <User /> */}
-      {/* <State /> */}
-      {/* <Map /> */}
-      {/* <Nav />
+      {/* 
+      <Practice /> 
+      <User /> 
+      <State /> 
+      <Map /> 
+      <Nav />
       <Back />
-      <Cards /> */}
+      <Cards />
+      */}
       <CommentList />
     </div>
   );
