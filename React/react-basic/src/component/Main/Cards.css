@@ -1,0 +1,19 @@
+.post-card-list {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  margin-top: 80px;
+}
+
+.post-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  width: 240px;
+  height: 300px;
+  color: #fff;
+  border-radius: 20px;
+  background-color: black;
+  box-shadow: 5px 5px #999;
+}
