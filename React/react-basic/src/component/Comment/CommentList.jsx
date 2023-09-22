@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import Comment from './Comment';
 
 let comments = [
@@ -39,12 +39,20 @@ const CommentList = () => {
     )
   }
 
+  let deleteComment = (index) => {
+    let newList = [...list];
+    // splice(배열 변경할 인덱스 값, 제거할 요소의 수);
+    newList.splice(index, 1);
+    setList(newList)
+    console.log(index)
+  }
+
   return (
     <div>
       {
         list.map((item, i) => {
           return (
-            <Comment name={item.name} text={item.content} key={i} />
+            <Comment name={item.name} text={item.content} key={i} delete={() => deleteComment(i)} />
           )
         })
       }

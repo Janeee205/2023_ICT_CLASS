@@ -35,7 +35,7 @@ const Comment = (props) => {
         <p>{props.text}</p>
       </div>
 
-      <button type='button'> X </button>
+      <button type='button' onClick={props.delete}> X </button>
     </div >
   );
 };
