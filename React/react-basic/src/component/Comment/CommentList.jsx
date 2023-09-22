@@ -42,9 +42,10 @@ const CommentList = () => {
   let deleteComment = (index) => {
     let newList = [...list];
     // splice(배열 변경할 인덱스 값, 제거할 요소의 수);
+    // Removes elements from an array and, if necessary, inserts new elements in their place, returning the deleted elements.
     newList.splice(index, 1);
-    setList(newList)
-    console.log(index)
+    setList(newList);
+    console.log(index);
   }
 
   return (
