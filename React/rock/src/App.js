@@ -10,7 +10,7 @@ let choice = {
   },
 
 
-  scissor: {
+  scissors: {
     name: 'Scissors',
     img: 'https://images.unsplash.com/photo-1567034866941-5acf937cb310?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1635&q=80'
   },
@@ -24,23 +24,72 @@ let choice = {
 
 function App() {
 
-  let [userSelect, setuserSelect] = useState(null);
-  let [comSelect, setcomSelect] = useState(null);
+  let [userSelect, setUserSelect] = useState(null);
+  let [comSelect, setComSelect] = useState(null);
   let [result, setResult] = useState('');
+
+  // 키값을 뽑아서 함수로
+
+  let play = (userChoice) => {
+
+    // 유저랑 컴퓨터가 선택한 값 업데이트
+    let userChoice = choice[userChoice]
+    setUserSelect(choice[userChoice])
+
+    let comChoice = randomChoice();
+    setComSelect(comChoice);
+
+    setResult(judgment(userChoice, comChoice));
+  }
+
+
+  // 컴퓨터 랜덤 값 선택
+  let randomChoice = () => {
+    // choice object 키값을 배열로 만들어서 랜덤으로 선택되게 한다
+    // keys() -> 객체의 키값을 뽑아서 Array로 만들어준다.
+
+    let itemArr = Object.keys(choice);
+
+    // 0부터 2사이에 있는 랜덤 값을 만들어준다
+    let randomItem = Math.floor(Math.random() * itemArr.length);
+    let final = itemArr[randomItem]
+
+    // 해당 함수가 호출 됐을 때 반환할 값
+    return choice[final]
+  }
+  randomChoice();
+
+
+  // 조건문으로 유저, 컴퓨터 중 누가 이겼는지 판단
+  let judgment = (user, computer) => {
+
+    console.log(userSelect)
+    console.log(comSelect)
+
+    // user가 이겼는지, computer가 이겼는지 어떤 값을 이용해서 판단할건지 결정한다.
+    if (user.name == computer.name) return 'tie';
+    else if (user.name == 'Rock') return computer.name == 'Scissors' ? 'win' : 'lose';
+    else if (user.name == 'Paper') return computer.name == 'Rock' ? 'win' : 'lose';
+    else if (user.name == 'Scissors') return computer.name == 'Paper' ? 'win' : 'lose';
+
+  }
+
+  judgment();
+
+
 
   return (
     <div className="App">
-      <div className="box-list">
+      <div className='box-list'>
         <Box title="You" />
         <Box title="Computer" />
       </div>
 
       <div className="btn-list">
-        <button type='button'>가위</button>
-        <button type='button'>바위</button>
-        <button type='button'>보</button>
+        <button type='button' onClick={() => play('scissors')}>가위</button>
+        <button type='button' onClick={() => play('rock')}>바위</button>
+        <button type='button' onClick={() => play('paper')}>보</button>
       </div>
-
     </div>
   );
 }
