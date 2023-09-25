@@ -16,3 +16,7 @@ ctrl + , 로 설정 열어서
 include Languages 검색
 key : value 추가
 javascript : javascriptreact
+
+
+git에서 다른사람의 react 코드를 받았는데 node modules 없으면
+ npm install 로 node modules 폴더 생성한다
