@@ -19,8 +19,8 @@ let choice = {
     name: 'Paper',
     img: 'https://images.unsplash.com/photo-1532153354457-5fbe1a3bb0b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80'
   }
-}
 
+}
 
 function App() {
 
@@ -31,15 +31,12 @@ function App() {
   // 키값을 뽑아서 함수로
 
   let play = (userChoice) => {
-
-    // 유저랑 컴퓨터가 선택한 값 업데이트
-    let userChoice = choice[userChoice]
     setUserSelect(choice[userChoice])
 
     let comChoice = randomChoice();
     setComSelect(comChoice);
 
-    setResult(judgment(userChoice, comChoice));
+    setResult(judgment(choice[userChoice], comChoice))
   }
 
 
@@ -62,20 +59,16 @@ function App() {
 
   // 조건문으로 유저, 컴퓨터 중 누가 이겼는지 판단
   let judgment = (user, computer) => {
-
-    console.log(userSelect)
-    console.log(comSelect)
-
-    // user가 이겼는지, computer가 이겼는지 어떤 값을 이용해서 판단할건지 결정한다.
-    if (user.name == computer.name) return 'tie';
-    else if (user.name == 'Rock') return computer.name == 'Scissors' ? 'win' : 'lose';
-    else if (user.name == 'Paper') return computer.name == 'Rock' ? 'win' : 'lose';
-    else if (user.name == 'Scissors') return computer.name == 'Paper' ? 'win' : 'lose';
-
+    // user가 이겼는지, computer 이겼는지
+    // 어떤 값을 이용해서 판단할건지 결정
+    // 사용자가 rock 컴퓨터가 scissors 사용자 win, com lose
+    // 사용자가 선택한 값, 컴퓨터가 선택한 값 비교
+    if (user.name == computer.name) {
+      return 'tie'
+    } else if (user.name == 'Rock') return computer.name == 'Scissors' ? 'win' : 'lose'
+    else if (user.name == 'Paper') return computer.name == 'Rock' ? 'win' : 'lose'
+    else if (user.name == 'Scissors') return computer.name == 'Paper' ? 'win' : 'lose'
   }
-
-  judgment();
-
 
   return (
     <div className="App">
@@ -85,9 +78,9 @@ function App() {
       </div>
 
       <div className="btn-list">
-        <button type='button' onClick={() => play('scissors')}>가위</button>
-        <button type='button' onClick={() => play('rock')}>바위</button>
-        <button type='button' onClick={() => play('paper')}>보</button>
+        <button onClick={() => play('scissors')} type='button'>가위</button>
+        <button onClick={() => play('rock')} type='button'>바위</button>
+        <button onClick={() => play('paper')} type='button'>보</button>
       </div>
     </div>
   );
