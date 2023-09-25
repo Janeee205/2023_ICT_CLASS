@@ -1,0 +1,42 @@
+.box-list,
+.btn-list {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  text-align: center;
+}
+
+.box-item {
+  border: 5px solid #ccc;
+}
+
+.box-item img {
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+}
+
+.btn-list {
+  gap: 8px;
+  margin-top: 30px;
+}
+
+.btn-list button {
+  padding: 10px 30px;
+  border: none;
+  background-color: #6f6f6f;
+  color: #fff;
+  border-radius: 20px;
+}
+
+.win {
+  border: 5px solid green;
+}
+
+.lose {
+  border: 5px solid red;
+}
+
+.tie {
+  border: 5px solid black;
+}
