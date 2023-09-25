@@ -24,7 +24,6 @@ let choice = {
 
 function App() {
 
-
   let [userSelect, setuserSelect] = useState(null);
   let [comSelect, setcomSelect] = useState(null);
   let [result, setResult] = useState('');
