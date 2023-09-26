@@ -6,6 +6,7 @@
   text-align: center;
 }
 
+/* 결과에 따라 border color 바뀜 */
 .box-item {
   border: 5px solid #ccc;
 }

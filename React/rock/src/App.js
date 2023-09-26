@@ -70,6 +70,7 @@ function App() {
     else if (user.name == 'Scissors') return computer.name == 'Paper' ? 'win' : 'lose'
   }
 
+
   return (
     <div className="App">
       <div className='box-list'>
