@@ -1,0 +1,28 @@
+.box-list {
+  display: flex;
+  width: 850px;
+  margin: 0 auto;
+}
+
+.box-item {
+  margin: 0 auto;
+  text-align: center;
+  border: 5px solid #ccc;
+}
+
+.box-item img {
+  width: 400px;
+}
+
+/* 승부 결과에 따라 border color 변경한다. */
+.win {
+  border: 5px solid green;
+}
+
+.lose {
+  border: 5px solid red;
+}
+
+.tie {
+  border: 5px solid darkslategrey;
+}
