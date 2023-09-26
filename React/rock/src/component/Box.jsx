@@ -8,9 +8,13 @@ const Box = (props) => {
     <div className='box-item'>
 
       <h1>{props.title}</h1>
-      <h2>Rock</h2>
-      <img src="https://iheartcraftythings.com/wp-content/uploads/2022/01/6-37.jpg" alt="" />
-      <h3>tie</h3>
+      {/* 
+      null error시 => 조건부 렌더링 
+      null이 아닐때만 값이 랜더링 되도록 한다.
+      */}
+      <h2>{props.select && props.select.name}</h2>
+      <img src="props.select.img" alt="" />
+      <h3>{props.result}</h3>
 
     </div>
 
